@@ -9,5 +9,5 @@ default fish scripts mpv darkman sway
 
 # push to my github account
 git add .
-git commit -m "files update"
+git commit -m "config update"
 git push
