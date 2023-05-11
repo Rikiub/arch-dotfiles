@@ -3,4 +3,5 @@
 # trigger a small, passive popup dialog to inform the user about darkman's activity
 # reference https://wiki.archlinux.org/title/Desktop_notifications#Usage_in_programming
 
-notify-send --app-name="darkman" --urgency=low --icon=weather-clear "switching to light mode"
+notify-send --app-name="darkman" --urgency=low --icon=weather-clear \
+"switching to light mode"
