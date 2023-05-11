@@ -1,0 +1,39 @@
+# ---DEFAULT---
+
+set $dir_script $HOME/.config/i3/bin
+
+# ---START---
+
+# ---USER---
+
+exec --no-startup-id redshift
+
+exec --no-startup-id syncthing
+
+# ---DEFAULT---
+
+# polkit-gnome
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# restore wallpaper with "azote"
+exec --no-startup-id ~/.fehbg
+
+# start polybar
+exec --no-startup-id ~/.config/i3/polybar/launch.sh
+
+# compositor
+exec --no-startup-id picom
+
+# notify daemon
+exec --no-startup-id dunst
+
+# manage bluetooh devices
+exec --no-startup-id blueman-applet
+
+# ---SCRIPTS---
+
+# autotiling script
+exec --no-startup-id $dir_script/autotiling.py
+
+# autorename workspaces
+exec --no-startup-id $dir_script/autoname-workspaces.py

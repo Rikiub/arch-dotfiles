@@ -1,0 +1,73 @@
+{
+	// Documentation: https://github.com/Alexays/Waybar/wiki //
+
+    "position": "top",
+    "height": 30,
+    "modules-left": ["sway/workspaces"],
+    "modules-right": ["tray", "network", "pulseaudio", "clock", "custom/power"],
+
+    // "battery"
+
+    // Modules configuration
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+	"sway/workspaces": {
+		"disable-scroll": false,
+		"all-outputs": false,
+     },
+
+	"custom/power": {
+		"format": "",
+		"on-click": "$HOME/.config/rofi/scripts/powermenu_t1"
+	},
+
+//"sh $HOME/.config/sway/scripts/swaynag-powermenu.sh"
+
+	"clock": {
+		"format": " {:%H:%M}",
+        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        	"format-alt": "{:%Y-%m-%d}"
+	},
+
+	"battery": {
+        	"states": {
+            		"warning": 30,
+            		"critical": 15,
+        	},
+        	"format": "{icon} {capacity}%",
+        	"format-charging": "󰂄 {capacity}%",
+        	"format-plugged": "󰂄{capacity}%",
+        	"format-alt": "{time} {icon}",
+        	"format-full": "󱈑 {capacity}%",
+        	"format-icons": ["󱊡", "󱊢", "󱊣"]
+	},
+
+	"network": {
+        	"format-wifi": "  {essid}",
+        	"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        	"format-linked": "{ifname} (No IP) ",
+        	"format-disconnected": "󰤮 Disconnected",
+        	//"format-alt": "{ifname}: {ipaddr}/{cidr}",
+        	"on-click": "networkmanager_dmenu",
+        	"on-click-right": "nm-connection-editor"
+	},
+
+	"pulseaudio": {
+		"on-click": "pavucontrol",
+		"format": "{icon} {volume}%",
+        	"format-muted": " Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+    }
+}

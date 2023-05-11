@@ -1,0 +1,69 @@
+# ---FLOATING RULES---
+
+## Tipos de ventana (enable/disable)
+# floating: Inicia la ventana en modo flotar
+# sticky: La ventana se fijara en el fondo, persistiendo en todos los espacios de trabajo
+#
+## Opciones:
+# resize:
+
+# --FLOATING--
+for_window [class="galculator"] floating enable; sticky enable
+for_window [class="qalculate-gtk"] floating enable; sticky enable
+for_window [class="qalculate-qt"] floating enable; sticky enable
+for_window [class="file-roller"] floating enable
+for_window [class="azote"] floating enable;
+for_window [class="yad"] floating enable
+
+for_window [class="nm-connection-editor"] floating enable; sticky enable
+for_window [class="pavucontrol"] floating enable; sticky enable, resize set width 50 ppt height 60 ppt
+for_window [class="blueman-manager"] floating enable; sticky enable
+for_window [class="blueman-adapters"] floating enable; sticky enable
+for_window [class="blueman-sendto"] floating enable; sticky enable
+
+for_window [class="ristretto"] floating enable, resize set width 50 ppt height 80 ppt
+for_window [class="gthumb"] floating enable
+for_window [class="imv"] floating enable
+for_window [class="org.gnome.Meld"] floating enable
+
+for_window [class="com.github.hluk.copyq"] floating enable, resize set width 50 ppt height 80 ppt; sticky enable
+
+for_window [class="firefox"] inhibit_idle fullscreen; border none; max_render_time off
+for_window [class="firefox"] inhibit_idle fullscreen; border none; max_render_time off
+for_window [class="chromium"] inhibit_idle fullscreen; border none; max_render_time off
+for_window [class="brave-browser"] inhibit_idle fullscreen; border none; max_render_time off
+for_window [class="microsoft-edge"] inhibit_idle fullscreen; border none; max_render_time off
+for_window [class="vivaldi-stable"] inhibit_idle fullscreen; border none; max_render_time off
+
+for_window [class="mpv"] inhibit_idle visible; border none; max_render_time off
+for_window [class="vlc"] inhibit_idle visible; border none; max_render_time off
+for_window [class="Anydesk"] inhibit_idle visible; border none;
+
+for_window [class="telegramdesktop"] floating enable
+for_window [class="telegramdesktop" title="Telegram"] floating disable
+
+for_window [class=".*.exe"] inhibit_idle fullscreen; floating enable; border none
+for_window [class="gamescope"] inhibit_idle fullscreen; floating enable; border none
+for_window [class="steam_app.*"] inhibit_idle fullscreen; floating enable; border none
+for_window [class="Steam"] floating enable; max_render_time off
+
+# --TERMINAL APPS--
+#[title="^ncmpcpp"] floating enable
+#[title="^ranger"] floating enable
+#[title="^htop"] floating enable
+
+# --FIX POPUP--
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="About"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable; sticky enable
+for_window [title="(?:Abrir|Guardar) (?:Archivo|Carpeta|Como)"] floating enable; sticky enable
+for_window [title="(?:Confirmar|Remplazar|Progreso)"] floating enable; sticky enable
+
+# --FIX POPUP OTHERS--
+for_window [title="Cambio de nombre en masa"] floating enable
+for_window [title="Picture in picture"] floating enable; sticky enable

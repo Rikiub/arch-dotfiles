@@ -1,0 +1,55 @@
+# ---DEFAULT---
+
+# GTK3 applications take a long time to start (FIX)
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+set $dir_script $HOME/.config/sway/bin
+
+# ---START---
+exec --no-startup-id {
+
+	# ---USER---
+
+	gammastep
+
+	syncthing
+
+	darkman run
+
+	# ---DEFAULT---
+
+	# swayidle (Protector de pantalla)
+	swayidle -w \
+		timeout 600 'swaymsg "output * power off"' \
+		resume 'swaymsg "output * power on"'
+
+	# clipboard (clipman)
+	wl-paste -t text --watch clipman store \
+	--no-persist
+
+	# polkit-gnome
+	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+	# Restore Wallpaper with "azote"
+	~/.azotebg
+
+	# notify daemon
+	mako
+
+	# manage bluetooh devices
+	blueman-applet
+
+	# ---SCRIPTS---
+
+	# autotiling script
+	$dir_script/autotiling.py
+
+	# transparency
+	$dir_script/inactive-windows-transparency.py
+
+	# autorename workspaces
+	$dir_script/autoname-workspaces.py
+}
+
+# start bar
+bar swaybar_command waybar

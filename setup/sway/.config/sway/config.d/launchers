@@ -1,0 +1,62 @@
+# ---LAUNCHERS---
+
+# Start Wofi
+#bindsym $mod+d exec wofi -I -b -a -p "" --show drun
+
+# darkman GTK Theme switch
+
+bindsym $mod+Shift+d exec darkman toggle
+
+# -ROFI-
+
+# Check the theme styles on:
+# https://github.com/adi1090x/rofi
+
+# rofi directory
+set $rofi_dir $HOME/.config/rofi
+set $rofi_launcher launchers/type-2/style-1.rasi
+set $rofi_emoji launchers/type-4/style-2.rasi
+set $rofi_calc launchers/type-1/style-3.rasi
+
+# Rofi (app launcher)
+bindsym $mod+d \
+exec rofi \
+-show drun \
+-theme $rofi_dir/$rofi_launcher \
+
+# Rofi (powermenu)
+bindsym $mod+Shift+e \
+exec $rofi_dir/powermenu/type-1/powermenu.sh \
+
+# Roji (emoji)
+#bindsym $mod+e \
+#exec rofi \
+#-show emoji \
+#-theme $rofi_dir/$rofi_emoji \
+
+# Rofi (calc)
+#bindsym $mod+q \
+#exec rofi \
+#-show calc -modi calc -no-show-match -no-sort \
+#-theme $rofi_dir/$rofi_calc \
+
+# -OTHERS-
+
+# swaynag (powermenu)
+#bindsym $mod+Shift+e \
+#exec sh $HOME/.config/sway/scripts/swaynag-powermenu.sh
+
+# ---SCREENSHOT---
+
+set $screenshot_dir $(echo $(xdg-user-dir PICTURES)"/"$(date +'screenshot-%Y%m%d-%H%M%S.png'))
+
+bindsym Print \
+exec grimshot --notify save output $screenshot_dir
+
+# Screenshot (Grimshot)
+bindsym $mod+Shift+s \
+exec grimshot --notify save area $screenshot_dir
+
+# Color picker
+bindsym $mod+Shift+a \
+exec wl-color-picker clipboard

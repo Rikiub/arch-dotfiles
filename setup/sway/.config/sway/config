@@ -1,0 +1,14 @@
+# sway config file
+
+# start config
+include ~/.config/sway/config.d/*
+
+# nwg-displays settings
+include ~/.config/sway/outputs
+include ~/.config/sway/workspaces
+
+# input settings
+include ~/.config/sway/input
+
+# xwayland
+xwayland enable

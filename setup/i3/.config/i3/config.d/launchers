@@ -1,0 +1,44 @@
+# ---LAUNCHERS---
+
+# --ROFI--
+
+# Check the theme styles on:
+# https://github.com/adi1090x/rofi
+
+# rofi directory
+#set $rofi_dir $HOME/.config/rofi
+#set $rofi_launcher launchers/type-2/style-1.rasi
+#set $rofi_emoji launchers/type-4/style-2.rasi
+#set $rofi_calc launchers/type-1/style-3.rasi
+
+# Rofi (app launcher)
+#bindsym $mod+d \
+#exec rofi \
+#-show drun \
+#-theme $rofi_dir/$rofi_launcher \
+
+# Rofi (powermenu)
+#bindsym $mod+Shift+e \
+#exec $rofi_dir/powermenu/type-1/powermenu.sh \
+
+# Roji (emoji)
+#bindsym $mod+e \
+#exec rofi \
+#-show emoji \
+#-theme $rofi_dir/$rofi_emoji \
+
+# Rofi (calc)
+#bindsym $mod+q \
+#exec rofi \
+#-show calc -modi calc -no-show-match -no-sort \
+#-theme $rofi_dir/$rofi_calc \
+
+# --POLYBAR--
+
+#set $dir_polybar ~/.config/i3/polybar
+
+# Polybar Launcher
+bindsym $mod+d exec ~/.config/i3/polybar/scripts/launcher.sh
+
+# Polybar Powemenu
+bindsym $mod+Shift+e exec ~/.config/i3/polybar/scripts/powermenu.sh
