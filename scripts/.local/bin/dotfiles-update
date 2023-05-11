@@ -4,5 +4,5 @@
 find $HOME -xtype l -delete
 
 # sync stow files
-stow -d $HOME/dotfiles -t $HOME \
+stow -d $HOME/dotfiles -t $HOME --dotfiles \
 default fish scripts mpv darkman sway
