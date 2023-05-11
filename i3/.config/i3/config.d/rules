@@ -1,12 +1,5 @@
 # ---FLOATING RULES---
 
-## Tipos de ventana (enable/disable)
-# floating: Inicia la ventana en modo flotar
-# sticky: La ventana se fijara en el fondo, persistiendo en todos los espacios de trabajo
-#
-## Opciones:
-# resize:
-
 # --FLOATING--
 for_window [class="galculator"] floating enable; sticky enable
 for_window [class="qalculate-gtk"] floating enable; sticky enable

@@ -6,4 +6,3 @@ alias aria2c 'aria2c -x 8'
 
 # ---abbr---
 # execute expanding command
-

@@ -58,8 +58,7 @@ bindsym {
 
 	# scratchpad
 	$mod+Shift+minus move scratchpad
-	$mod+minus exec $dir_script/sway-fit-floats --toggle --x-origin=20 --y-origin=20 --padx=20 --pady=20
-
+	$mod+minus show scratchpad
 }
 
 # --WORKSPACE KEYBINDINGS--
