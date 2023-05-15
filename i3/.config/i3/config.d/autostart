@@ -4,13 +4,13 @@ set $dir_script $HOME/.config/i3/bin
 
 # ---START---
 
-# ---USER---
+# --USER--
 
 exec --no-startup-id redshift
 
 exec --no-startup-id syncthing
 
-# ---DEFAULT---
+# --DEFAULT--
 
 # polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

@@ -3,8 +3,8 @@
 # 2. Remove orphans
 # 3. Remove optional/circular dependences
 function arch-clean -d 'Clean Arch Linux"'
-	paccache -r
-	rm -rf $HOME/.cache
+	sudo rm -rf $HOME/.cache
+  paccache -r
 	pacman -Qtdq | sudo pacman -Rns -
 	pacman -Qqd | sudo pacman -Rsu -
 end

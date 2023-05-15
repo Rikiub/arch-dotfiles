@@ -11,10 +11,10 @@
 #set $rofi_emoji launchers/type-4/style-2.rasi
 
 # Rofi (app launcher)
-#bindsym $mod+d \
-#exec rofi \
-#-show drun \
-#-theme $rofi_dir/$rofi_launcher \
+bindsym $mod+d \
+exec rofi \
+-show drun \
+-theme $rofi_dir/$rofi_launcher \
 
 # Rofi (powermenu)
 #bindsym $mod+Shift+e \
@@ -31,7 +31,7 @@
 #set $dir_polybar ~/.config/i3/polybar
 
 # Polybar Launcher
-bindsym $mod+d exec ~/.config/i3/polybar/scripts/launcher.sh
+#bindsym $mod+d exec ~/.config/i3/polybar/scripts/launcher.sh
 
 # Polybar Powemenu
-bindsym $mod+Shift+e exec ~/.config/i3/polybar/scripts/powermenu.sh
+#bindsym $mod+Shift+e exec ~/.config/i3/polybar/scripts/powermenu.sh
