@@ -40,17 +40,17 @@
         	},
         	"format": "{icon} {capacity}%",
         	"format-charging": "󰂄 {capacity}%",
-        	"format-plugged": "󰂄{capacity}%",
+        	"format-plugged": "󰂄 {capacity}%",
         	"format-alt": "{time} {icon}",
         	"format-full": "󱈑 {capacity}%",
         	"format-icons": ["󱊡", "󱊢", "󱊣"]
 	},
 
 	"network": {
-        	"format-wifi": "  {essid}",
-        	"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        	"format-linked": "{ifname} (No IP) ",
-        	"format-disconnected": "󰤮 Disconnected",
+        	"format-wifi": " {essid}",
+        	"format-disconnected": "󰖪 Disconnected",
+        	"format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈁",
+        	"format-linked": "{ifname} (No IP) 󰈁",
         	//"format-alt": "{ifname}: {ipaddr}/{cidr}",
         	"on-click": "networkmanager_dmenu",
         	"on-click-right": "nm-connection-editor"
@@ -59,7 +59,7 @@
 	"pulseaudio": {
 		"on-click": "pavucontrol",
 		"format": "{icon} {volume}%",
-        	"format-muted": " Muted",
+        	"format-muted": "󰝟 Muted",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -67,7 +67,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", "󰖀", "󰕾"]
         },
     }
 }

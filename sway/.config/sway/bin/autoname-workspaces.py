@@ -24,66 +24,66 @@ WINDOW_ICONS = {
 	"vivaldi-stable": "",
     'org.qbittorrent.qBittorrent': '',
 
-	'blueman-manager': '',
-	'blueman-adapters': '',
-	'blueman-sendto': '',
-	'pavucontrol': '',
-	'wdisplays': '🖵',
-	'azote': '',
-	'balena-etcher': '',
+	'blueman-manager': '',
+	'blueman-adapters': '',
+	'blueman-sendto': '',
+	'pavucontrol': '󰲸',
+	'wdisplays': '󰹑',
+	'balena-etcher': '󱊞',
 	'bitwarden': '',
-	'copyq': '⚙',
+	'copyq': '󱉧',
 
-	'galculator': '🖩',
-	'qalculate-gtk': '🖩',
-	'qalculate-qt': '🖩',
-    'thunderbird': '',
+	'galculator': '󰃬',
+	'qalculate-gtk': '󰃬',
+	'qalculate-qt': '󰃬',
+    'thunderbird': '󰇮',
 
-    "aseprite": "🖌",
-    "gimp": "",
-    'org.inkscape.Inkscape': '🖋',
-    "krita": "🖌",
+    "aseprite": "",
+    "gimp": "󱇣",
+    'org.inkscape.Inkscape': '',
+    "krita": "",
 
 	'citra': '︁',
 	'yuzu': '︁',
 	'rpcs3': '︁',
 	'dolphin-emu': '︁',
 
-    "com.github.neithern.g4music": "",
-    'audacity': '︁',
+    "com.github.neithern.g4music": "",
+    'audacity': '',
+    'azote': '',
     "ristretto": "",
     "gthumb": "",
     "imv": "",
     "feh": "",
     "swayimg": "",
-    'vlc': '🎞',
-    'mpv': '🎞',
-    'celluloid': '🎞',
-    'obs': '',
+    'vlc': '󰿎',
+    'mpv': '󰿎',
+    'celluloid': '󰿎',
+    'obs': '󰕧',
 
     "thunar": "",
-    "alacritty": "",
-	'polkit-gnome-authentication-agent-1': '︁',
-	'gparted': '🖴',
+    "alacritty": "",
+	'polkit-gnome-authentication-agent-1': '',
+	'gpartedbin': '󰋊',
 
-	"okular": '',
-    'zathura': '',
-    'libreoffice-startcenter': '',
-    'libreoffice-writer': '',
-    'libreoffice-calc': '',
-    'libreoffice-draw': '',
-    'libreoffice-base': '',
-    'libreoffice-impress': '',
-    'libreoffice-math': '',
-    'soffice': '',
-    "obsidian": "",
+	"okular": '',
+    'zathura': '',
+    'libreoffice-startcenter': '󰈙',
+    'libreoffice-writer': '󰈙',
+    'libreoffice-calc': '󰈙',
+    'libreoffice-draw': '󰈙',
+    'libreoffice-base': '󰈙',
+    'libreoffice-impress': '󰈙',
+    'libreoffice-math': '󰈙',
+    'soffice': '󰈙',
+    "obsidian": "󱓧",
 
-	"geany": "",
-	"vscodium": "",
-	"codium-url-handler": ""
+	"geany": "󱅄",
+	"vscodium": "󰨞",
+	"codium-url-handler": "󰨞"
 }
 
-DEFAULT_ICON = ""
+DEFAULT_ICON = ""
 
 def icon_for_window(window):
     name = None
@@ -185,36 +185,3 @@ if __name__ == "__main__":
     rename_workspaces(ipc)
 
     ipc.main()
-
-#❄︁
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#☁
-#︁
-#
-#
-#
-#
-#
-#
-#
-#☎︁
-#✉︁
-#🗩︁
-#︁
-#︁
-#︁
-#⚙︁
-#︁
-#︁
-#︁
-#︁
-#🖌︁
-#︁
