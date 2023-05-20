@@ -5,7 +5,7 @@
     border-radius: 0;
     min-height: 0;
     font-size: 15px;
-    font-family: FontAwesome, Symbols Nerd Font Mono, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Symbols Nerd Font Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
 }
 
 window#waybar {

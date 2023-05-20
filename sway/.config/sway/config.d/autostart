@@ -3,7 +3,7 @@
 # GTK3 applications take a long time to start (FIX)
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
-set $dir_script $HOME/.config/sway/bin
+set $sway_scripts $HOME/.config/sway/scripts
 
 # ---START---
 exec --no-startup-id {
@@ -18,7 +18,7 @@ exec --no-startup-id {
 
 	# ---DEFAULT---
 
-	# swayidle (Protector de pantalla)
+	# swayidle (Screensaver)
 	swayidle -w \
 		timeout 600 'swaymsg "output * power off"' \
 		resume 'swaymsg "output * power on"'
@@ -42,13 +42,13 @@ exec --no-startup-id {
 	# ---SCRIPTS---
 
 	# autotiling script
-	$dir_script/autotiling.py
-
-	# transparency
-	$dir_script/inactive-windows-transparency.py
+	$sway_scripts/autotiling.py
 
 	# autorename workspaces
-	$dir_script/autoname-workspaces.py
+	$sway_scripts/autoname-workspaces.py
+	
+	# transparency
+	$sway_scripts/inactive-windows-transparency.py
 }
 
 # start bar

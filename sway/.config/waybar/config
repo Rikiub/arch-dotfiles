@@ -25,8 +25,6 @@
 		"on-click": "$HOME/.config/rofi/scripts/powermenu_t1"
 	},
 
-//"sh $HOME/.config/sway/scripts/swaynag-powermenu.sh"
-
 	"clock": {
 		"format": " {:%H:%M}",
         	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",

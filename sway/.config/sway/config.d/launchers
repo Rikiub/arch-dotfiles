@@ -1,8 +1,5 @@
 # ---LAUNCHERS---
 
-# Start Wofi
-#bindsym $mod+d exec wofi -I -b -a -p "" --show drun
-
 # darkman GTK Theme switch
 bindsym $mod+Shift+d exec darkman toggle
 
@@ -12,36 +9,27 @@ bindsym $mod+Shift+d exec darkman toggle
 # https://github.com/adi1090x/rofi
 
 # rofi directory
-set $rofi_dir $HOME/.config/rofi
-set $rofi_launcher launchers/type-2/style-1.rasi
-set $rofi_emoji launchers/type-4/style-2.rasi
+set $rofi_scripts $HOME/.config/rofi/scripts
 
 # Rofi (app launcher)
 bindsym $mod+d \
-exec rofi \
--show drun \
--theme $rofi_dir/$rofi_launcher \
+exec $rofi_scripts/launcher_t2 \
 
 # Rofi (powermenu)
 bindsym $mod+Shift+e \
-exec $rofi_dir/powermenu/type-1/powermenu.sh \
+exec $rofi_scripts/powermenu_t1
 
-# Roji (emoji)
-#bindsym $mod+e \
-#exec rofi \
-#-show emoji \
-#-theme $rofi_dir/$rofi_emoji \
-
-# -OTHERS-
+# --OTHERS--
 
 # swaynag (powermenu)
 #bindsym $mod+Shift+e \
-#exec sh $$dir_script/swaynag-powermenu.sh
+#exec sh $sway_scripts/swaynag-powermenu.sh
 
 # ---SCREENSHOT---
 
 set $screenshot_dir $(echo $(xdg-user-dir PICTURES)"/"$(date +'screenshot-%Y%m%d-%H%M%S.png'))
 
+# Screenshot (Grimshot)
 bindsym Print \
 exec grimshot --notify save output $screenshot_dir
 

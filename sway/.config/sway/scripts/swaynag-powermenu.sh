@@ -1,6 +1,6 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
-swaynag --config $HOME/.config/sway/bin/swaynag.conf -t custom\
+swaynag --config $HOME/.config/sway/scripts/swaynag.conf -t custom\
 	-m 'Powermenu'\
 	\
 	-b ' Apagar' 'systemctl poweroff'\

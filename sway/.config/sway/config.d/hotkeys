@@ -1,6 +1,6 @@
 # ---DEFAULT APPS---
 
-set $term alacritty
+set $term $TERM
 
 # global key modifier
 set $mod Mod4
