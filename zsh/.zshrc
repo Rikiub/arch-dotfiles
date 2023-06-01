@@ -1,7 +1,6 @@
 # ---zsh start-config---
 
 export ANTIDOTE_HOME=~/.antidote
-#zstyle ':antidote:bundle' use-friendly-names 'yes'
 
 # zsh plugin manager
 source '/usr/share/zsh-antidote/antidote.zsh'

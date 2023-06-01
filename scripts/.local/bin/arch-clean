@@ -1,11 +1,17 @@
 #!/usr/bin/env sh
 
-# 1. Clean pacman cache
-# 2. Remove .cache dir ("$HOME/.cache")
-# 2. Remove orphans
-# 3. Remove optional/circular dependences
+# Use sudo for current shell
+sudo echo "" ;\
 
-sudo rm -rf $HOME/.cache ;\
+# Remove $HOME/.cache
+echo "Erasing... $(du -sh $HOME/.cache)" ;\
+rm -rf $HOME/.cache ;\
+
+# Clean pacman cache
 paccache -r ;\
+
+# Remove orphans
 pacman -Qtdq | sudo pacman -Rns - ;\
+
+# Remove optional/circular dependences
 pacman -Qqd | sudo pacman -Rsu -\

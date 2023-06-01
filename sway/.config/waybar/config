@@ -4,14 +4,19 @@
     "position": "top",
     "height": 30,
     "modules-left": ["sway/workspaces"],
+    "modules-center": ["custom/launcher"],
     "modules-right": ["tray", "network", "pulseaudio", "clock", "custom/power"],
 
     // "battery"
 
     // Modules configuration
 
+    "custom/launcher": {
+		"format": "󱗼",
+		"on-click": "$HOME/.config/rofi/scripts/launcher_t2"
+	},
+
     "tray": {
-        // "icon-size": 21,
         "spacing": 10
     },
 
@@ -20,38 +25,27 @@
 		"all-outputs": false,
      },
 
-	"custom/power": {
-		"format": "",
-		"on-click": "$HOME/.config/rofi/scripts/powermenu_t1"
-	},
-
-	"clock": {
-		"format": " {:%H:%M}",
-        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        	"format-alt": "{:%Y-%m-%d}"
-	},
-
 	"battery": {
-        	"states": {
-            		"warning": 30,
-            		"critical": 15,
-        	},
-        	"format": "{icon} {capacity}%",
-        	"format-charging": "󰂄 {capacity}%",
-        	"format-plugged": "󰂄 {capacity}%",
-        	"format-alt": "{time} {icon}",
-        	"format-full": "󱈑 {capacity}%",
-        	"format-icons": ["󱊡", "󱊢", "󱊣"]
+		"states": {
+			"warning": 30,
+			"critical": 15,
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": "󰂄 {capacity}%",
+		"format-plugged": "󰂄 {capacity}%",
+		"format-alt": "{time} {icon}",
+		"format-full": "󱈑 {capacity}%",
+		"format-icons": ["󱊡", "󱊢", "󱊣"]
 	},
 
 	"network": {
-        	"format-wifi": " {essid}",
-        	"format-disconnected": "󰖪 Disconnected",
-        	"format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈁",
-        	"format-linked": "{ifname} (No IP) 󰈁",
-        	//"format-alt": "{ifname}: {ipaddr}/{cidr}",
-        	"on-click": "networkmanager_dmenu",
-        	"on-click-right": "nm-connection-editor"
+		"format-wifi": " {essid}",
+		"format-disconnected": "󰖪 Disconnected",
+		"format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈁",
+		"format-linked": "{ifname} (No IP) 󰈁",
+		//"format-alt": "{ifname}: {ipaddr}/{cidr}",
+		"on-click": "networkmanager_dmenu",
+		"on-click-right": "nm-connection-editor"
 	},
 
 	"pulseaudio": {
@@ -67,5 +61,16 @@
             "car": "",
             "default": ["", "󰖀", "󰕾"]
         },
-    }
+    },
+    
+    "clock": {
+		"format": " {:%a %d - %H:%M}",
+			"format-alt": "{:%Y-%m-%d}",
+        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+	
+    "custom/power": {
+		"format": "",
+		"on-click": "$HOME/.config/rofi/scripts/powermenu_t1"
+	},
 }
