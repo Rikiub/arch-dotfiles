@@ -26,7 +26,7 @@
     "bitrate": "disable",
     "ffmpeg_args": null,
     "format": "m4a",
-    "save_file": null,
+    "save_file": ".spotdl",
     "filter_results": true,
     "threads": 4,
     "cookie_file": null,

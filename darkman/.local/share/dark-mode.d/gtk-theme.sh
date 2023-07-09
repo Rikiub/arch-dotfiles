@@ -4,5 +4,7 @@
 # "Darker" is actually LESS DARK than "Dark".
 
 gsettings set org.gnome.desktop.interface gtk-theme \
-Catppuccin-Frappe-Standard-Sky-Dark
+"Catppuccin-Frappe-Standard-Sky-dark"
 
+gsettings set org.gnome.desktop.interface icon-theme \
+"Papirus-Dark"
