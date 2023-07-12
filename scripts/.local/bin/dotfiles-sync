@@ -6,3 +6,5 @@ find $HOME -xtype l -delete
 # sync stow files
 stow -d $HOME/dotfiles -t $HOME --dotfiles \
 darkman default fish scripts mpv darkman sway i3
+
+echo "Completed dotfiles sync"
