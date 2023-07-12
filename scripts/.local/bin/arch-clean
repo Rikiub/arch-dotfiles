@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-# Remove $HOME/.cache
-sudo echo "Erasing... $(du -sh $HOME/.cache/yay)" ;\
-sudo rm -rf $HOME/.cache/yay ;\
+# remove .cache
+sudo rm -r -f $HOME/.cache/yay ;\
 
-# Clean pacman cache
+# clear pacman cache
 paccache -r ;\
 
-# Remove orphans
+# remove orphans
 pacman -Qtdq | sudo pacman -Rns - ;\
 
-# Remove optional/circular dependences
+# remove optional/circular dependences
 pacman -Qqd | sudo pacman -Rsu -\

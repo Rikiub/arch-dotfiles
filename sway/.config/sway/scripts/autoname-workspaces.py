@@ -65,6 +65,8 @@ WINDOW_ICONS = {
     "thunar": "",
     "nemo": "",
     "alacritty": "",
+    "foot": "",
+    "kitty": "",
 	'polkit-gnome-authentication-agent-1': '',
 	'gpartedbin': '󰋊',
 
