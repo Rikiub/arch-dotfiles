@@ -1,12 +1,3 @@
-# ---FLOATING RULES---
-
-## Tipos de ventana (enable/disable)
-# floating: Inicia la ventana en modo flotar
-# sticky: La ventana se fijara en el fondo, persistiendo en todos los espacios de trabajo
-#
-## Opciones:
-# resize:
-
 # Display window as floating. Find out wayland app_id with "swaymsg -t get_tree | jq '.' | grep app_id" and xorg class with xprop
 for_window {
 

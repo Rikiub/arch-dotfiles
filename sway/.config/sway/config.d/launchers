@@ -1,42 +1,31 @@
-# ---LAUNCHERS---
+# --- LAUNCHERS ---
 
-# darkman GTK Theme switch
-bindsym $mod+Shift+d exec darkman toggle
+# darkman toggle
+bindsym $mod+Shift+d \
+exec darkman toggle
 
-# --ROFI--
+# Terminal
+bindsym $mod+Return \
+exec $TERM
 
-# Check the theme styles on:
-# https://github.com/adi1090x/rofi
-
-# rofi directory
-set $rofi_scripts $HOME/.config/rofi/scripts
-
-# Rofi (app launcher)
+# Menu/Launcher
 bindsym $mod+d \
-exec $rofi_scripts/launcher_t2 \
+exec $menu
 
-# Rofi (powermenu)
+# Powermenu
 bindsym $mod+Shift+e \
-exec $rofi_scripts/powermenu_t1
+exec $powermenu
 
-# --OTHERS--
+# --- SCREENSHOT ---
+set $screenshot $(echo $(xdg-user-dir PICTURES)"/"$(date +'screenshot-%Y%m%d-%H%M%S.png'))
 
-# swaynag (powermenu)
-#bindsym $mod+Shift+e \
-#exec sh $sway_scripts/swaynag-powermenu.sh
-
-# ---SCREENSHOT---
-
-set $screenshot_dir $(echo $(xdg-user-dir PICTURES)"/"$(date +'screenshot-%Y%m%d-%H%M%S.png'))
-
-# Screenshot (Grimshot)
+# Grimshot
 bindsym Print \
-exec grimshot --notify save output $screenshot_dir
+exec grimshot --notify save output $screenshot
 
-# Screenshot (Grimshot)
 bindsym $mod+Shift+s \
-exec grimshot --notify save area $screenshot_dir
+exec grimshot --notify save area $screenshot
 
 # Color picker
 bindsym $mod+Shift+a \
-exec wl-color-picker clipboard
+exec $color_picker

@@ -1,3 +1,6 @@
+# This file is managed by nwg-displays
+# https://github.com/nwg-piotr/nwg-displays
+
 output "VGA-1" {
     mode --custom 1366x768@59.79Hz
     pos 0 0

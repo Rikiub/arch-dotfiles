@@ -1,3 +1,6 @@
+# This file is managed by nwg-displays
+# https://github.com/nwg-piotr/nwg-displays
+
 workspace 1 output VGA-1
 workspace 2 output VGA-1
 workspace 3 output VGA-1

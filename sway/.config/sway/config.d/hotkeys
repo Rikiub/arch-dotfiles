@@ -1,25 +1,15 @@
-# ---DEFAULT APPS---
-
-set $term $TERM
-
 # global key modifier
 set $mod Mod4
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+# use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# --USER KEYBINDINGS--
+# --- KEYS ---
+
 bindsym {
 
-	# start a terminal
-	$mod+Return exec $term
-
-	# kill focused window
-	$mod+Shift+q kill
-
-	# kill focused window (F4)
-	$mod+F4 kill
-
+	# --- FOCUS ---
+	
 	# change focus
 	$mod+h focus left
 	$mod+k focus down
@@ -33,10 +23,10 @@ bindsym {
 	$mod+Right focus right
 
 	# move focused window
-	$mod+Shift+j move left
+	$mod+Shift+h move left
 	$mod+Shift+k move down
-	$mod+Shift+l move up
-	$mod+Shift+ntilde move right
+	$mod+Shift+j move up
+	$mod+Shift+l move right
 
 	# alternatively, you can use the cursor keys:
 	$mod+Shift+Left move left
@@ -44,11 +34,17 @@ bindsym {
 	$mod+Shift+Up move up
 	$mod+Shift+Right move right
 
+	# kill focused window
+	$mod+Shift+q kill
+	$mod+F4 kill
+
+	# --- EXTRAS ---
+	
 	# enter fullscreen mode for the focused container
 	$mod+f fullscreen toggle
 
 	# change container layout (stacked, tabbed, toggle split)
-	$mod+x layout toggle split tabbed stacking
+	#$mod+x layout toggle split tabbed stacking
 
 	# toggle tiling / floating
 	$mod+Shift+space floating toggle
@@ -59,9 +55,17 @@ bindsym {
 	# scratchpad
 	$mod+Shift+minus move scratchpad
 	$mod+minus scratchpad show
+	
+	# --- DEV ---
+	
+	# reload the configuration file
+	$mod+Shift+c reload
+	
+	# restart sway inplace
+	$mod+Shift+r restart
 }
 
-# --WORKSPACE KEYBINDINGS--
+# --- WORKSPACE ---
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -129,34 +133,27 @@ bindcode $mod+Shift+80 move container to workspace number $ws8
 bindcode $mod+Shift+81 move container to workspace number $ws9
 bindcode $mod+Shift+90 move container to workspace number $ws10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+# --- RESIZE ---
 
-# resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	bindsym {
+		# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        h resize grow width 10 px or 10 ppt
+        l resize shrink width 10 px or 10 ppt
+        j resize grow height 10 px or 10 ppt
+        k resize shrink height 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Right resize shrink width 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Left resize grow width 10 px or 10 ppt
+        Right resize shrink width 10 px or 10 ppt
+        Up resize grow height 10 px or 10 ppt
+        Down resize shrink height 10 px or 10 ppt
+        Left resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        Return mode "default"
+        Escape mode "default"
+        $mod+r mode "default"
+	}
 }
-
 bindsym $mod+r mode "resize"

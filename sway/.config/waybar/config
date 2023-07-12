@@ -104,7 +104,7 @@
 	
     "custom/power": {
 		"format": "",
-		"on-click": "$HOME/.config/rofi/scripts/powermenu_t1"
+		"on-click": "wlogout -p layer-shell"
 	},
 	
 	"custom/launcher": {

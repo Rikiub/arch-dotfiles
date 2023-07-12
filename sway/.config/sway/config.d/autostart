@@ -1,22 +1,9 @@
 # GTK3 applications take a long time to start (FIX)
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
-set $sway_scripts $HOME/.config/sway/scripts
-
-# ---START---
 exec --no-startup-id {
 
-	# ---USER---
-
-	gammastep
-
-	syncthing
-
-	darkman run
-
-	# ---DEFAULT---
-
-	# swayidle (Screensaver)
+	# --- DEFAULT ---
 	swayidle -w \
 		timeout 600 'swaymsg "output * power off"' \
 		resume 'swaymsg "output * power on"'
@@ -28,39 +15,22 @@ exec --no-startup-id {
 	# notify daemon
 	mako
 
-	# wallpaper with "azote"
-	#~/.azotebg
-		
-	# wallpaper with "swww"
-	swww init
+	# background image
+	$wallpaper
 
-	# ---ETC---
+	# --- ETC ---
+	/usr/lib/geoclue-2.0/demos/agent #geoclue agent
+	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 #polkit-gnome
 
-	# enable geoclue agent
-	/usr/lib/geoclue-2.0/demos/agent
-
-	# polkit-gnome
-	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-	# ---APPLETS---
-	
-	# nm-applet
+	# --- APPLETS ---
 	nm-applet
-
-	# manage bluetooh devices
 	blueman-applet
 
-	# ---SCRIPTS---
-
-	# autotiling script
-	$sway_scripts/autotiling.py
-
-	# autorename workspaces
-	$sway_scripts/autoname-workspaces.py
-	
-	# transparency
-	$sway_scripts/inactive-windows-transparency.py
+	# --- SCRIPTS ---
+	$scripts/autotiling.py
+	$scripts/autoname-workspaces.py
+	$scripts/inactive-windows-transparency.py
 }
 
-# start bar
-bar swaybar_command waybar
+# bar
+bar swaybar_command $bar

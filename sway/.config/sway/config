@@ -1,14 +1,26 @@
-# sway config file
+# --- DIRECTORIES ---
+set $sway           $HOME/.config/sway
+set $scripts        $sway/scripts
 
-# start config
-include ~/.config/sway/config.d/*
+# --- VARIABLES (executables) ---
+set $bar            waybar
+set $menu           $HOME/.config/rofi/scripts/launcher_t2
+set $powermenu      wlogout -p layer-shell
+set $color_picker   hyprpicker -a
+set $wallpaper      ~/.azotebg
 
-# nwg-displays settings
-include ~/.config/sway/outputs
-include ~/.config/sway/workspaces
+# --- STARTUP ---
+include $sway/config.d/*
+include $sway/input
+include $sway/outputs
+include $sway/workspaces
 
-# input settings
-include ~/.config/sway/input
-
-# xwayland
+# --- OTHERS ---
 xwayland enable
+
+# --- APPS ---
+exec --no-startup-id {
+	gammastep
+	syncthing
+	darkman run
+}
