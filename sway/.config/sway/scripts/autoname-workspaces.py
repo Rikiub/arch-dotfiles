@@ -61,7 +61,9 @@ WINDOW_ICONS = {
     'celluloid': '󰿎',
     'obs': '󰕧',
 
+	"org.gnome.Nautilus": "",
     "thunar": "",
+    "nemo": "",
     "alacritty": "",
 	'polkit-gnome-authentication-agent-1': '',
 	'gpartedbin': '󰋊',

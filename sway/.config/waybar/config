@@ -1,29 +1,32 @@
 {
 	// Documentation: https://github.com/Alexays/Waybar/wiki //
 
+	"layer": "bottom", //top, bottom
     "position": "top",
-    "height": 30,
+    "margin-top": 5,
+    "margin-bottom": 0,
+    "margin-left": 10,
+    "margin-right": 10,
+    
+    "fixed-center": true,
+    
     "modules-left": ["sway/workspaces"],
-    "modules-center": ["custom/launcher"],
-    "modules-right": ["tray", "network", "pulseaudio", "clock", "custom/power"],
+    "modules-center": ["clock", "mpris"],
+    "modules-right": ["tray", "pulseaudio", "custom/power"],
 
-    // "battery"
+    // Excluded: "battery", "memory", "network", "custom/launcher"
 
-    // Modules configuration
-
-    "custom/launcher": {
-		"format": "󱗼",
-		"on-click": "$HOME/.config/rofi/scripts/launcher_t2"
-	},
-
-    "tray": {
-        "spacing": 10
-    },
+    // Modules configuration //
 
 	"sway/workspaces": {
 		"disable-scroll": false,
 		"all-outputs": false,
      },
+
+    "tray": {
+        "spacing": 10,
+        "reverse-direction": true
+    },
 
 	"battery": {
 		"states": {
@@ -49,28 +52,63 @@
 	},
 
 	"pulseaudio": {
-		"on-click": "pavucontrol",
 		"format": "{icon} {volume}%",
-        	"format-muted": "󰝟 Muted",
+		"format-bluetooth": "{icon} {volume}%",
+        "format-muted": "{icon} Muted",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
             "headset": "",
+            "speaker": "󰓃",
+            "hdmi": "󰓃",
+            "hifi": "󰓃",
             "phone": "",
             "portable": "",
             "car": "",
             "default": ["", "󰖀", "󰕾"]
         },
+        "on-click": "pavucontrol",
+        "on-click-right": "amixer set Master toggle",
+        "scroll-step": 5
     },
     
     "clock": {
-		"format": " {:%a %d - %H:%M}",
-			"format-alt": "{:%Y-%m-%d}",
-        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+		"format": " {:%H:%M}",
+		"format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+	},
+	
+	"mpris": {
+		"format": "",
+		"format-playing": "{status_icon} <i>Playing</i>",
+		"format-paused": "{status_icon} Paused",
+		"format-stopped": "{status_icon} Stopped",
+		"tooltip-format": "{player} | {dynamic}",
+		"player-icons": {
+			"default": "▶",
+			"mpv": "🎵"
+		},
+		"status-icons": {
+			"playing": "󰐊",
+			"paused": "󰏤",
+			"stopped": "󰓛",
+		},
+		//"ignored-players": ["firefox"],
+		"interval": 2
+	},
+	
+	"memory": {
+		"interval": 30,
+		"format": "󰍛 {}%"
 	},
 	
     "custom/power": {
 		"format": "",
 		"on-click": "$HOME/.config/rofi/scripts/powermenu_t1"
 	},
+	
+	"custom/launcher": {
+		"format": "󱗼",
+		"on-click": "$HOME/.config/rofi/scripts/launcher_t2"
+	}
 }

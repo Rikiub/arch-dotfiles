@@ -58,7 +58,7 @@ bindsym {
 
 	# scratchpad
 	$mod+Shift+minus move scratchpad
-	$mod+minus show scratchpad
+	$mod+minus scratchpad show
 }
 
 # --WORKSPACE KEYBINDINGS--

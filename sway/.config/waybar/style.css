@@ -3,6 +3,7 @@
 * {
     font-family: Symbols Nerd Font Mono, FontAwesome;
     font-size: 15;
+    border-radius: 30px;
 }
 
 window#waybar {
@@ -11,56 +12,51 @@ window#waybar {
 
 #workspaces {
 	background-color: @base;
-	margin-top: 5px;
-	margin-left: 10px;
-	border-radius: 5px;
 }
 #workspaces button {
-    padding: 5px 10px;
     color: @text;
 }
 #workspaces button.focused {
     color: @crust;
     background-color: @blue;
-    border-radius: 5px;
 }
 #workspaces button:hover {
 	background-color: @sky;
 	color: @crust;
-	border-radius: 5px;
 }
 
-#custom-date, #custom-launcher, #clock, #battery, #pulseaudio, #network {
+#custom-date, 
+#custom-launcher, 
+#custom-power,
+#bluetooth,
+#clock,
+#battery, 
+#pulseaudio, 
+#network, 
+#memory,
+#tray {
 	background-color: @base;
-	padding: 5px 10px;
-	margin: 5px 0px;
+	padding: 0px 10px;
+	margin: 0px 2px;
 }
 
 #tray {
-	background-color: @base;
-	margin: 5px 10px 5px 5px;
-	padding: 5px 10px;
-	border-radius: 5px;
+	margin-right: 5px;
 }
 
 #custom-power {
 	color: @crust;
 	background-color: @red;
-	padding: 5px 10px;
-	margin: 5px 10px 5px 5px;
-	border-radius: 5px;
+	margin-left: 10px;
 }
 
 #custom-launcher {
 	color: @text;
-
-	border-radius: 5px;
+	padding: 0px 10px;
 }
 
 #clock {
     color: @pink;
-    margin-right: 10px;
-    border-radius: 0px 5px 5px 0px;
 }
 
 #battery {
@@ -75,9 +71,34 @@ window#waybar {
 
 #network {
 	color: @red;
-	border-radius: 5px 0px 0px 5px;
 }
 
 #pulseaudio {
 	color: @yellow;
+}
+#pulseaudio.muted {
+	color: gray;
+}
+
+#mpris {
+	color: @mauve;
+}
+#mpris.playing {
+	background-color: @base;
+	padding: 0px 10px;
+	margin: 0px 2px;
+}
+#mpris.paused {
+	background-color: @base;
+	padding: 0px 10px;
+	margin: 0px 2px;
+}
+#mpris.stopped {
+	background-color: @base;
+	padding: 0px 10px;
+	margin: 0px 2px;
+}
+
+#memory {
+	color: @teal;
 }

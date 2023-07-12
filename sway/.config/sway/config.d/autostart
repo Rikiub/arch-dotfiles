@@ -1,5 +1,3 @@
-# ---DEFAULT---
-
 # GTK3 applications take a long time to start (FIX)
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
@@ -27,14 +25,25 @@ exec --no-startup-id {
 	wl-paste -t text --watch clipman store \
 	--no-persist
 
+	# notify daemon
+	mako
+
+	# wallpaper with "azote"
+	#~/.azotebg
+		
+	# wallpaper with "swww"
+	#swww init
+
+	# enable geoclue agent
+	/usr/lib/geoclue-2.0/demos/agent
+
 	# polkit-gnome
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-	# Restore Wallpaper with "azote"
-	~/.azotebg
-
-	# notify daemon
-	mako
+	# ---APPLETS---
+	
+	# nm-applet
+	nm-applet
 
 	# manage bluetooh devices
 	blueman-applet

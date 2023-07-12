@@ -1,11 +1,8 @@
-#!/usr/bin/env sh
-
-# Use sudo for current shell
-sudo echo "" ;\
+#!/usr/bin/env bash
 
 # Remove $HOME/.cache
-echo "Erasing... $(du -sh $HOME/.cache)" ;\
-rm -rf $HOME/.cache ;\
+sudo echo "Erasing... $(du -sh $HOME/.cache/yay)" ;\
+sudo rm -rf $HOME/.cache/yay ;\
 
 # Clean pacman cache
 paccache -r ;\

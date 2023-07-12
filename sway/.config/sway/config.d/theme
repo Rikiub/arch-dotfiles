@@ -5,11 +5,11 @@ font pango:Symbols Nerd Font Mono, FontAwesome, Rubik 8
 # ---WINDOWS OPTIONS---
 
 # Inner gaps for all windows: space between two adjacent windows (or split containers).
-gaps inner 15
+gaps inner 10
 
 # Outer gaps for all windows: space along the screen edges.
 # gaps outer|horizontal|vertical|top|left|bottom|right <gap_size>[px]
-gaps outer 5
+gaps outer 0
 
 smart_borders off
 
