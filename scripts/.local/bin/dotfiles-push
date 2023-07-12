@@ -5,5 +5,5 @@ cd $HOME/dotfiles
 
 # push to my github account
 git add .
-git commit -m "files update"
+git commit -m "update"
 git push
