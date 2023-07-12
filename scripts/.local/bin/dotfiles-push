@@ -1,5 +1,7 @@
 #/usr/bin/env sh
 
+echo "> Starting git"
+
 # cd to git repo
 cd $HOME/dotfiles
 
@@ -7,5 +9,3 @@ cd $HOME/dotfiles
 git add .
 git commit -m "update"
 git push
-
-echo "> Starting git..."
