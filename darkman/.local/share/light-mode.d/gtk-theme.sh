@@ -1,10 +1,6 @@
 #!/bin/sh
 
-THEME="Catppuccin-Latte-Standard-Sky-light"
-ICON="Papirus"
-
-export GTK_THEME=$THEME
-
-gsettings set org.gnome.desktop.interface gtk-theme $THEME
-gsettings set org.gnome.desktop.interface icon-theme $ICON
+export GTK_THEME=$GTK_THEME_LIGHT
+gsettings set org.gnome.desktop.interface gtk-theme $GTK_THEME_LIGHT
+gsettings set org.gnome.desktop.interface icon-theme $ICON_LIGHT
 gsettings set org.gnome.desktop.interface color-scheme prefer-light

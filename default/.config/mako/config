@@ -6,6 +6,7 @@ text-color=#DADAE8
 #width=450
 #height=200
 max-icon-size=96
+icons=1
 icon-location=right
 #margin=20,20,0
 #padding=15,15,15

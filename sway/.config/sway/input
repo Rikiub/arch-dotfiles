@@ -1,4 +1,4 @@
-# ---KEYBOARD---
+# --- KEYBOARD ---
 # Run "swaymsg -t get_inputs" to see inputs
 
 input "type:keyboard" {

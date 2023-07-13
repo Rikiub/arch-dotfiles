@@ -1,0 +1,17 @@
+# --- enable darkman support ---
+## For usage set the following env variables on your startup script or session manager.
+##
+## EXAMPLE:
+#
+#~/.profile
+#export GTK_THEME_LIGHT="Catppuccin-Latte-Standard-Sky-light"
+#export ICON_LIGHT="Papirus"
+#export GTK_THEME_DARK="Catppuccin-Frappe-Standard-Sky-dark"
+#export ICON_DARK="Papirus-Dark"
+
+# run daemon
+exec --no-startup-id darkman run
+
+# darkman toggle
+bindsym $mod+Shift+d \
+exec darkman toggle

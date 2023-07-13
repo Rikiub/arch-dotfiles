@@ -13,7 +13,7 @@ exec --no-startup-id {
 	--no-persist
 
 	# notify daemon
-	mako
+	swaync
 
 	# background image
 	$wallpaper

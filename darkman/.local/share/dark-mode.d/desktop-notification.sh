@@ -4,4 +4,4 @@
 # reference https://wiki.archlinux.org/title/Desktop_notifications#Usage_in_programming
 
 notify-send --app-name="darkman" --urgency=low --icon=weather-clear-night \
-"switching to dark mode"
+"Switching to dark mode"

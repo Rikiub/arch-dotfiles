@@ -1,9 +1,5 @@
 # --- LAUNCHERS ---
 
-# darkman toggle
-bindsym $mod+Shift+d \
-exec darkman toggle
-
 # Terminal
 bindsym $mod+Return \
 exec $TERM
@@ -17,15 +13,15 @@ bindsym $mod+Shift+e \
 exec $powermenu
 
 # --- SCREENSHOT ---
-set $screenshot $(echo $(xdg-user-dir PICTURES)"/"$(date +'screenshot-%Y%m%d-%H%M%S.png'))
 
-# Grimshot
+set $screenshot $(xdg-user-dir PICTURES)/"Screenshots"
+
 bindsym Print \
-exec grimshot --notify save output $screenshot
+exec hyprshot -m output -o $screenshot
 
 bindsym $mod+Shift+s \
-exec grimshot --notify save area $screenshot
+exec hyprshot -m region -o $screenshot
 
 # Color picker
 bindsym $mod+Shift+a \
-exec $color_picker
+exec hyprpicker -a
