@@ -38,7 +38,7 @@ bindsym {
 	$mod+Shift+q kill
 	$mod+F4 kill
 
-	# --- EXTRAS ---
+	# --- LAYOUT ---
 	
 	# enter fullscreen mode for the focused container
 	$mod+f fullscreen toggle
@@ -63,6 +63,20 @@ bindsym {
 	
 	# restart sway inplace
 	$mod+Shift+r restart
+	
+	# --- USER ---
+	
+	# launch terminal
+	$mod+Return \
+	exec $TERM
+	
+	# app-launcher
+	$mod+d \
+	exec $launcher
+
+	# menu
+	$mod+Shift+e \
+	exec $menu
 }
 
 # --- WORKSPACE ---

@@ -1,0 +1,15 @@
+# --- SCREENSHOT ---
+
+set $screenshot $(xdg-user-dir PICTURES)
+
+bindsym {
+	Print \
+	exec hyprshot -m output -o $screenshot
+
+	$mod+Shift+s \
+	exec hyprshot -m region -o $screenshot
+
+	# Color picker
+	$mod+Shift+a \
+	exec hyprpicker -a
+}

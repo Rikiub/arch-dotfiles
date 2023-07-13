@@ -25,6 +25,7 @@ window#waybar {
 	color: @crust;
 }
 
+#custom-swaync,
 #custom-date, 
 #custom-launcher, 
 #custom-power,
@@ -42,17 +43,6 @@ window#waybar {
 
 #tray {
 	margin-right: 5px;
-}
-
-#custom-power {
-	color: @crust;
-	background-color: @red;
-	margin-left: 10px;
-}
-
-#custom-launcher {
-	color: @text;
-	padding: 0px 10px;
 }
 
 #clock {
@@ -101,4 +91,19 @@ window#waybar {
 
 #memory {
 	color: @teal;
+}
+
+#custom-swaync {
+	color: @crust;
+	background-color: @lavender;
+	margin-left: 10px;
+}
+#custom-power {
+	color: @crust;
+	background-color: @red;
+	margin-left: 10px;
+}
+#custom-launcher {
+	color: @text;
+	padding: 0px 10px;
 }

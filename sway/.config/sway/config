@@ -1,11 +1,12 @@
 # --- DIRECTORIES ---
 set $sway           $HOME/.config/sway
 set $scripts        $sway/scripts
+set $components     $sway/components
 
 # --- VARIABLES (executables) ---
 set $bar            waybar
-set $menu           $HOME/.config/rofi/scripts/launcher_t2
-set $powermenu      wlogout -p layer-shell
+set $menu           swaync-client -t
+set $launcher       $HOME/.config/rofi/scripts/launcher_t2
 set $wallpaper      ~/.azotebg
 
 # --- STARTUP ---
@@ -14,8 +15,10 @@ include $sway/input
 include $sway/outputs
 include $sway/workspaces
 
-# optional darkman support. Comment (#) to disable
-include $sway/darkman
+# --- COMPONENTS (Comment # to disable) ---
+include $components/screenshot
+include $components/darkman
+include $components/emoji
 
 # --- OTHERS ---
 xwayland enable

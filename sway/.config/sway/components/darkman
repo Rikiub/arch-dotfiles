@@ -13,5 +13,5 @@
 exec --no-startup-id darkman run
 
 # darkman toggle
-bindsym $mod+Shift+d \
+bindsym $mod+Shift+m \
 exec darkman toggle
