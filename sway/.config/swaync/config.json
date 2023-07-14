@@ -149,7 +149,7 @@
 				"actions": [
 					{
 						"label": "󰌧 App Launcher",
-						"command": "swaync-client -cp && $HOME/.config/rofi/scripts/drun"
+						"command": "swaync-client -cp && $HOME/.config/rofi/scripts/launcher_t2"
 					},
 					{
 						"label": "󱁿 Dotfiles",

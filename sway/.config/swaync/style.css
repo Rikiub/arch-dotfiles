@@ -381,7 +381,7 @@
 .screenshot-buttons,
 .screencast-buttons,
 .power-buttons {
-	background: @mantle;
+	background: @noti-bg-darker;
 	margin: 5px 10px;
 	padding: 3px;
 	border: 1px solid @noti-border-color;
