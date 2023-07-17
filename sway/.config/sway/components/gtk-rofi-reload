@@ -1,0 +1,3 @@
+set $rofi $HOME/.config/rofi
+
+exec_always $rofi/gtk-rofi/launcher.sh reset

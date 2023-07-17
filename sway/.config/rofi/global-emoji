@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+ROFI_DIR="$HOME/.config/rofi"
+
+$ROFI_DIR/gtk-rofi/launcher.sh -show emoji runner

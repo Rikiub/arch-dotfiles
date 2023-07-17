@@ -1,4 +1,0 @@
-bindsym {
-	$mod+Shift+d \
-	exec $HOME/.config/rofi/scripts/emoji
-}

@@ -5,6 +5,6 @@
 
 # sync stow files
 stow -d $HOME/dotfiles -t $HOME --dotfiles \
-darkman default fish scripts i3 sway
+default fish scripts i3 sway
 
 echo "> Completed dotfiles sync"

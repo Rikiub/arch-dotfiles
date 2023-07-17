@@ -1,0 +1,114 @@
+fallback = ''
+separator = ' '
+
+[matching]
+
+# Social media
+'discord' = '󰙯'
+'Discord' = '󰙯'
+'Thunderbird' = ''
+'thunderbird' = ''
+'Slack' = ''
+
+# Image Editor
+"gimp" = "󱇣"
+"aseprite" = ""
+"krita" = ""
+'org.inkscape.Inkscape' = ''
+
+# Image
+'azote' = ''
+"ristretto" = ""
+"gthumb" = ""
+"imv" = ""
+"feh" = ""
+"swayimg" = ""
+
+# Audio
+'Spotify' = ''
+'vlc' = '󰕼'
+'audacity' = ''
+"com.github.neithern.g4music" = ""
+
+# Video
+'mpv' = '󰿎'
+'celluloid' = '󰿎'
+'obs' = '󰕧'
+
+# Documents - Notepad
+"obsidian" = "󱓧"
+"okular" = ''
+'zathura' = ''
+'libreoffice-startcenter' = '󰈙'
+'libreoffice-writer' = '󰈙'
+'libreoffice-calc' = '󰈙'
+'libreoffice-draw' = '󰈙'
+'libreoffice-base' = '󰈙'
+'libreoffice-impress' = '󰈙'
+'libreoffice-math' = '󰈙'
+'soffice' = '󰈙'
+
+# Web Browser
+'firefox' = ''
+'Nightly' = ''
+'firefoxdeveloperedition' = ''
+'Google-chrome' = ''
+'Chromium' = ''
+"brave-browser" = ""
+"microsoft-edge" = ""
+'chromium' = ''
+"vivaldi-stable" = ""
+
+# Code Editor
+"geany" = "󱅄"
+'Code' = ''
+'code-oss' = ''
+'jetbrains-studio' = ''
+"vscodium" = "󰨞"
+"codium-url-handler" = "󰨞"
+'GitHub Desktop' = ''
+'/(?i)Github.*Firefox/' = ''
+
+# Games
+'Steam' = ''
+'citra' = '︁'
+'yuzu' = '︁'
+'rpcs3' = '︁'
+'dolphin-emu' = '︁'
+
+# Utils
+'galculator' = '󰃬'
+'qalculate-gtk' = '󰃬'
+'qalculate-qt' = '󰃬'
+"org.gnome.Calculator" = '󰃬'
+'balena-etcher' = ''
+'Chia Blockchain' = ''
+'org.qbittorrent.qBittorrent' = ''
+'Postman' = ''
+'Insomnia' = ''
+'Bitwarden' = ''
+'copyq' = '󱉧'
+
+# File Browser
+"org.gnome.Nautilus" = ""
+"thunar" = ""
+"nemo" = ""
+'gpartedbin' = '󰋊'
+
+# Terminal - Apps
+"Alacritty" = ""
+"foot" = ""
+"kitty" = ""
+'/npm/' = '󰛷'
+'/node/' = '󰎙'
+'/yarn/' = ''
+'/nvim ?\w*/' = ''
+
+# Config
+'blueman-manager' = ''
+'blueman-adapters' = ''
+'blueman-sendto' = ''
+'pavucontrol' = '󰲸'
+'wdisplays' = '󰹑'
+"nwg-look" = "󰚠"
+"com.github.GradienceTeam.Gradience" = "󰚠"

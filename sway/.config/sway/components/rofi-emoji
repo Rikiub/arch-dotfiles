@@ -1,0 +1,4 @@
+set $rofi $HOME/.config/rofi
+
+bindsym $mod+Shift+d \
+exec $rofi/global-emoji

@@ -108,16 +108,12 @@
 				"position": "left",
 				"actions": [
 					{
-						"label": " Entire screen",
-						"command": "swaync-client -cp && wf-recorder"
+						"label": " Record Video",
+						"command": "swaync-client -cp && $HOME/.local/bin/wfcord region mkv"
 					},
 					{
-						"label": " Select a region",
-						"command": "swaync-client -cp && wf-recorder -g $(slurp)"
-					},
-					{
-						"label": " Stop",
-						"command": "swaync-client -cp && pkill wf-recorder"
+						"label": " Record GIF",
+						"command": "swaync-client -cp && $HOME/.local/bin/wfcord region gif"
 					}
 				]
 			},
@@ -127,7 +123,7 @@
 				"actions": [
 					{
 						"label": " Lock",
-						"command": "swaylock.sh"
+						"command": "swaync-client -cp && swaylock"
 					},
 					{
 						"label": " Logout",
@@ -149,11 +145,15 @@
 				"actions": [
 					{
 						"label": "󰌧 App Launcher",
-						"command": "swaync-client -cp && $HOME/.config/rofi/scripts/launcher_t2"
+						"command": "swaync-client -cp && $HOME/.config/rofi/global-drun"
 					},
 					{
-						"label": "󱁿 Dotfiles",
-						"command": "swaync-client -cp && xdg-open $HOME/dotfiles"
+						"label": "󱁿 Sway Config",
+						"command": "swaync-client -cp && xdg-open $HOME/.config/sway"
+					},
+					{
+						"label": "󰚠 Gradience",
+						"command": "swaync-client -cp && gradience"
 					}
 				]
 			}

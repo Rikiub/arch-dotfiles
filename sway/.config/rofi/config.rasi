@@ -27,7 +27,7 @@ configuration {
 	drun-show-actions: false;
 	drun-url-launcher: "xdg-open";
 	drun-use-desktop-cache: true;
-	drun-reload-desktop-cache: false;
+	drun-reload-desktop-cache: true;
 	drun {
 		/** Parse user desktop files. */
 		parse-user:   true;

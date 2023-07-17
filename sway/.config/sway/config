@@ -1,13 +1,15 @@
 # --- DIRECTORIES ---
-set $sway           $HOME/.config/sway
-set $scripts        $sway/scripts
-set $components     $sway/components
+set $sway               $HOME/.config/sway
+set $scripts            $sway/scripts
+set $components         $sway/components
 
-# --- VARIABLES (executables) ---
-set $bar            waybar
-set $menu           swaync-client -t
-set $launcher       $HOME/.config/rofi/scripts/launcher_t2
-set $wallpaper      ~/.azotebg
+# --- VARIABLES ---
+
+# Script or executable to set wallpaper
+set $wallpaper          ~/.azotebg
+
+# Must be a integer (Default: 600)
+set $swayidle_timeout   600
 
 # --- STARTUP ---
 include $sway/config.d/*
@@ -17,14 +19,23 @@ include $sway/workspaces
 
 # --- COMPONENTS (Comment # to disable) ---
 include $components/screenshot
-include $components/darkman
-include $components/emoji
+include $components/gtk-rofi-reload
+include $components/rofi-drun
+include $components/rofi-emoji
+include $components/waybar
+include $components/swaync
+#include $components/darkman
+
+# -- SCRIPTS ---
+
+# update qt5ct theme with Gradience colors
+exec_always $scripts/gradience-to-qt/__main__.py
 
 # --- OTHERS ---
 xwayland enable
 
-# --- APPS ---
-exec --no-startup-id {
+# --- USER-APPS ---
+exec {
 	gammastep
 	syncthing
 }

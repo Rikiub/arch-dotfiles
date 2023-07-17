@@ -1,25 +1,27 @@
-#!/bin/env sh
+#!/usr/bin/env sh
 
 # --- STARTUP ---
 
 # desktop session
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
-    export TERM=foot
+    export TERM=alacritty
 elif [ "$XDG_SESSION_TYPE" == "x11" ]; then
 	export TERM=alacritty
 fi
 
-# enable GTK_THEME with QT compability
-#export QT_QPA_PLATFORMTHEME=gtk2
+# QT with GTK THEME compability
+# for "qt5ct" just put
+# for "gnome" you need the packages: qgnomeplatform-qt5 qgnomeplatform-qt6
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # --- USER ---
 
 # darkman themes
-export GTK_THEME_LIGHT="Catppuccin-Latte-Standard-Sky-light"
-export ICON_LIGHT="Papirus"
-export GTK_THEME_DARK="Catppuccin-Frappe-Standard-Sky-dark"
-export ICON_DARK="Papirus-Dark"
+#export GTK_THEME_LIGHT="Catppuccin-Latte-Standard-Sky-light"
+#export ICON_LIGHT="Papirus"
+#export GTK_THEME_DARK="Catppuccin-Frappe-Standard-Sky-dark"
+#export ICON_DARK="Papirus-Dark"
 
 # default apps
 export EDITOR=nvim

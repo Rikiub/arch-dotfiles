@@ -10,7 +10,7 @@
 #export ICON_DARK="Papirus-Dark"
 
 # run daemon
-exec --no-startup-id darkman run
+exec darkman run
 
 # darkman toggle
 bindsym $mod+Shift+m \

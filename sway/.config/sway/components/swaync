@@ -1,0 +1,5 @@
+exec_always $components/run-swaync
+
+# menu
+bindsym	$mod+Shift+e \
+exec swaync-client -t

@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+python $HOME/.config/sway/bin/gradience-to-qt
