@@ -1,13 +1,39 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-# remove .cache
-sudo rm -r -f $HOME/.cache/yay ;\
+SEP_COLOR="31"
+TEXT_COLOR="33"
 
-# clear pacman cache
-paccache -r ;\
+SEP="\e[0;${SEP_COLOR}m"
+TEXT="\e[1;${TEXT_COLOR}m"
+END="\e[0m"
 
-# remove orphans
-pacman -Qtdq | sudo pacman -Rns - ;\
+echo ''
+echo -e "${SEP}======${END} ${TEXT} Sudo Privileges ${END} ${SEP}=====${END}"
+echo ''
+sudo echo 'Done'
 
-# remove optional/circular dependences
-pacman -Qqd | sudo pacman -Rsu -\
+echo ''
+echo -e "${SEP}======${END} ${TEXT} Sync Database ${END} ${SEP}=====${END}"
+echo ''
+sudo pacman -Syy
+
+echo ''
+echo -e "${SEP}======${END} ${TEXT} Clean (Pacman|Yay) Cache ${END} ${SEP}=====${END}"
+echo ''
+yay -Scc --noconfirm
+
+echo ''
+echo -e "${SEP}======${END} ${TEXT} Removing unused packages ${END} ${SEP}=====${END}"
+echo ''
+pacman -Qtdq | sudo pacman -Rns -              # remove cache
+pacman -Qqd  | sudo pacman -Rsu -              # remove optional/circular dependences
+
+echo ''
+echo -e "${SEP}======${END} ${TEXT} Update mlocate database ${END} ${SEP}=====${END}"
+echo ''
+sudo updatedb
+echo 'Done'
+
+echo ''
+echo -e "${SEP}======${END} ${TEXT} Optimizations completed ${END} ${SEP}=====${END}"
+echo ''

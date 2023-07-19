@@ -1,78 +1,133 @@
 #!/usr/bin/env sh
 
-VIDEO_DIR="$(xdg-user-dir VIDEOS)/record_$(date +%Y-%-m-%-d_%-H-%-M-%-S)"
-EXT="mkv"
-MSG_TAG="wf-recorder"
+function show_usage {
+	echo "Usage: wfcord [OPTIONS] [region|window|output] [mp4|mkv|gif]"
+}
 
-# if wf-recorder is running, stop it and send a message to Waybar
-if [ -n "$(pgrep wf-recorder)" ]; then
-	echo "Stopping the current recording and saving it..."
-    killall -s SIGINT wf-recorder
-    while pgrep -x wf-recorder > /dev/null; do 
-        wait
-    done
-    
-    # send exit signal to Waybar
-    pkill -RTMIN+8 waybar
-    
-    notify-send -a "$MSG_TAG" -i media-stop -u low \
-    "Recording completed" "$VIDEO_DIR.$EXT" \
-    -h string:x-canonical-private-synchronous:"$MSG_TAG"
-    exit
+function show_help {
+	echo "Usage: wfcord [OPTIONS] [region|window|output] [mp4|mkv|gif]"
+	echo ""
+	echo "A helper for wf-recorder to record video to mp4 or gif."
+	echo ""
+	echo "Options:"
+	echo "  -h, --help   Display this help and exit."
+	echo ""
+	echo "Arguments:"
+	echo "  region       Record a region of the screen."
+	echo "  window       Record a specific window."
+	echo "  output       Record a specific output."
+	echo ""
+	echo "Formats:"
+	echo "  mp4          Save the recording as an MP4 video."
+	echo "  mkv          Save the recording as a MKV video."
+	echo "  gif          Save the recording as a GIF animation."
+}
+
+function send_notification {
+	if $NOTIFY_SUPPORT; then
+		notify-send --app-name="wf-recorder" --urgency=low "$@"
+	fi
+}
+
+FILENAME="record_$(date +%Y-%-m-%-d_%-H-%-M-%-S)"
+VIDEO_DIR="$(xdg-user-dir VIDEOS)"
+OUTPUT="$VIDEO_DIR/$FILENAME"
+
+# Check if notify-send is installed
+if command -v notify-send >/dev/null 2>&1; then
+	NOTIFY_SUPPORT=true
+else
+	NOTIFY_SUPPORT=false
 fi
 
-# check and show help message
-if [ $# -eq 0 ] || [ "$1" = "help" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-	echo "Usage: wlrecord [region|window|output] [mkv|gif]"
+# Stop the current recording if wf-recorder is running
+if pgrep wf-recorder >/dev/null 2>&1; then
+	echo "Stopping the current recording and saving it..."
+	killall -s SIGINT wf-recorder
+	wait
+
+	# Send exit signal to Waybar
+	pkill -RTMIN+8 waybar
+
+	send_notification --icon=media-stop "Recording completed" "$VIDEO_DIR"
+	
 	exit
 fi
 
-# check record mode
-if [ "$1" = "region" ]; then
-    WF_MODE="-g $(slurp)"
-elif [ "$1" = "output" ]; then
-	WF_MODE="swaymsg -t get_tree | jq -r '.nodes[] | select([recurse(.nodes[]?, .floating_nodes[]?) | .focused] | any) | .name'"
-elif [ "$1" = "window" ]; then
-    WF_MODE="-g $(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp )"
-else
-    # if not arguments, exit
-    echo "ERROR: Second argument must be [region|window|output]"
-    exit 1
+# Show help message
+if [ $# -eq 0 ] || [ "$1" = "help" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+	show_usage
+	exit
 fi
 
-# cant you select a area? error got
-if [ $? -ne 0 ]; then
-    echo "ERROR: slurp selection failed"
-    
-    notify-send "Failed to record" "Area not selected" -a "$MSG_TAG" -i dialog-error -u low \
-	-h string:x-canonical-private-synchronous:"$MSG_TAG"
-    
-    exit 1
-fi
+# Check recording mode
+case "$1" in
+	region)
+		WF_MODE="-g"
+		WF_VALUE="$(slurp)"
 
-# check ext format
-if [ "$2" = "mkv" ]; then
-    WF_EXT="-f $VIDEO_DIR.mkv"
-elif [ "$2" = "gif" ]; then
-    WF_EXT="-f $VIDEO_DIR.gif -c gif"
-else
-    # if not arguments, exit
-    echo "ERROR: Third argument must be [mkv|gif]"
-    exit 1
-fi
+		if [ $? -ne 0 ]; then
+			echo "ERROR: slurp selection failed"
 
-if [ $# -eq 3 ]; then
-	echo "Too many arguments. You cannot provide more than two arguments."
+			send_notification -i dialog-error \
+				"Failed to record" "Area not selected"
+
+			exit 1
+		fi		;;
+	window)
+		WF_MODE="-g"
+		WF_VALUE="$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)"
+		;;
+	output)
+		WF_MODE="-o"
+		WF_VALUE="$(swaymsg -t get_tree | jq -r '.nodes[] | select([recurse(.nodes[]?, .floating_nodes[]?) | .focused] | any) | .name')"
+		;;
+	*)
+		echo "ERROR: $1 is not a valid argument. It must be [region|window|output]"
+		exit 1
+		;;
+esac
+
+# Check extension format
+case "$2" in
+	mp4)
+		WF_EXT="-f $OUTPUT.mp4"
+		;;
+	mkv)
+		WF_EXT="-f $OUTPUT.mkv"
+		;;
+	gif)
+		WF_EXT="-f $OUTPUT.gif -c gif"
+		;;
+	*)
+		echo "ERROR: $2 is not a valid argument. It must be [mp4|mkv|gif]"
+		exit 1
+		;;
+esac
+
+# Check for too many arguments
+if [ $# -gt 2 ]; then
+	echo "Too many arguments. You cannot provide more than three arguments."
 	exit 1
 fi
 
-# start to recording
-wf-recorder $WF_EXT "$WF_MODE" >/dev/null 2>&1 &
+if $NOTIFY_SUPPORT; then
+	# Countdown
+	for i in 3 2 1; do
+		send_notification --icon=media-record --replace-id=1 --transient \
+			"The recording will start in..." "$i"
+		sleep 1
+	done
 
-echo "Recording started"
+	# Delete countdown notification
+	send_notification --expire-time=1 --replace-id=1 --transient \
+		"Recording started"
+fi
 
-notify-send "Recording started" -a "$MSG_TAG" -i media-record -u low \
--h string:x-canonical-private-synchronous:"$MSG_TAG"
+echo "Recording has started. Execute the command again to end the recording."
 
-# send enter signal to Waybar
+# Send enter signal to Waybar
 pkill -RTMIN+8 waybar
+
+# Start recording
+wf-recorder $WF_EXT $WF_MODE "$WF_VALUE" >/dev/null 2>&1 &

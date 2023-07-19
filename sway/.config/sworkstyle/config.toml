@@ -60,6 +60,8 @@ separator = ' '
 "vivaldi-stable" = ""
 
 # Code Editor
+"org.kde.kwrite" = "󱅄"
+"org.kde.kate" = "󱅄"
 "geany" = "󱅄"
 'Code' = ''
 'code-oss' = ''
@@ -90,9 +92,13 @@ separator = ' '
 'copyq' = '󱉧'
 
 # File Browser
-"org.gnome.Nautilus" = ""
-"thunar" = ""
+"Caja" = ""
 "nemo" = ""
+"thunar" = ""
+"pcmanfm" = ""
+"pcmanfm-qt" = ""
+"org.kde.dolphin" = ""
+"org.gnome.Nautilus" = ""
 'gpartedbin' = '󰋊'
 
 # Terminal - Apps
@@ -109,6 +115,8 @@ separator = ' '
 'blueman-adapters' = ''
 'blueman-sendto' = ''
 'pavucontrol' = '󰲸'
+'nwg-displays' = '󰹑'
 'wdisplays' = '󰹑'
 "nwg-look" = "󰚠"
+"wpg" = "󰚠"
 "com.github.GradienceTeam.Gradience" = "󰚠"

@@ -1,3 +1,6 @@
+# --- OTHERS ---
+xwayland enable
+
 # --- DIRECTORIES ---
 set $sway               $HOME/.config/sway
 set $scripts            $sway/scripts
@@ -24,15 +27,16 @@ include $components/rofi-drun
 include $components/rofi-emoji
 include $components/waybar
 include $components/swaync
-#include $components/darkman
+include $components/darkman
 
 # -- SCRIPTS ---
-
-# update qt5ct theme with Gradience colors
-exec_always $scripts/gradience-to-qt/__main__.py
-
-# --- OTHERS ---
-xwayland enable
+exec_always {
+	# update qt5ct theme with Gradience colors
+	$scripts/gradience-to-qt/__main__.py
+	
+	# volume notification daemon
+	#$scripts/volume-subscribe
+}
 
 # --- USER-APPS ---
 exec {

@@ -1,4 +1,5 @@
 # Display window as floating. Find out wayland app_id with "swaymsg -t get_tree | jq '.' | grep app_id" and xorg class with xprop
+
 for_window {
 
 	# --OTHERS--
@@ -95,18 +96,22 @@ for_window {
 	[title="TeamSpeak 3"] floating enable
 	[class="ATLauncher"] floating enable
 	[app_id="pamac-manager"] floating enable
-	[app_id="wdisplays"] floating enable
-	[app_id="qt5ct"] floating enable
-	[app_id="gnome-tweaks"] floating enable
 	[app_id="flameshot"] floating enable
 	[title="Firefox - Choose User Profile" ] floating enable
-	[app_id="wdisplays"] resize set width 1150px height 480px
-	[app_id="nwg-look"] floating enable, resize set width 580px height 480px
+	
 	[app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
 	[app_id="gnome-disks"] floating enable
+	
+	[app_id="wdisplays"] floating enable
+	[app_id="nwg-displays"] floating enable
 	[app_id="nwg-shell-config"] floating enable
-	[app_id="com.github.GradienceTeam.Gradience"] floating enable
+	
+	[app_id="nwg-look"] floating enable, resize set width 580px height 480px
 	[class="lxappearance"] floating enable
+	[app_id="com.github.GradienceTeam.Gradience"] floating enable
+	[app_id="wpg"] floating enable
+	[app_id="qt5ct"] floating enable
+	[app_id="gnome-tweaks"] floating enable
 
 	# Zoom
 	[app_id="zoom"] floating enable

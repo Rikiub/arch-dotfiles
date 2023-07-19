@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 export GTK_THEME=$GTK_THEME_LIGHT
 gsettings set org.gnome.desktop.interface gtk-theme $GTK_THEME_LIGHT

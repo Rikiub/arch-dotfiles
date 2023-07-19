@@ -84,21 +84,22 @@
 		"volume": {
 			"label": ""
 		},
+		
 	"menubar": {
 			"menu#screenshot-buttons": {
 				"label": "",
 				"position": "left",
 				"actions": [
 					{
-						"label": " Entire screen",
-						"command": "swaync-client -cp && hyprshot -m output -o $(xdg-user-dir PICTURES)"
-					},
-					{
-						"label": " Select a region",
+						"label": "󰒅  Select a region",
 						"command": "swaync-client -cp && hyprshot -m region -o $(xdg-user-dir PICTURES)"
 					},
 					{
-						"label": " Color picker",
+						"label": "󱣴  Entire screen",
+						"command": "swaync-client -cp && hyprshot -m output -o $(xdg-user-dir PICTURES)"
+					},
+					{
+						"label": "  Color picker",
 						"command": "swaync-client -cp && hyprpicker -a"
 					}
 				]
@@ -108,11 +109,11 @@
 				"position": "left",
 				"actions": [
 					{
-						"label": " Record Video",
-						"command": "swaync-client -cp && $HOME/.local/bin/wfcord region mkv"
+						"label": "󰈫  Record Video",
+						"command": "swaync-client -cp && $HOME/.local/bin/wfcord region mp4"
 					},
 					{
-						"label": " Record GIF",
+						"label": "󰵸  Record GIF",
 						"command": "swaync-client -cp && $HOME/.local/bin/wfcord region gif"
 					}
 				]
@@ -122,41 +123,67 @@
 				"position": "right",
 				"actions": [
 					{
-						"label": " Lock",
-						"command": "swaync-client -cp && swaylock"
+						"label": "  Shutdown",
+						"command": "systemctl poweroff"
 					},
 					{
-						"label": " Logout",
-						"command": "loginctl terminate-session ${XDG_SESSION_ID}"
-					},
-					{
-						"label": " Reboot",
+						"label": "  Reboot",
 						"command": "systemctl reboot"
 					},
 					{
-						"label": " Shutdown",
-						"command": "systemctl poweroff"
+						"label": "  Logout",
+						"command": "loginctl terminate-session ${XDG_SESSION_ID}"
+					},
+					{
+						"label": "  Lock",
+						"command": "swaync-client -cp && swaylock"
 					}
 				]
 			},
 			"menu#app-buttons": {
 				"label": "󰀻",
-				"position": "right",
+				"position": "left",
 				"actions": [
 					{
-						"label": "󰌧 App Launcher",
+						"label": "󰌧  App Launcher",
 						"command": "swaync-client -cp && $HOME/.config/rofi/global-drun"
 					},
 					{
-						"label": "󱁿 Sway Config",
+						"label": "  Switch Mode",
+						"command": "darkman toggle"
+					}
+				]
+			},
+			"menu#config-buttons": {
+				"label": "",
+				"position": "right",
+				"actions": [
+					{
+						"label": "  Sway Config",
 						"command": "swaync-client -cp && xdg-open $HOME/.config/sway"
 					},
 					{
-						"label": "󰚠 Gradience",
+						"label": "󰸉  Wallpapers",
+						"command": "swaync-client -cp && azote"
+					},
+					{
+						"label": "󰚠  Gradience",
 						"command": "swaync-client -cp && gradience"
 					}
 				]
 			}
+		},
+		"buttons-grid": {
+			"actions": [
+				{
+				  "label": "󰌧  Launcher",
+				  "command": "swaync-client -cp && $HOME/.config/rofi/global-drun"
+				},
+				{
+				  "label": "  Switch",
+				  "command": "darkman toggle"
+				}
+			]
 		}
 	}
 }

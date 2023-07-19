@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-sudo echo "" ;\
+sudo echo ""
 yay -Syu

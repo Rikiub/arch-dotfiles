@@ -69,8 +69,8 @@
             "car": "",
             "default": ["", "󰖀", "󰕾"]
         },
-        "on-click": "pavucontrol",
-        "on-click-right": "amixer set Master toggle",
+        "on-click": "amixer set Master toggle",
+        "on-click-right": "pavucontrol",
         "scroll-step": 5
     },
 
@@ -107,8 +107,9 @@
 
 	"custom/wf-recorder": {
 		"format": "{}",
+		"tooltip": false,
 		"interval": "once",
-		"exec": "echo ''",
+		"exec": "echo '󰻂'",
 		"exec-if": "pgrep 'wf-recorder'",
 		"on-click": "$HOME/.local/bin/wfcord",
 		"signal": 8
@@ -116,16 +117,19 @@
 	
 	"custom/swaync": {
 		"format": "󱗼",
-		"on-click": "swaync-client -t"
+		"on-click": "swaync-client -t",
+		"tooltip": false
 	},
 
     "custom/power": {
 		"format": "",
-		"on-click": "wlogout -p layer-shell"
+		"on-click": "wlogout -p layer-shell",
+		"tooltip": false
 	},
 
 	"custom/launcher": {
 		"format": "󱗼",
-		"on-click": "$HOME/.config/rofi/scripts/launcher_t2"
+		"on-click": "$HOME/.config/rofi/scripts/launcher_t2",
+		"tooltip": false
 	}
 }

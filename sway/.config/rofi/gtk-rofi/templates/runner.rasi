@@ -32,6 +32,7 @@ window {
 	border-color:					@border;
     border-radius:                  30px;
 	width:							38%;
+	padding:                        10px;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;

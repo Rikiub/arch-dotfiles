@@ -276,26 +276,28 @@
 
 /* Buttons widget */
 .widget-buttons-grid {
-	padding: 8px;
-	margin: 8px;
+	background: transparent;
+	padding: 0px;
+	margin: 0px;
 	border-radius: 12px;
-	background-color: @sn-bg;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
-	background: @sn-bg;
+	background: @sn-bg-darker;
 	border-radius: 12px;
+	border: 1px solid @sn-border;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
 	background: @sn-bg-hover;
+	border: 1px solid @sn-accent-bg-color;
 }
 
 /* Menubar widget */
 .widget-menubar > box > .menu-button-bar > button {
 	border: none;
-	background: transparent;
-	margin: 8px 3px;
+	background: @sn-bg-darker;
+	margin: 5px 3px;
 	border: 1px solid @sn-border;
 }
 .widget-menubar > box > .menu-button-bar > button:focus {
@@ -374,7 +376,8 @@
 .app-buttons,
 .screenshot-buttons,
 .screencast-buttons,
-.power-buttons {
+.power-buttons,
+.config-buttons {
 	margin: 5px 10px;
 	padding: 3px;
 	border: 1px solid @sn-border;
@@ -384,7 +387,8 @@
 .app-buttons > button,
 .screenshot-buttons > button,
 .screencast-buttons > button,
-.power-buttons > button {
+.power-buttons > button,
+.config-buttons > button {
 	border-radius: 0px;
 	background: @sn-bg-darker;
 	border: 1px solid lighter(@sn-border);
@@ -393,7 +397,8 @@
 .app-buttons > button:hover,
 .screenshot-buttons > button:hover,
 .screencast-buttons > button:hover,
-.power-buttons > button:hover {
+.power-buttons > button:hover,
+.config-buttons > button:hover {
 	border-radius: 5px;
 	background: @sn-bg-hover;
 }
