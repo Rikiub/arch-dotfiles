@@ -49,7 +49,8 @@ if pgrep wf-recorder >/dev/null 2>&1; then
 	# Send exit signal to Waybar
 	pkill -RTMIN+8 waybar
 
-	send_notification --icon=media-stop "Recording completed" "$VIDEO_DIR"
+	send_notification --icon=media-stop \
+		"Recording completed" "$VIDEO_DIR"
 	
 	exit
 fi
@@ -69,7 +70,7 @@ case "$1" in
 		if [ $? -ne 0 ]; then
 			echo "ERROR: slurp selection failed"
 
-			send_notification -i dialog-error \
+			send_notification --icon=dialog-error \
 				"Failed to record" "Area not selected"
 
 			exit 1
