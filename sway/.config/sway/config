@@ -2,14 +2,11 @@
 xwayland enable
 
 # --- DIRECTORIES ---
-set $sway               $HOME/.config/sway
+set $sway               ~/.config/sway
 set $scripts            $sway/scripts
 set $components         $sway/components
 
 # --- VARIABLES ---
-
-# Script or executable to set wallpaper
-set $wallpaper          ~/.azotebg
 
 # Must be a integer (Default: 600)
 set $swayidle_timeout   600
@@ -25,14 +22,13 @@ include $components/screenshot
 include $components/gtk-rofi-reload
 include $components/rofi-drun
 include $components/rofi-emoji
-include $components/waybar
 include $components/swaync
 include $components/darkman
 
 # -- SCRIPTS ---
 exec_always {
-	# update qt5ct theme with Gradience colors
-	$scripts/gradience-to-qt/__main__.py
+	# exec waybar
+	$components/run-waybar
 	
 	# volume notification daemon
 	#$scripts/volume-subscribe

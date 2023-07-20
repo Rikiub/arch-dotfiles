@@ -1,17 +1,13 @@
-/*
-* vim: ft=less
-*/
-
 @define-color sn-accent-color     @accent_color;
 @define-color sn-accent-bg-color  @accent_bg_color;
 
+@define-color sn-text             @view_fg_color;
+@define-color sn-text-disable     darker(@view_fg_color);
 @define-color sn-bg               @view_bg_color;
 @define-color sn-bg-darker        darker(@sn-bg);
 @define-color sn-bg-focus         mix(@sn-accent-color, @sn-bg, 0.7);
 @define-color sn-bg-hover         mix(@sn-accent-color, @sn-bg, 0.7);
 @define-color sn-border           @shade_color;
-@define-color sn-text             @view_fg_color;
-@define-color sn-text-disable     darker(@view_fg_color);
 
 * {
 	font-family: Rubik, Symbols Nerd Font Mono, FontAwesome;
@@ -298,7 +294,6 @@
 	border: none;
 	background: @sn-bg-darker;
 	margin: 5px 3px;
-	border: 1px solid @sn-border;
 }
 .widget-menubar > box > .menu-button-bar > button:focus {
 	background: @sn-bg-focus;
@@ -391,7 +386,7 @@
 .config-buttons > button {
 	border-radius: 0px;
 	background: @sn-bg-darker;
-	border: 1px solid lighter(@sn-border);
+	border: 1px solid @sn-border;
 }
 
 .app-buttons > button:hover,

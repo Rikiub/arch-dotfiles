@@ -59,7 +59,7 @@ elif [ "$#" -eq 1 ] && [ "$1" == "reset" ]; then
  for f in "$TEMPDIR"/*; do
   file=$(basename "${f}")
   python3 "${SCRIPTDIR}"/file_gtk_style.py "${TEMPDIR}"/"${file}" > "${THEMEDIR}"/"${file}"
- done
+done
 	
 else
  echo "Theme doesn't exist"

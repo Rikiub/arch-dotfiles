@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+WALLPAPER=$1
+
+wal -i "$WALLPAPER" \
+--backend colorz \
+--saturate 0.5

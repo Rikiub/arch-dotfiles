@@ -1,3 +1,0 @@
-# bar
-
-exec_always $components/run-waybar

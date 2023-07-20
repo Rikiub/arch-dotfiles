@@ -1,10 +1,9 @@
-@define-color wb_accent_color @accent_color;
-@define-color wb_accent_bg_color @accent_bg_color;
-
-@define-color wb-background @view_bg_color;
-@define-color wb-border @shade_color;
+@define-color wb-accent-color @accent_color;
+@define-color wb-accent-bg-color @accent_bg_color;
 
 @define-color wb-text @view_fg_color;
+@define-color wb-background @view_bg_color;
+@define-color wb-border @shade_color;
 
 * {
     font-family: Symbols Nerd Font Mono, FontAwesome;
@@ -49,15 +48,15 @@ window#waybar {
 #workspaces button.focused,
 #custom-swaync, #custom-power,
 #mpris.playing {
-    background: mix(@wb-background, @wb_accent_color, 0.5);
+    background: mix(@wb-background, @wb-accent-color, 0.5);
 }
 #mpris.paused, #mpris.stopped {
-	background: mix(@wb-background, @wb_accent_color, 0.3);
+	background: mix(@wb-background, @wb-accent-color, 0.3);
 }
 
 #workspaces button:hover {
 	color: mix(white, @wb-text, 1.0);
-	background:  mix(@wb-background, @wb_accent_bg_color, 0.8);
+	background:  mix(@wb-background, @wb-accent-bg-color, 0.8);
 }
 
 tooltip {
@@ -67,7 +66,7 @@ tooltip {
 }
 
 #pulseaudio.muted {
-	color: shade(@view_fg_color, 0.5);
+	color: shade(@wb-text, 0.5);
 }
 
 @keyframes wf-record-blink {

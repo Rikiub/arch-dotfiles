@@ -29,11 +29,5 @@ pacman -Qtdq | sudo pacman -Rns -              # remove cache
 pacman -Qqd  | sudo pacman -Rsu -              # remove optional/circular dependences
 
 echo ''
-echo -e "${SEP}======${END} ${TEXT} Update mlocate database ${END} ${SEP}=====${END}"
-echo ''
-sudo updatedb
-echo 'Done'
-
-echo ''
 echo -e "${SEP}======${END} ${TEXT} Optimizations completed ${END} ${SEP}=====${END}"
 echo ''

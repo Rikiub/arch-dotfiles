@@ -24,22 +24,18 @@ title_align center
 # --- COLORS ---
 
 # pywal support (dynamic color by wallpaper)
-#include "$HOME/.cache/wal/colors-sway"
+include "~/.cache/wal/colors-sway"
 
-# Define colors variables:
-set $darkblue		#08052b
-set $lightblue		#5294e2
-set $urgentred		#e53935
-set $white		    #ffffff
-set $black		    #000000
-set $darkgrey		#383c4a
-set $grey		    #b0b5bd
-set $mediumgrey		#8b8b8b
-set $yellowbrown	#e1b700
+# wallpaper set with pywal
+output * background $wallpaper fill
+
+set $focused            #808080
+set $unfocused          #000000
+set $focused_inactive   #000000
+set $urgent             #FFF200
 
 # define colors for windows:
-#class		        	    border		bground		text		indicator		child_border
-client.focused		    	$lightblue	$darkblue	$white		$mediumgrey		$mediumgrey
-client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey		$darkgrey
-client.focused_inactive		$darkblue	$darkblue	$grey		$black			$black
-client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
+client.focused		    	$focused   $focused   $focused   $focused   $focused
+client.unfocused	    	$unfocused   $unfocused   $unfocused   $unfocused   $unfocused
+client.focused_inactive		$focused_inactive   $focused_inactive   $focused_inactive   $focused_inactive   $focused_inactive
+client.urgent		    	$urgent   $urgent   $urgent   $urgent   $urgent

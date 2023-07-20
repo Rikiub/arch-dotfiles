@@ -153,24 +153,6 @@
 						"command": "darkman toggle"
 					}
 				]
-			},
-			"menu#config-buttons": {
-				"label": "",
-				"position": "right",
-				"actions": [
-					{
-						"label": "  Sway Config",
-						"command": "swaync-client -cp && xdg-open $HOME/.config/sway"
-					},
-					{
-						"label": "󰸉  Wallpapers",
-						"command": "swaync-client -cp && azote"
-					},
-					{
-						"label": "󰚠  Gradience",
-						"command": "swaync-client -cp && gradience"
-					}
-				]
 			}
 		},
 		"buttons-grid": {
@@ -181,7 +163,7 @@
 				},
 				{
 				  "label": "  Switch",
-				  "command": "darkman toggle"
+				  "command": "swaync-client -cp && darkman toggle"
 				}
 			]
 		}
