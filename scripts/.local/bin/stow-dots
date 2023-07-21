@@ -4,7 +4,7 @@
 DEFAULT_DOTS="default scripts fish sway-rice i3"
 
 DOTFILES_DIR="$HOME/dotfiles"
-GIT_DIR="--work-tree=$DOTFILES_DIR"
+GIT_DIR="--git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"
 
 function show_usage {
 	echo "Usage: stow-dots [sync|push|both]"
