@@ -1,9 +1,14 @@
 #/usr/bin/env sh
 
+# Specified the dotfiles to install here
+DEFAULT_DOTS="default scripts fish sway-rice i3"
+
 DOTFILES_DIR="$HOME/dotfiles"
 GIT_DIR="--work-tree=$DOTFILES_DIR"
 
-INSTALL_DOTS="default scripts fish sway-rice i3"
+function show_usage {
+	echo "Usage: stow-dots [sync|push|both]"
+}
 
 function sync {
 	echo "> Searching and fixing broken symlinks..."
@@ -12,7 +17,7 @@ function sync {
 
 	echo "> Syncing..."
 	stow --dotfiles --dir="$DOTFILES_DIR" --target="$HOME" \
-	$INSTALL_DOTS
+	$DEFAULT_DOTS
 
 	# check if stow return error
 	if [ $? -ne 0 ]; then
@@ -40,7 +45,11 @@ function push {
 	echo "> Completed dotfiles push"
 }
 
+# main
 case "$1" in
+	--help|-h)
+		show_usage
+		;;
 	sync)
 		sync
 		;;
@@ -54,6 +63,8 @@ case "$1" in
 		;;
 	*)
 		echo "ERROR: Arguments not provided"
+		echo ''
+		show_usage
 		exit 1
 		;;
 esac

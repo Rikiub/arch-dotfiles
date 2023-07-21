@@ -57,7 +57,7 @@ fi
 
 # Show help message
 if [ $# -eq 0 ] || [ "$1" = "help" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-	show_usage
+	show_help
 	exit
 fi
 
