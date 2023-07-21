@@ -5,9 +5,10 @@ DEFAULT_DOTS="default scripts fish sway-rice i3"
 
 DOTFILES_DIR="$HOME/dotfiles"
 GIT_DIR="--git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"
+STOW_DIR="--dotfiles --dir=$DOTFILES_DIR --target=$HOME"
 
 function show_usage {
-	echo "Usage: stow-dots [sync|push|both]"
+	echo "Usage: stow-dots [sync|push|both|list]"
 }
 
 function sync {
@@ -16,7 +17,7 @@ function sync {
 	find ~/.local -xtype l -delete
 
 	echo "> Syncing..."
-	stow --dotfiles --dir="$DOTFILES_DIR" --target="$HOME" \
+	stow $STOW_DIR \
 	$DEFAULT_DOTS
 
 	# check if stow return error
@@ -45,6 +46,10 @@ function push {
 	echo "> Completed dotfiles push"
 }
 
+function list {
+	ls $DOTFILES_DIR
+}
+
 # main
 case "$1" in
 	--help|-h)
@@ -60,6 +65,9 @@ case "$1" in
 		sync
 		echo ''
 		push
+		;;
+	list|-l)
+		list
 		;;
 	*)
 		echo "ERROR: Arguments not provided"
