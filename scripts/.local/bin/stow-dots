@@ -5,23 +5,25 @@ GIT_DIR="--work-tree=$DOTFILES_DIR"
 
 INSTALL_DOTS="default scripts fish sway-rice i3"
 
-if [ "$1" = "sync" ]; then
-	# find and delete broken symlinks
+function sync {
+	echo "> Searching and fixing broken symlinks..."
 	find ~/.config -xtype l -delete
 	find ~/.local -xtype l -delete
 
-	# sync stow files
+	echo "> Syncing..."
 	stow --dotfiles --dir="$DOTFILES_DIR" --target="$HOME" \
 	$INSTALL_DOTS
 
-	# check is stow return error
+	# check if stow return error
 	if [ $? -ne 0 ]; then
+		echo "ERROR: Stow threw a error"
 		exit 1
 	fi
 
 	echo "> Completed dotfiles sync"
-	
-elif [ "$1" = "push" ]; then
+}
+
+function push {
 	echo "> Starting git"
 
 	# push to my github account
@@ -29,7 +31,28 @@ elif [ "$1" = "push" ]; then
 	git $GIT_DIR commit -m "update"
 	git $GIT_DIR push
 
-else
-	echo "ERROR: Arguments no provided"
+	# check if git return error
+	if [ $? -ne 0 ]; then
+		echo "ERROR: Git threw a error"
+		exit 1
+	fi
 
-fi
+	echo "> Completed dotfiles push"
+}
+
+case "$1" in
+	sync)
+		sync
+		;;
+	push)
+		push
+		;;
+	both)
+		sync
+		push
+		;;
+	*)
+		echo "ERROR: Arguments not provided"
+		exit 1
+		;;
+esac
