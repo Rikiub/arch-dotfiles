@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/sus/.config/wpg/wallpapers/wallhaven-x8lp7z_1920x1080.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#141016",
+        "foreground": "#f9f9fd",
+        "cursor": "#f9f9fd"
+    },
+    "colors": {
+        "color0": "#141016",
+        "color1": "#B14438",
+        "color2": "#9C5E69",
+        "color3": "#D7665A",
+        "color4": "#335A8B",
+        "color5": "#C36B92",
+        "color6": "#565B88",
+        "color7": "#bebec1",
+        "color8": "#2e2433",
+        "color9": "#f54c39",
+        "color10": "#db697e",
+        "color11": "#ff7461",
+        "color12": "#3573c1",
+        "color13": "#ff77bb",
+        "color14": "#616abf",
+        "color15": "#f9f9fd"
+    }
+}

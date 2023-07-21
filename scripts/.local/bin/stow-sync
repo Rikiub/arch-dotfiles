@@ -1,10 +1,11 @@
 #/usr/bin/env sh
 
 # find and delete broken symlinks
-#find $HOME -xtype l -delete
+find ~/.config -xtype l -delete
+find ~/.local -xtype l -delete
 
 # sync stow files
-stow -d $HOME/dotfiles -t $HOME --dotfiles \
-darkman default fish scripts i3 sway
+stow --dotfiles --dir=$HOME/dotfiles --target=$HOME \
+default scripts fish sway-rice i3
 
 echo "> Completed dotfiles sync"

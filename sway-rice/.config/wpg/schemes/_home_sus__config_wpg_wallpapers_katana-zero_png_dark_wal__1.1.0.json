@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/sus/.config/wpg/wallpapers/katana-zero.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#16011d",
+        "foreground": "#cbe6fe",
+        "cursor": "#cbe6fe"
+    },
+    "colors": {
+        "color0": "#16011d",
+        "color1": "#4f3580",
+        "color2": "#40497f",
+        "color3": "#2b2e7d",
+        "color4": "#3a3093",
+        "color5": "#493495",
+        "color6": "#386199",
+        "color7": "#9aadd2",
+        "color8": "#31113d",
+        "color9": "#6337ac",
+        "color10": "#4655ae",
+        "color11": "#2f31ae",
+        "color12": "#4131c8",
+        "color13": "#5537ce",
+        "color14": "#3979d2",
+        "color15": "#cbe6fe"
+    }
+}

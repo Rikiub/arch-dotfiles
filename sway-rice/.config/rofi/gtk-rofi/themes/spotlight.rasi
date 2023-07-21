@@ -7,13 +7,13 @@
 * {
     font:   "Montserrat 12";
 
-    bg0:    #1c1b2fE6;
-    bg1:    #8d829780;
-    bg2:    #8a5984E6;
+    bg0:    #141016E6;
+    bg1:    #86848980;
+    bg2:    #6f3933E6;
 
-    fg0:    #ffe9ff;
+    fg0:    #f9f9fd;
     fg1:    #FFFFFF;
-    fg2:    #ffe9ff80;
+    fg2:    #f9f9fd80;
 
     background-color:   transparent;
     text-color:         @fg0;

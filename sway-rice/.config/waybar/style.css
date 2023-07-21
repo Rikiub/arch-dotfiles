@@ -47,12 +47,6 @@ window#waybar {
 
 #workspaces button.focused,
 #custom-swaync, #custom-power,
-#mpris.playing {
-    background: mix(@wb-background, @wb-accent-color, 0.5);
-}
-#mpris.paused, #mpris.stopped {
-	background: mix(@wb-background, @wb-accent-color, 0.3);
-}
 
 #workspaces button:hover {
 	color: mix(white, @wb-text, 1.0);
@@ -74,6 +68,23 @@ tooltip {
         background-color: red;
         color: black;
     }
+}
+@keyframes mpris-blink {
+    to {
+        background-color: mix(@wb-background, @wb-accent-color, 0.9);
+    }
+}
+
+#mpris.playing {
+    background: mix(@wb-background, @wb-accent-color, 0.6);
+    animation-name: mpris-blink;
+    animation-duration: 2.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#mpris.paused, #mpris.stopped {
+	background: mix(@wb-background, @wb-accent-color, 0.3);
 }
 
 #custom-wf-recorder {
