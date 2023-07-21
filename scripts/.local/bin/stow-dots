@@ -49,6 +49,7 @@ case "$1" in
 		;;
 	both)
 		sync
+		echo ''
 		push
 		;;
 	*)
