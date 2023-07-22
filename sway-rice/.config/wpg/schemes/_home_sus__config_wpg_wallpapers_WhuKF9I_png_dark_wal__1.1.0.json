@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/sus/.config/wpg/wallpapers/WhuKF9I.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#09121E",
+        "foreground": "#ffe4e1",
+        "cursor": "#ffe4e1"
+    },
+    "colors": {
+        "color0": "#09121E",
+        "color1": "#FE516C",
+        "color2": "#F86478",
+        "color3": "#D8946D",
+        "color4": "#FD5796",
+        "color5": "#FF4C92",
+        "color6": "#F17189",
+        "color7": "#f4c4c1",
+        "color8": "#132845",
+        "color9": "#ff537d",
+        "color10": "#ff6b8b",
+        "color11": "#ffba78",
+        "color12": "#ff5abd",
+        "color13": "#ff4db9",
+        "color14": "#ff7ba3",
+        "color15": "#ffe4e1"
+    }
+}

@@ -4,13 +4,13 @@
 @define-color sn-text             @view_fg_color;
 @define-color sn-text-disable     darker(@view_fg_color);
 @define-color sn-bg               @view_bg_color;
-@define-color sn-bg-darker        darker(@sn-bg);
+@define-color sn-fg               lighter(@sn-bg);
 @define-color sn-bg-focus         mix(@sn-accent-color, @sn-bg, 0.7);
 @define-color sn-bg-hover         mix(@sn-accent-color, @sn-bg, 0.7);
 @define-color sn-border           @shade_color;
 
 * {
-	font-family: Rubik, Symbols Nerd Font Mono, FontAwesome;
+	font-family: Symbols Nerd Font Mono, FontAwesome;
 	color: @sn-text;
 }
 
@@ -20,7 +20,7 @@
 
 .notification-row:focus,
 .notification-row:hover {
-	background: shade(@sn-bg, 0.8);
+	background: shade(@sn-bg, 0.7);
 	border-radius: 30px;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .close-button {
-	background: @sn-bg-darker;
+	background: @sn-fg;
 	color: @sn-text;
 	text-shadow: none;
 	padding: 0;
@@ -72,7 +72,7 @@
 
 .close-button:hover {
 	box-shadow: none;
-	background: mix(@sn-accent-color, @sn-bg-darker, 0.8);
+	background: mix(@sn-accent-color, @sn-fg, 0.8);
 	transition: all 0.15s ease-in-out;
 	border: none;
 }
@@ -82,7 +82,7 @@
 	padding: 4px;
 	margin: 0;
 	box-shadow: none;
-	background: lighter(@sn-bg-darker);
+	background: @sn-fg;
 	border: 1px solid @sn-border;
 	color: @text-color;
 	transition: all 0.15s ease-in-out;
@@ -92,6 +92,7 @@
 .notification-action:hover {
 	-gtk-icon-effect: none;
 	background: @sn-bg-hover;
+	border: 1px solid lighter(@sn-border);
 }
 
 .notification-default-action {
@@ -125,7 +126,7 @@
 	margin-top: 8px;
 }
 .inline-reply-entry {
-	background: @sn-bg-darker;
+	background: @sn-fg;
 	color: @sn-text;
 	caret-color: @sn-text;
 	border: 1px solid @sn-border;
@@ -215,7 +216,7 @@
 	font-size: initial;
 	color: @sn-text;
 	text-shadow: none;
-	background: @sn-bg-darker;
+	background: @sn-fg;
 	border: 1px solid @sn-border;
 	box-shadow: none;
 	border-radius: 12px;
@@ -257,7 +258,7 @@
 	/* The parent to all players */
 }
 .widget-mpris-player {
-	background: @sn-bg-darker;
+	background: @sn-fg;
 	padding: 8px;
 	margin: 8px 0px;
 	border-radius: 12px;
@@ -268,36 +269,6 @@
 }
 .widget-mpris-subtitle {
 	font-size: 0.7rem;
-}
-
-/* Buttons widget */
-.widget-buttons-grid {
-	background: transparent;
-	padding: 0px;
-	margin: 0px;
-	border-radius: 12px;
-}
-
-.widget-buttons-grid > flowbox > flowboxchild > button {
-	background: @sn-bg-darker;
-	border-radius: 12px;
-	border: 1px solid @sn-border;
-}
-
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
-	background: @sn-bg-hover;
-	border: 1px solid @sn-accent-bg-color;
-}
-
-/* Menubar widget */
-.widget-menubar > box > .menu-button-bar > button {
-	border: none;
-	background: @sn-bg-darker;
-	margin: 5px 3px;
-}
-.widget-menubar > box > .menu-button-bar > button:focus {
-	background: @sn-bg-focus;
-	border: 1px solid @sn-accent-bg-color;
 }
 
 /* .AnyName { Name defined in config after #
@@ -315,11 +286,6 @@
 .AnyName>button:hover {
 	background-color: @noti-bg-hover;
 } */
-
-.topbar-buttons > button { /* Name defined in config after # */
-	border: none;
-	background: transparent;
-}
 
 /* Volume widget */
 
@@ -368,6 +334,47 @@
 	background: @sn-bg-hover;
 }
 
+
+
+.topbar-buttons > button { /* Name defined in config after # */
+	border: none;
+	background: transparent;
+}
+
+/* Buttons widget */
+.widget-buttons-grid {
+	background: transparent;
+	padding: 0px;
+	margin: 0px;
+	border-radius: 12px;
+	border: 1px solid @sn-border;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+	background: @sn-fg;
+	border-radius: 12px;
+	border: 1px solid @sn-border;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+	background: @sn-bg-hover;
+	border: 1px solid @sn-accent-bg-color;
+}
+
+/* Menubar widget */
+.widget-menubar > box > .menu-button-bar > button {
+	background: @sn-fg;
+	border: 1px solid @sn-border;
+	margin: 5px 3px;
+}
+.widget-menubar > box > .menu-button-bar > button:hover {
+	border: 1px solid @sn-accent-bg-color;
+}
+.widget-menubar > box > .menu-button-bar > button:focus {
+	background: @sn-bg-focus;
+	border: 1px solid @sn-accent-bg-color;
+}
+
 .app-buttons,
 .screenshot-buttons,
 .screencast-buttons,
@@ -385,7 +392,7 @@
 .power-buttons > button,
 .config-buttons > button {
 	border-radius: 0px;
-	background: @sn-bg-darker;
+	background: @sn-fg;
 	border: 1px solid @sn-border;
 }
 

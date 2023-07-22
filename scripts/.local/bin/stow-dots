@@ -1,7 +1,7 @@
 #/usr/bin/env sh
 
 # Specified the dotfiles to install here
-DEFAULT_DOTS="default scripts fish sway-rice i3"
+DEFAULT_DOTS="default scripts fish i3 sway-rice wayland"
 
 DOTFILES_DIR="$HOME/dotfiles"
 GIT_DIR="--git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"

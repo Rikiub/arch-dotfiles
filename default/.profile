@@ -5,7 +5,7 @@
 # desktop session
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
-    export TERM=alacritty
+    export TERM=foot
 elif [ "$XDG_SESSION_TYPE" == "x11" ]; then
 	export TERM=alacritty
 fi
