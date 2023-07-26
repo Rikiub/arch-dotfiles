@@ -1,4 +1,4 @@
-#/usr/bin/env sh
+#!/usr/bin/env sh
 
 # Specified the dotfiles to install here
 DEFAULT_DOTS="default scripts fish i3 pywal sway-rice wayland"
