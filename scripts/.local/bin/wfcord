@@ -1,37 +1,31 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-function show_usage {
-	echo "Usage: wfcord [OPTIONS] [region|window|output] [mp4|mkv|gif]"
-}
+# posible positional arguments
+modes=(region window output)
+# posible optional arguments
+formats=(mkv mp4 gif)
+audio=false
 
+# File Output
+FILENAME="record_$(date +%Y-%-m-%-d_%-H-%-M-%-S)"
+VIDEO_DIR="$(xdg-user-dir VIDEOS)"
+OUTPUT="$VIDEO_DIR/$FILENAME"
+
+# Function to display the help message
 function show_help {
-	echo "Usage: wfcord [OPTIONS] [region|window|output] [mp4|mkv|gif]"
+	echo "Usage: wfcord [${modes[*]}] [${formats[*]}] [OPTIONS]"
 	echo ""
-	echo "A helper for wf-recorder to record video to mp4 or gif."
-	echo ""
-	echo "Options:"
-	echo "  -h, --help   Display this help and exit."
-	echo ""
-	echo "Arguments:"
-	echo "  region       Record a region of the screen."
-	echo "  window       Record a specific window."
-	echo "  output       Record a specific output."
-	echo ""
-	echo "Formats:"
-	echo "  mp4          Save the recording as an MP4 video."
-	echo "  mkv          Save the recording as a MKV video."
-	echo "  gif          Save the recording as a GIF animation."
+	echo "OPTIONS"
+	echo "  -h, --help 	Display this help message"
+	echo "  --audio       Include audio in the recording"
 }
 
+# Send a pretty notification
 function send_notification {
 	if $NOTIFY_SUPPORT; then
 		notify-send --app-name="wf-recorder" --urgency=low "$@"
 	fi
 }
-
-FILENAME="record_$(date +%Y-%-m-%-d_%-H-%-M-%-S)"
-VIDEO_DIR="$(xdg-user-dir VIDEOS)"
-OUTPUT="$VIDEO_DIR/$FILENAME"
 
 # Check if notify-send is installed
 if command -v notify-send >/dev/null 2>&1; then
@@ -55,11 +49,33 @@ if pgrep wf-recorder >/dev/null 2>&1; then
 	exit
 fi
 
-# Show help message
-if [ $# -eq 0 ] || [ "$1" = "help" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-	show_help
-	exit
-fi
+# Process optional arguments
+while [[ "$#" -gt 0 ]]; do
+	case $1 in
+		-h|--help) show_help; exit 0 ;;
+		-a|--audio) audio=true ;;
+		-*|--*) echo "Invalid argument: $1"; exit 1 ;;
+		*) break ;;
+	esac
+	shift
+done
+
+# Check extension format
+case "$2" in
+	mp4)
+		WF_EXT="-f $OUTPUT.mp4"
+		;;
+	mkv)
+		WF_EXT="-f $OUTPUT.mkv"
+		;;
+	gif)
+		WF_EXT="-f $OUTPUT.gif -c gif"
+		;;
+	*)
+		echo "Error: the second positional argument must be one of the following: [${formats[*]}]"
+		exit 1
+		;;
+esac
 
 # Check recording mode
 case "$1" in
@@ -74,7 +90,8 @@ case "$1" in
 				"Failed to record" "Area not selected"
 
 			exit 1
-		fi		;;
+		fi
+		;;
 	window)
 		WF_MODE="-g"
 		WF_VALUE="$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)"
@@ -84,32 +101,17 @@ case "$1" in
 		WF_VALUE="$(swaymsg -t get_tree | jq -r '.nodes[] | select([recurse(.nodes[]?, .floating_nodes[]?) | .focused] | any) | .name')"
 		;;
 	*)
-		echo "ERROR: $1 is not a valid argument. It must be [region|window|output]"
+		echo "Error: the first positional argument must be one of the following: [${modes[*]}]"
 		exit 1
 		;;
 esac
 
-# Check extension format
-case "$2" in
-	mp4)
-		WF_EXT="-f $OUTPUT.mp4"
-		;;
-	mkv)
-		WF_EXT="-f $OUTPUT.mkv"
-		;;
-	gif)
-		WF_EXT="-f $OUTPUT.gif -c gif"
-		;;
-	*)
-		echo "ERROR: $2 is not a valid argument. It must be [mp4|mkv|gif]"
-		exit 1
-		;;
-esac
-
-# Check for too many arguments
-if [ $# -gt 2 ]; then
-	echo "Too many arguments. You cannot provide more than three arguments."
-	exit 1
+# If the --audio flag was specified, display a message an set variable
+if $audio; then
+	echo "Audio recording enabled"
+	WF_AUDIO="--audio"
+else
+	echo "Recording without audio"
 fi
 
 if $NOTIFY_SUPPORT; then
@@ -131,4 +133,4 @@ echo "Recording has started. Execute the command again to end the recording."
 pkill -RTMIN+8 waybar
 
 # Start recording
-wf-recorder $WF_EXT $WF_MODE "$WF_VALUE" >/dev/null 2>&1 &
+wf-recorder $WF_AUDIO $WF_EXT $WF_MODE "$WF_VALUE" >/dev/null 2>&1 &

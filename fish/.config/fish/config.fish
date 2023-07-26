@@ -1,7 +1,7 @@
 # disable fish_greeting
 set -g fish_greeting
 
-# init custom prompt
+# init startship prompt
 starship init fish | source
 
 # pywal support
