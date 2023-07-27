@@ -17,12 +17,7 @@ set cleaner ctpvclear
 &ctpv -s $id
 &ctpvquit $id
 
-cmd open ${{
-    case $(file --mime-type "$f" -bL) in
-        text/*|application/json) $EDITOR "$f";;
-        *) %xdg-open "$f" ;;
-    esac
-}}
+cmd open &xdg-open "$f"
 
 # Mappings
 map D trash
@@ -34,7 +29,7 @@ map <enter> open
 
 cmd mkdir %{{
 	mkdir -p "$(echo $* | tr ' ' '\ ')"
-  lf -remote "send $id select \"$*\""
+	lf -remote "send $id select \"$*\""
 }}
 cmd touch %touch "$(echo $* | tr ' ' '\ ')"
 
@@ -49,21 +44,25 @@ cmd trash %trash-put $fx
 # use '<delete>' key for either 'trash' or 'delete' command
 map <delete> trash
 
-cmd copy_to_clipboard ${{
+cmd copy-to-clipboard ${{
 	# Linux - Wayland
 	if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-		printf '%s' "$f" | wl-copy
+		if wl-copy < "$f" > /dev/null 2>&1; then
+		  exit
+	else
+		wl-copy "$f"
+	fi
 
 	# Linux - X11
-    elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
-		printf '%s' "$f" | xsel -ib
+	elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
+		printf '%s' "$f" | xclip
 
 	# Darwin
 	elif type pbcopy > /dev/null 2>&1; then
 		printf '%s' "$f" | pbcopy
-  fi
+	fi
 }}
-map <c-c> :copy_to_clipboard
+map <c-c> :copy-to-clipboard
 
 # zoxide integration
 cmd z %{{

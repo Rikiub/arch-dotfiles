@@ -8,9 +8,8 @@ exec {
 		timeout $swayidle_timeout 'swaymsg "output * power off"' \
 		resume 'swaymsg "output * power on"'
 
-	# clipboard (clipman)
-	wl-paste -t text --watch clipman store \
-	--no-persist
+	# clipboard
+	wl-paste -t text --watch clipman store --no-persist
 
 	# background image
 	$wallpaper
