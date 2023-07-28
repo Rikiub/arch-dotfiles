@@ -35,7 +35,7 @@ cmd touch %touch "$(echo $* | tr ' ' '\ ')"
 
 map a push :mkdir<space>
 map A push :touch<space>
-map r :rename; cmd-end; cmd-delete-home
+map r :rename; cmd-end
 
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)

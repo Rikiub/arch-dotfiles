@@ -31,20 +31,20 @@ separator = ' '
 "com.github.neithern.g4music" = ""
 
 # Video
+'obs' = '󰕧'
 'mpv' = '󰿎'
 'celluloid' = '󰿎'
-'obs' = '󰕧'
 
 # Documents - Notepad
 "obsidian" = "󱓧"
 "okular" = ''
 'zathura' = ''
 'libreoffice-startcenter' = '󰈙'
+'libreoffice-impress' = '󰈙'
 'libreoffice-writer' = '󰈙'
 'libreoffice-calc' = '󰈙'
 'libreoffice-draw' = '󰈙'
 'libreoffice-base' = '󰈙'
-'libreoffice-impress' = '󰈙'
 'libreoffice-math' = '󰈙'
 'soffice' = '󰈙'
 
@@ -60,12 +60,13 @@ separator = ' '
 "vivaldi-stable" = ""
 
 # Code Editor
-"org.kde.kwrite" = "󱅄"
-"org.kde.kate" = "󱅄"
-"geany" = "󱅄"
+"org.kde.kwrite" = ""
+"org.kde.kate" = ""
+"geany" = ""
 'Code' = ''
 'code-oss' = ''
 'jetbrains-studio' = ''
+'neovide' = ''
 "vscodium" = "󰨞"
 "codium-url-handler" = "󰨞"
 'GitHub Desktop' = ''
@@ -89,7 +90,9 @@ separator = ' '
 'Postman' = ''
 'Insomnia' = ''
 'Bitwarden' = ''
+'seahorse' = ''
 'copyq' = '󱉧'
+"bleachbit" = "󰃢"
 
 # File Browser
 "Caja" = ""
@@ -99,6 +102,7 @@ separator = ' '
 "pcmanfm-qt" = ""
 "org.kde.dolphin" = ""
 "org.gnome.Nautilus" = ""
+"gnome-disks" = '󰋊'
 'gpartedbin' = '󰋊'
 
 # Terminal - Apps

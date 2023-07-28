@@ -24,5 +24,5 @@ export GTK_THEME_DARK="adw-gtk3-dark"
 export ICON_DARK="Papirus-Dark"
 
 # default apps
-export EDITOR=nvim
+export EDITOR=neovide
 export BROWSER=brave
