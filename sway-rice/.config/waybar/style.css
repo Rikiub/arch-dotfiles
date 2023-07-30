@@ -8,7 +8,7 @@
 * {
     font-family: Symbols Nerd Font Mono, FontAwesome;
     border-radius: 30px;
-	color: @wb-text;
+    color: @wb-text;
 }
 
 window#waybar {
@@ -60,7 +60,7 @@ tooltip {
 }
 
 #pulseaudio.muted {
-	color: shade(@wb-text, 0.5);
+	color: darker(@wb-text);
 }
 
 @keyframes wf-record-blink {
