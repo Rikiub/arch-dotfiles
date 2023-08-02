@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+SEP_COLOR="31"
+TEXT_COLOR="33"
+
+SEP="\e[0;${SEP_COLOR}m"
+TEXT="\e[1;${TEXT_COLOR}m"
+END="\e[0m"
+
+if command -v yay >/dev/null 2>&1; then
+	HELPER="yay"
+elif command -v paru >/dev/null 2>&1; then
+	HELPER="paru"
+else
+	HELPER="sudo pacman"
+fi
+
+echo ''
+echo -e "${SEP}======${END} ${TEXT} Sudo Privileges ${END} ${SEP}=====${END}"
+echo ''
+sudo echo 'Done'
+
+echo ''
+echo -e "${SEP}======${END} ${TEXT} Updating System ${END} ${SEP}=====${END}"
+echo ''
+echo "HELPER: $HELPER"
+echo ''
+$HELPER -Syu
+
+echo ''
+echo -e "${SEP}======${END} ${TEXT} Update Completed ${END} ${SEP}=====${END}"
+echo ''

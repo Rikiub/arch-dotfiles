@@ -7,20 +7,24 @@ SEP="\e[0;${SEP_COLOR}m"
 TEXT="\e[1;${TEXT_COLOR}m"
 END="\e[0m"
 
+if command -v yay >/dev/null 2>&1; then
+	AUR_HELPER="yay"
+elif command -v paru >/dev/null 2>&1; then
+	AUR_HELPER="paru"
+else
+	AUR_HELPER="sudo pacman"
+fi
+
 echo ''
 echo -e "${SEP}======${END} ${TEXT} Sudo Privileges ${END} ${SEP}=====${END}"
 echo ''
 sudo echo 'Done'
 
 echo ''
-echo -e "${SEP}======${END} ${TEXT} Sync Database ${END} ${SEP}=====${END}"
-echo ''
-sudo pacman -Syy
-
-echo ''
 echo -e "${SEP}======${END} ${TEXT} Clean (Pacman|Yay) Cache ${END} ${SEP}=====${END}"
 echo ''
-yay -Scc --noconfirm
+echo "AUR HELPER: $AUR_HELPER"
+$AUR_HELPER -Scc --noconfirm
 
 echo ''
 echo -e "${SEP}======${END} ${TEXT} Removing unused packages ${END} ${SEP}=====${END}"
