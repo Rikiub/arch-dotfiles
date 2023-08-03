@@ -35,7 +35,7 @@ bindsym {
 	$mod+Shift+Right move right
 
 	# kill focused window
-	$mod+Shift+q kill
+	$mod+q kill
 	$mod+F4 kill
 
 	# --- LAYOUT ---

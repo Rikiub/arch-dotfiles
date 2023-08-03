@@ -35,7 +35,6 @@ cmd touch %touch "$(echo $* | tr ' ' '\ ')"
 
 map a push :mkdir<space>
 map A push :touch<space>
-map r :rename; cmd-end
 
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)
@@ -87,6 +86,7 @@ cmd select-files &{{
 
     lf -remote "send $id :unselect; toggle $(get_files)"
 }}
+map <c-a> select-files
 
 cmd select-dirs &{{
     get_dirs() {
@@ -103,7 +103,7 @@ cmd select-dirs &{{
 
 cmd extract ${{
     set -f
-    atool -x $f
+    aunpack $f
 }}
 
 cmd compress ${{

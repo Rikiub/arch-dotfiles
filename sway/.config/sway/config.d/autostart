@@ -10,9 +10,6 @@ exec {
 
 	# clipboard
 	wl-paste -t text --watch clipman store --no-persist
-
-	# background image
-	$wallpaper
 	
 	# workspace name icons
 	sworkstyle &> /tmp/sworkstyle.log

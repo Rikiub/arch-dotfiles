@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Specified the dotfiles to install here
-DEFAULT_DOTS="default scripts fish i3 pywal sway-rice wayland"
+DEFAULT_DOTS="default scripts fish i3 pywal sway wayland"
 
 DOTFILES_DIR="$HOME/dotfiles"
 GIT_DIR="--git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"
@@ -47,7 +47,7 @@ function push {
 }
 
 function list {
-	ls $DOTFILES_DIR
+	ls -d $DOTFILES_DIR/* --group-directories-first --color
 }
 
 # main

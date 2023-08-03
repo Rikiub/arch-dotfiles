@@ -7,12 +7,12 @@ SEP="\e[0;${SEP_COLOR}m"
 TEXT="\e[1;${TEXT_COLOR}m"
 END="\e[0m"
 
-if command -v yay >/dev/null 2>&1; then
-	AUR_HELPER="yay"
-elif command -v paru >/dev/null 2>&1; then
-	AUR_HELPER="paru"
+# this script must be executed on Arch Linux or a distribution with "pacman" package manager.
+if command -v pacman >/dev/null 2>&1; then
+	:
 else
-	AUR_HELPER="sudo pacman"
+	echo "You aren't on Arch Linux system because 'pacman' is not installed."
+	exit 1
 fi
 
 echo ''
@@ -22,9 +22,18 @@ sudo echo 'Done'
 
 echo ''
 echo -e "${SEP}======${END} ${TEXT} Clean (Pacman|Yay) Cache ${END} ${SEP}=====${END}"
-echo ''
-echo "AUR HELPER: $AUR_HELPER"
-$AUR_HELPER -Scc --noconfirm
+if command -v yay >/dev/null 2>&1; then
+	echo ''
+	echo -e "${TEXT}Cleaning 'yay' cache...${END}"
+	echo ''
+	yay -Sc --noconfirm
+fi
+if command -v paru >/dev/null 2>&1; then
+	echo ''
+	echo -e "${TEXT}Cleaning 'paru' cache...${END}"
+	echo ''
+	paru -Sc --noconfirm
+fi
 
 echo ''
 echo -e "${SEP}======${END} ${TEXT} Removing unused packages ${END} ${SEP}=====${END}"

@@ -3,7 +3,7 @@
 
 # exa: a modern replacement for ls.
 if command -q exa
-	alias exa "exa --icons --group-directories-first --sort Extension --header --no-filesize"
+	alias exa "exa --icons --group-directories-first --header --no-filesize"
 	alias ls "exa"
 # builtin ls
 else

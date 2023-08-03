@@ -1,5 +1,5 @@
 # Font for window titles. Will also be used by the bar unless a different font
-font pango:Symbols Nerd Font Mono, FontAwesome, Rubik 8
+font pango:Symbols Nerd Font Mono, FontAwesome, 8
 
 # --- WINDOWS ---
 
@@ -34,8 +34,8 @@ set $unfocused          #000000
 set $focused_inactive   #000000
 set $urgent             #FFF200
 
-# define colors for windows:
-client.focused		    	$focused   $focused   $focused   $focused   $focused
-client.unfocused	    	$unfocused   $unfocused   $unfocused   $unfocused   $unfocused
-client.focused_inactive		$focused_inactive   $focused_inactive   $focused_inactive   $focused_inactive   $focused_inactive
-client.urgent		    	$urgent   $urgent   $urgent   $urgent   $urgent
+# define colors for windowsQ
+client.focused		    	$focused          $focused          $focused          $focused          $focused
+client.unfocused	    	$unfocused        $unfocused        $unfocused        $unfocused        $unfocused
+client.focused_inactive		$focused_inactive $focused_inactive $focused_inactive $focused_inactive $focused_inactive
+client.urgent		    	$urgent           $urgent           $urgent           $urgent           $urgent
