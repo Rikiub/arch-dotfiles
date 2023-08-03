@@ -77,16 +77,14 @@ cmd zi ${{
 cmd select-files &{{
     get_files() {
         if [ "$lf_hidden" = 'false' ]; then
-            find "$PWD" -mindepth 1 -maxdepth 1 -type f -not -name '.*' -print0
+            find "$PWD" -mindepth 1 -maxdepth 1 -type f,l -not -name '.*' -print0
         else
-            find "$PWD" -mindepth 1 -maxdepth 1 -type f -print0
+            find "$PWD" -mindepth 1 -maxdepth 1 -type f,l -print0
         fi |
         xargs -0 printf ' %q'
     }
-
     lf -remote "send $id :unselect; toggle $(get_files)"
 }}
-map <c-a> select-files
 
 cmd select-dirs &{{
     get_dirs() {
@@ -97,16 +95,26 @@ cmd select-dirs &{{
         fi |
         xargs -0 printf ' %q'
     }
-
     lf -remote "send $id :unselect; toggle $(get_dirs)"
 }}
 
+cmd select-all &{{
+	get_all() {
+        if [ "$lf_hidden" = 'false' ]; then
+            find "$PWD" -mindepth 1 -maxdepth 1 -not -name '.*' -print0
+        else
+            find "$PWD" -mindepth 1 -maxdepth 1 -print0
+        fi |
+        xargs -0 printf ' %q'
+    }
+    lf -remote "send $id :unselect; toggle $(get_all)"
+}}
+map <c-a> select-all
+
 cmd extract ${{
-    set -f
-    aunpack $f
+    aunpack "$f"
 }}
 
 cmd compress ${{
-    set -f
-    atool -a "$fx"
+    atool -a $fx
 }}
