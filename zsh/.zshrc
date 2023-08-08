@@ -1,6 +1,6 @@
 # ---zsh start-config---
 
-export ANTIDOTE_HOME=~/.antidote
+#export ANTIDOTE_HOME=~/.antidote
 
 # zsh plugin manager
 source '/usr/share/zsh-antidote/antidote.zsh'
@@ -19,24 +19,6 @@ alias ls="exa --icons --group-directories-first --sort Name"
 
 cd_after_ls() { cd $1 ; ls }
 alias cd="cd_after_ls"
-
-# Arch-Linux Utils
-# Pacman Arguments: 1. Clean pacman cache | 2. Remove optional/circular dependences | 3. Remove orphans
-alias arch-clean="
-				paccache -r ; \
-				rm -rf $HOME/.cache ; \
-				pacman -Qtdq | sudo pacman -Rns - ; \
-				pacman -Qqd | sudo pacman -Rsu -
-				"
-alias arch-update="yay -Syu"
-
-# reshift
-alias redshift="pkill redshift ; redshift"
-
-# gammastep
-alias gammastep="pkill gammastep ; gammastep"
-alias gamma-soft="pkill gammastep ; gammastep -O 4000"
-alias gamma-hard="pkill gammastep ; gammastep -O 2000"
 
 # sway
 alias sway-check-output="swaymsg -t get_tree"

@@ -16,7 +16,6 @@ hlissner/zsh-autopair
 amyreese/zsh-titles
 none9632/zsh-sudo
 Aloxaf/fzf-tab
-agkozak/zsh-z
 
 # Themes
 sindresorhus/pure
