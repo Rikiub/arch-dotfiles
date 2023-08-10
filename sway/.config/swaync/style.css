@@ -4,7 +4,7 @@
 @define-color sn-text             @view_fg_color;
 @define-color sn-text-disable     darker(@view_fg_color);
 @define-color sn-bg               @view_bg_color;
-@define-color sn-fg               lighter(@sn-bg);
+@define-color sn-fg               @window_bg_color;
 @define-color sn-bg-focus         mix(@sn-accent-color, @sn-bg, 0.7);
 @define-color sn-bg-hover         mix(@sn-accent-color, @sn-bg, 0.7);
 @define-color sn-border           @shade_color;
@@ -20,7 +20,7 @@
 
 .notification-row:focus,
 .notification-row:hover {
-	background: shade(@sn-bg, 0.7);
+	background: mix(black, @sn-bg, 0.8);
 	border-radius: 30px;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .close-button {
-	background: @sn-fg;
+	background: @sn-bg;
 	color: @sn-text;
 	text-shadow: none;
 	padding: 0;
@@ -72,7 +72,7 @@
 
 .close-button:hover {
 	box-shadow: none;
-	background: mix(@sn-accent-color, @sn-fg, 0.8);
+	background: mix(@sn-accent-color, @sn-bg, 0.8);
 	transition: all 0.15s ease-in-out;
 	border: none;
 }

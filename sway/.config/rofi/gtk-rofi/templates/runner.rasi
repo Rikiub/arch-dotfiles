@@ -17,18 +17,18 @@ configuration {
 }
 
 * {
-    background: {@view_bg_color}FF;
+    background: {@window_bg_color}FF;
     background-alt: #00000000;
     background-bar: {@accent_color}99;
     border: {@shade_color};
-    foreground: {@view_fg_color};
+    foreground: {@window_fg_color};
 }
 
 window {
     transparency:                   "real";
     background-color:               @background;
     text-color:                     @foreground;
-	border:							1px;
+	border:							2px;
 	border-color:					@border;
     border-radius:                  30px;
 	width:							38%;

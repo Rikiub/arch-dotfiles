@@ -17,18 +17,18 @@ configuration {
 }
 
 * {
-    background: #1c161fFF;
+    background: #171d2bFF;
     background-alt: #00000000;
-    background-bar: #be473a99;
-    border: #4c2427;
-    foreground: #ffffff;
+    background-bar: #a4739599;
+    border: #382f43;
+    foreground: #fff5ff;
 }
 
 window {
     transparency:                   "real";
     background-color:               @background;
     text-color:                     @foreground;
-	border:							1px;
+	border:							2px;
 	border-color:					@border;
     border-radius:                  30px;
 	width:							38%;

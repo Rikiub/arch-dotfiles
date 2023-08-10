@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 # Taken from MATE-HUD github.com/ubuntu-mate/mate-hud
 # Used for rofi css
@@ -37,7 +37,16 @@ lists = [
  'warning_bg_color', 'info_bg_color',
  #Others
  'theme_unfocused_fg_color', 'theme_text_color',
- "accent_color", "view_bg_color", "view_fg_color", "shade_color"
+
+ # gtk-4.0 compability. Supported by adw-gtk3 theme and Gradience.
+ "accent_color", "accent_bg_color",
+ "window_bg_color", "window_fg_color",
+ "view_bg_color", "view_fg_color",
+ "headerbar_bg_color", "headerbar_fg_color",
+ "card_bg_color", "card_fg_color",
+ "dialog_bg_color", "dialog_fg_color",
+ "popover_bg_color", "popover_fg_color",
+ "shade_color"
 ]
 
 with open(sys.argv[1]) as f:
