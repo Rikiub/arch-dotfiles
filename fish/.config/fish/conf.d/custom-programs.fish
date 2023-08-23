@@ -1,5 +1,5 @@
 # --- CUSTOM ---
-# if the command exist, replace builtin command or start setup
+# if command exist, replace builtin command and start setup
 
 # exa: a modern replacement for ls.
 if command -q exa

@@ -11,6 +11,7 @@ separator = ' '
 'Slack' = ''
 
 # Image Editor
+"/Photopea | Online Photo Editor/" = "󱇣"
 "gimp" = "󱇣"
 "aseprite" = ""
 "krita" = ""
