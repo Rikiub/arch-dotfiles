@@ -4,11 +4,14 @@
 
 # desktop session
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
-    export MOZ_ENABLE_WAYLAND=1
-    export TERM=foot
+  export MOZ_ENABLE_WAYLAND=1
+  export TERM=foot
 elif [ "$XDG_SESSION_TYPE" == "x11" ]; then
 	export TERM=alacritty
 fi
+
+# custom sort preference
+export LC_COLLATE=C
 
 # QT with GTK THEME compability
 # for "qt5ct" just put
