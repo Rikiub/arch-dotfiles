@@ -1,4 +1,0 @@
-set $rofi $HOME/.config/rofi
-
-bindsym $mod+period \
-exec $rofi/global-emoji

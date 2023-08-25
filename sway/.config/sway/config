@@ -19,19 +19,17 @@ include $sway/workspaces
 
 # --- COMPONENTS (Comment # to disable) ---
 include $components/screenshot
-include $components/gtk-rofi-reload
-include $components/rofi-drun
-include $components/rofi-emoji
-include $components/swaync
 include $components/darkman
+include $components/swaync
+include $components/rofi
 
 # -- SCRIPTS ---
 exec_always {
 	# exec waybar
-	$components/run-waybar
+	$components/run-waybar.sh
 	
 	# volume notification daemon
-	#$scripts/volume-subscribe
+	#$scripts/volume-subscribe.sh
 }
 
 # --- USER-APPS ---

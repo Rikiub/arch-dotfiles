@@ -1,5 +1,0 @@
-set $rofi $HOME/.config/rofi
-
-# app-launcher
-bindsym $mod+d \
-exec $rofi/global-drun

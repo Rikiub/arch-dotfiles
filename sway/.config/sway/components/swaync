@@ -1,4 +1,4 @@
-exec_always $components/run-swaync
+exec_always $components/run-swaync.sh
 
 # menu
 bindsym	$mod+Shift+e \

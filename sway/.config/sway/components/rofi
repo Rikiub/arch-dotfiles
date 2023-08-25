@@ -1,0 +1,11 @@
+set $rofi ~/.config/rofi
+
+# gtk-rofi reloader
+exec_always $rofi/scripts/gtk-launcher.sh reset
+
+# app-launcher
+bindsym $mod+d \
+exec $rofi/drun.sh
+
+bindsym $mod+period \
+exec $rofi/emoji.sh

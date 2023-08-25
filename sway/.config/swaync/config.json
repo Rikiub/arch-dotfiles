@@ -150,7 +150,7 @@
 				"actions": [
 					{
 						"label": "󰌧  App Launcher",
-						"command": "swaync-client -cp && $HOME/.config/rofi/global-drun"
+						"command": "swaync-client -cp && ${XDG_CONFIG_HOME:-$HOME/.config}/rofi/drun.sh"
 					},
 					{
 						"label": "  Switch Mode",
@@ -158,18 +158,6 @@
 					}
 				]
 			}
-		},
-		"buttons-grid": {
-			"actions": [
-				{
-				  "label": "󰌧  Launcher",
-				  "command": "swaync-client -cp && $HOME/.config/rofi/global-drun"
-				},
-				{
-				  "label": "  Switch",
-				  "command": "swaync-client -cp && darkman toggle"
-				}
-			]
 		}
 	}
 }
