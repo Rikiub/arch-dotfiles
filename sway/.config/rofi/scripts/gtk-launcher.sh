@@ -13,13 +13,26 @@ function log() {
 function parse_templates() {
 	log "Parsing themes"
 
+	sed -i "s:GTK_THEME=${SETTINGS_GTK_THEME}:GTK_THEME=${CURRENT_GTK_THEME}:g" "${SETTINGS}"
+
+	# if $THEMEDIR not exist, create
+	if [ ! -d "$THEMEDIR" ]; then
+		mkdir -p "$THEMEDIR"
+	fi
+
 	for f in "$TEMPDIR"/*; do
 		file=$(basename "${f}")
-		python3 "${SCRIPTDIR}"/file_gtk_style.py "${TEMPDIR}"/"${file}" > "${THEMEDIR}"/"gtk-${file}"
+		python "$SCRIPTDIR"/file_gtk_style.py "$TEMPDIR"/"$file" > "$THEMEDIR"/"gtk-${file}"
 	done
 
 	log "Parsing completed"
 }
+
+# use this for just generate themes
+if [ "$1" == "reset" ]; then
+	parse_templates
+	exit
+fi
 
 # Gets the current gtk using gsettings and removes the quotes
 CURRENT_GTK_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme)
@@ -30,16 +43,11 @@ CURRENT_GTK_THEME="${CURRENT_GTK_THEME%?}"
 SETTINGS_GTK_THEME=$(grep "GTK_THEME" "${SETTINGS}" | cut -b 11-)
 
 # Checks either gtk theme isn't the same
-if [ "${SETTINGS_GTK_THEME}" != "${CURRENT_GTK_THEME}" ]; then
-	log "Updating settings"
-
-	sed -i "s:GTK_THEME=${SETTINGS_GTK_THEME}:GTK_THEME=${CURRENT_GTK_THEME}:g" "${SETTINGS}"
-	if [ ! -d "$THEMEDIR" ]; then
-		mkdir -p "$THEMEDIR"
-	fi
+if [ "$SETTINGS_GTK_THEME" != "$CURRENT_GTK_THEME" ]; then
+	log "GTK theme are changed, updating settings"
 	parse_templates
 else
-	log "The current GTK theme not are changed, nothing to process"
+	log "Current GTK theme not are changed, nothing to process"
 fi
 
 if [ $# -gt 0 ]; then
@@ -54,12 +62,10 @@ while [ $i -lt $# ]; do
 	i=$((i+1))
 done
 
-if [ -e "${THEMEDIR}"/"${THEME}".rasi ]; then
+if [ -e "$THEMEDIR"/"$THEME".rasi ]; then
 	log "'$THEME' theme founded, running..."
-	rofi $(echo "${ARGS}") -theme "${THEMEDIR}"/"${THEME}".rasi -theme-str "configuration { show-icons: true; icon-theme: $(gsettings get org.gnome.desktop.interface icon-theme | tr "'" '"');}"
-elif [ "$#" -eq 1 ] && [ "$1" == "reset" ]; then
-	parse_templates
+	rofi $(echo "${ARGS}") -theme "$THEMEDIR"/"$THEME".rasi
 
 else
-	log "'$THEME' theme dont exist, please try again or generate themes with 'reset'"
+	log "'$THEME' theme not exist, please try again or generate themes with 'reset'"
 fi

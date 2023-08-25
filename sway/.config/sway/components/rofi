@@ -1,4 +1,4 @@
-set $rofi ~/.config/rofi
+set $rofi ${XDG_CONFIG_HOME:-$HOME/.config}/rofi
 
 # gtk-rofi reloader
 exec_always $rofi/scripts/gtk-launcher.sh reset
