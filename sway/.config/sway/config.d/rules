@@ -46,7 +46,7 @@ for_window {
 	# MULTIMEDIA
 	[app_id="com.github.neithern.g4music"] floating enable
 	[title="Preferencias"] floating enable
-  [class="Catapult"] floating enable
+	[class="Catapult"] floating enable
 
 	[app_id="(?i)(?:firefox|chromium|brave-browser|microsoft-edge|vivaldi-stable)"] inhibit_idle fullscreen; border none; max_render_time off
 	[app_id="firefox" title="Library"] floating enable, border pixel 1, sticky enable
@@ -118,7 +118,6 @@ for_window {
 	[app_id="qt5ct"] floating enable
 	[app_id="gnome-tweaks"] floating enable
 
-	# Zoom
 	[app_id="zoom"] floating enable
 	[app_id="zoom" title="Choose ONE of the audio conference options"] floating enable
 	[app_id="zoom" title="zoom"] floating enable

@@ -1,24 +1,24 @@
 {
 	// Documentation: https://github.com/Alexays/Waybar/wiki //
 
-	"layer": "bottom", //top, bottom
-    "position": "top",
-	"height": 35,
-	"spacing": 10,
-    "margin-top": 5,
-    "margin-bottom": 0,
-    "margin-left": 10,
-    "margin-right": 10,
+  "layer": "bottom", //top, bottom
+  "position": "top",
+  "height": 0,
+  "spacing": 10,
+  "margin-top": 5,
+  "margin-bottom": 0,
+  "margin-left": 5,
+  "margin-right": 5,
 
-    "fixed-center": true,
+  "fixed-center": true,
 
-    "modules-left": ["sway/workspaces"],
-    "modules-center": ["clock", "mpris"],
-    "modules-right": ["tray", "custom/wf-recorder", "pulseaudio", "custom/swaync"],
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock", "mpris"],
+  "modules-right": ["tray", "custom/wf-recorder", "pulseaudio", "custom/swaync"],
 
-    // Excluded: "battery", "memory", "network", "custom/launcher"
+  // Excluded: "battery", "memory", "network", "custom/launcher"
 
-    // Modules configuration //
+  // Modules configuration //
 
 	"sway/workspaces": {
 		"disable-scroll": false,
