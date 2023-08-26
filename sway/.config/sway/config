@@ -2,7 +2,7 @@
 xwayland enable
 
 # --- DIRECTORIES ---
-set $sway               ~/.config/sway
+set $sway               ${XDG_CONFIG_HOME:-$HOME/.config}/sway
 set $scripts            $sway/scripts
 set $components         $sway/components
 

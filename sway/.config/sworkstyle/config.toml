@@ -37,6 +37,7 @@ separator = ' '
 'celluloid' = '󰿎'
 
 # Documents - Notepad
+"marktext" = "󱓧"
 "obsidian" = "󱓧"
 "okular" = ''
 'zathura' = ''
@@ -75,6 +76,7 @@ separator = ' '
 
 # Games
 'Steam' = ''
+'itch' = '︁'
 'citra' = '︁'
 'yuzu' = '︁'
 'rpcs3' = '︁'

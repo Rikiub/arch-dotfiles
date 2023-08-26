@@ -1,0 +1,17 @@
+[Added Associations]
+text/plain=geany.desktop;
+image/jpg=imv-dir.desktop;
+image/jpeg=imv-dir.desktop;
+image/png=imv-dir.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+
+[Default Applications]
+application/json=geany.desktop;
+application/msword=libreoffice-writer.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+application/x-zerosize=geany.desktop;
+image/*=imv-dir.desktop;
+inode/directory=pcmanfm.desktop;
+text/*=geany.desktop;
+image/jpeg=imv-dir.desktop
