@@ -6,6 +6,7 @@ rm -f $HOME/.xsession-errors
 
 # To follow XDG Base Directory specification.
 # https://wiki.archlinux.org/title/XDG_Base_Directory
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"                   # move ZSH config
 export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}"/gnupg            # move GNU Privacy Guard
 export HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}"/bash/history     # move bash history
 export ANDROID_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"/android       # move .android folder created by ADB
@@ -13,10 +14,10 @@ export ANDROID_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"/android       # move 
 # --- STARTUP ---
 
 # Detect desktop-session
-if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 	export MOZ_ENABLE_WAYLAND=1
 	export TERM=foot
-elif [ "$XDG_SESSION_TYPE" == "x11" ]; then
+elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
 	export TERM=alacritty
 fi
 
