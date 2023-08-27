@@ -2,7 +2,9 @@
 set -g fish_greeting
 
 # init startship prompt
-starship init fish | source
+if command -q starship
+	starship init fish | source
+end
 
 # pywal support
 #cat ~/.cache/wal/sequences &
