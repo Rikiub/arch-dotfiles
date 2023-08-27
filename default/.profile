@@ -24,6 +24,9 @@ fi
 # Custom sort preference
 export LC_COLLATE=C
 
+# user PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 # QT with GTK THEME compability
 # for "qt5ct" just put
 # for "gnome" you need install this packages: qgnomeplatform-qt5 qgnomeplatform-qt6

@@ -19,12 +19,6 @@ if command -q bat
 	set -x BAT_THEME base16
 	set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 	set -x MANROFFOPT "-c"
-
-	# highlight help commands | Usage: help [program]
-	alias bathelp "bat --plain --language=help"
-	function help
-		$argv --help 2>&1 | bathelp
-	end 
 end
 
 # zoxide is a smarter cd command, inspired by z and autojump.
