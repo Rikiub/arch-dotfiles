@@ -1,3 +1,10 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
+# disable fish_greeting
+set -g fish_greeting
+
+# init startship prompt
+if command -q starship
+	starship init fish | source
 end
+
+# pywal support
+#cat ~/.cache/wal/sequences &
