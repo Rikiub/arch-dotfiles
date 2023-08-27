@@ -7,8 +7,8 @@
   "spacing": 10,
   "margin-top": 5,
   "margin-bottom": 0,
-  "margin-left": 5,
-  "margin-right": 5,
+  "margin-left": 10,
+  "margin-right": 10,
 
   "fixed-center": true,
 

@@ -17,11 +17,11 @@ configuration {
 }
 
 * {
-    background: #151b2cFF;
+    background: #2a2428FF;
     background-alt: #00000000;
-    background-bar: #a96b9699;
-    border: #382b44;
-    foreground: #f3e6f3;
+    background-bar: #d3dca799;
+    border: #555346;
+    foreground: #f9fff9;
 }
 
 window {
