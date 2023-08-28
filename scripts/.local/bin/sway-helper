@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+case $1 in
+  output)
+    swaymsg -t get_tree | grep "app_id\|class" ;;
+  input)
+    swaymsg -t get_inputs ;;
+esac

@@ -13,8 +13,8 @@ function show_usage {
 
 function sync {
 	echo "> Searching and fixing broken symlinks..."
-	find ~/.config -xtype l -delete
-	find ~/.local -xtype l -delete
+	find ${XDG_CONFIG_HOME:-$HOME/.config} -xtype l -delete
+	find $HOME/.local -xtype l -delete
 
 	echo "> Syncing..."
 	stow $STOW_DIR \

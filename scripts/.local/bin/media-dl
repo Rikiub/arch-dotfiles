@@ -1,3 +1,0 @@
-#!/bin/sh
-
-python $HOME/dev/python/media_dl.py

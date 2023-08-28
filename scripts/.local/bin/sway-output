@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-swaymsg -t get_tree | grep "app_id\|class"

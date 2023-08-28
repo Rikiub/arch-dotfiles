@@ -110,15 +110,15 @@
 				"actions": [
 					{
 						"label": "  Record Video (With audio)",
-						"command": "swaync-client -cp && ~/.local/bin/wfcord region mp4 --audio"
+						"command": "swaync-client -cp && wfcord region mp4 --audio"
 					},
 					{
 						"label": "󰈫  Record Video",
-						"command": "swaync-client -cp && ~/.local/bin/wfcord region mp4"
+						"command": "swaync-client -cp && wfcord region mp4"
 					},
 					{
 						"label": "󰵸  Record GIF",
-						"command": "swaync-client -cp && ~/.local/bin/wfcord region gif"
+						"command": "swaync-client -cp && wfcord region gif"
 					}
 				]
 			},

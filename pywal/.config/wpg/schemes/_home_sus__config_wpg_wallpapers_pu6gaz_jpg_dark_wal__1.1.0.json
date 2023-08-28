@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/sus/.config/wpg/wallpapers/pu6gaz.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#190e28",
+        "foreground": "#eee5eb",
+        "cursor": "#eee5eb"
+    },
+    "colors": {
+        "color0": "#190e28",
+        "color1": "#a84461",
+        "color2": "#1e4460",
+        "color3": "#6b445a",
+        "color4": "#305d75",
+        "color5": "#635e66",
+        "color6": "#484955",
+        "color7": "#d8b4bb",
+        "color8": "#2c2145",
+        "color9": "#e24473",
+        "color10": "#1e577e",
+        "color11": "#914a71",
+        "color12": "#31769c",
+        "color13": "#81678a",
+        "color14": "#485075",
+        "color15": "#eee5eb"
+    }
+}
