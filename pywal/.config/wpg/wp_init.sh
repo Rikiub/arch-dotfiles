@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-wpg -nrs 'pu6gaz.jpg' 'pu6gaz.jpg'
+wpg -Lnrs 'pu6gaz.jpg' 'pu6gaz.jpg'

@@ -21,7 +21,8 @@ include $sway/workspaces
 include $components/screenshot
 include $components/darkman
 include $components/swaync
-include $components/rofi
+include $components/wofi
+#include $components/rofi
 
 # -- SCRIPTS ---
 exec_always {

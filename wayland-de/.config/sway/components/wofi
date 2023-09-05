@@ -1,0 +1,6 @@
+# app-launcher
+bindsym $mod+d \
+exec wofi --show drun
+
+bindsym $mod+period \
+exec wofi-emoji

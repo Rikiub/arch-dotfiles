@@ -36,7 +36,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 # darkman themes
 export GTK_THEME_LIGHT="adw-gtk3"
-export ICON_LIGHT="Papirus-Dark"
+export ICON_LIGHT="Papirus"
 export GTK_THEME_DARK="adw-gtk3-dark"
 export ICON_DARK="Papirus-Dark"
 
