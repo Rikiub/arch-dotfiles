@@ -6,13 +6,13 @@
 @define-color wb-border @shade_color;
 
 * {
-    font-family: Symbols Nerd Font Mono, FontAwesome;
-    border-radius: 30px;
-    color: @wb-text;
+	font-family: Symbols Nerd Font Mono, FontAwesome;
+	border-radius: 30px;
+	color: @wb-text;
 }
 
 window#waybar {
-    background: transparent;
+	background: transparent;
 }
 
 #workspaces,
@@ -29,7 +29,9 @@ window#waybar {
 #memory,
 #tray,
 #tooltip,
-#mpris.playing, #mpris.paused, #mpris.stopped {
+#mpris.playing,
+#mpris.paused,
+#mpris.stopped {
 	background: @wb-background;
 	border: 1px solid @wb-border;
 	padding: 0px 10px;
@@ -38,6 +40,7 @@ window#waybar {
 #workspaces {
 	padding: 0px;
 }
+
 #workspaces button {
 	background: inherit;
 	margin: 2px;
@@ -46,11 +49,13 @@ window#waybar {
 }
 
 #workspaces button.focused,
-#custom-swaync, #custom-power {
-	background: mix(@wb-background, @wb-accent-bg-color, 0.7);
+#custom-swaync,
+#custom-power {
+	background: mix(@wb-background, @wb-accent-color, 0.5);
 }
+
 #workspaces button:hover {
-	background: mix(@wb-background, @wb-accent-color, 0.7);
+	background: mix(@wb-background, @wb-accent-color, 0.3);
 }
 
 tooltip {
@@ -64,35 +69,37 @@ tooltip {
 }
 
 @keyframes mpris-blink {
-    to {
-        background-color: mix(@wb-background, @wb-accent-color, 0.9);
-    }
+	to {
+		background-color: mix(@wb-background, @wb-accent-color, 0.9);
+	}
 }
 
 #mpris.playing {
-    background: mix(@wb-background, @wb-accent-color, 0.6);
-    animation-name: mpris-blink;
-    animation-duration: 2.0s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	background: mix(@wb-background, @wb-accent-color, 0.6);
+	animation-name: mpris-blink;
+	animation-duration: 2.0s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
-#mpris.paused, #mpris.stopped {
+
+#mpris.paused,
+#mpris.stopped {
 	background: mix(@wb-background, @wb-accent-color, 0.3);
 }
 
 @keyframes wf-record-blink {
-    to {
-        background-color: red;
-        color: black;
-    }
+	to {
+		background-color: red;
+		color: black;
+	}
 }
 
 #custom-wf-recorder {
 	color: red;
 	animation-name: wf-record-blink;
-    animation-duration: 1.0s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	animation-duration: 1.0s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }

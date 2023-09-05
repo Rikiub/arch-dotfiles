@@ -1,3 +1,11 @@
 **/sway/input
 **/sway/outputs
 **/sway/workspaces
+
+**/wpg/samples
+**/wpg/schemes
+**/wpg/templates
+**/wpg/wallpapers
+**/wpg/.current
+
+**/zsh/antidote

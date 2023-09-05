@@ -1,5 +1,4 @@
 * {
-  font-family: JetBrainsMono;
   color: @window_fg_color;
 }
 
@@ -27,7 +26,7 @@
 }
 
 #entry:selected {
-  background-color: @accent_bg_color;
+  background-color: mix(@window_bg_color, @accent_bg_color, 0.5);
 }
 
 #text {
