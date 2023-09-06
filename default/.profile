@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # --- ENV FIXES ---
-ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"                            # remove xsession-errors
+ERRFILE="${XDG_CACHE_HOME:-$HOME/.cache}/X11/xsession-errors"            # remove xsession-errors
 rm -f $HOME/.xsession-errors
 
 # To follow XDG Base Directory specification.

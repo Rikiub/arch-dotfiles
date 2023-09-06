@@ -1,35 +1,37 @@
 {
 	// Documentation: https://github.com/Alexays/Waybar/wiki //
-
-  "layer": "bottom", //top, bottom
-  "position": "top",
-  "height": 0,
-  "spacing": 10,
-  "margin-top": 5,
-  "margin-bottom": 0,
-  "margin-left": 10,
-  "margin-right": 10,
-
-  "fixed-center": true,
-
-  "modules-left": ["sway/workspaces"],
-  "modules-center": ["clock", "mpris"],
-  "modules-right": ["tray", "custom/wf-recorder", "pulseaudio", "custom/swaync"],
-
-  // Excluded: "battery", "memory", "network", "custom/launcher"
-
-  // Modules configuration //
-
+	"layer": "bottom", //top, bottom
+	"position": "top",
+	"height": 0,
+	"spacing": 10,
+	"margin-top": 5,
+	"margin-bottom": 0,
+	"margin-left": 10,
+	"margin-right": 10,
+	"fixed-center": true,
+	"modules-left": [
+		"sway/workspaces"
+	],
+	"modules-center": [
+		"clock",
+		"mpris"
+	],
+	"modules-right": [
+		"tray",
+		"custom/wf-recorder",
+		"pulseaudio",
+		"custom/swaync"
+	],
+	// Excluded: "battery", "memory", "network", "custom/launcher"
+	// Modules configuration //
 	"sway/workspaces": {
 		"disable-scroll": false,
 		"all-outputs": false,
-     },
-
-    "tray": {
-        "spacing": 10,
-        "reverse-direction": true
-    },
-
+	},
+	"tray": {
+		"spacing": 10,
+		"reverse-direction": true
+	},
 	"battery": {
 		"states": {
 			"warning": 30,
@@ -40,9 +42,12 @@
 		"format-plugged": "󰂄 {capacity}%",
 		"format-alt": "{time} {icon}",
 		"format-full": "󱈑 {capacity}%",
-		"format-icons": ["󱊡", "󱊢", "󱊣"]
+		"format-icons": [
+			"󱊡",
+			"󱊢",
+			"󱊣"
+		]
 	},
-
 	"network": {
 		"format-wifi": " {essid}",
 		"format-disconnected": "󰖪 Disconnected",
@@ -52,34 +57,35 @@
 		"on-click": "networkmanager_dmenu",
 		"on-click-right": "nm-connection-editor"
 	},
-
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
 		"format-bluetooth": "{icon}  {volume}%",
-        "format-muted": "{icon} Muted",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "speaker": "󰓃",
-            "hdmi": "󰓃",
-            "hifi": "󰓃",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "󰖀", "󰕾"]
-        },
-        "on-click": "amixer set Master toggle",
-        "on-click-right": "pavucontrol",
-        "scroll-step": 5
-    },
-
-    "clock": {
+		"format-muted": "{icon} Muted",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"speaker": "󰓃",
+			"hdmi": "󰓃",
+			"hifi": "󰓃",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"󰖀",
+				"󰕾"
+			]
+		},
+		"on-click": "amixer set Master toggle",
+		"on-click-right": "pavucontrol",
+		"scroll-step": 5
+	},
+	"clock": {
 		"format": " {:%H:%M}",
 		"format-alt": "{:%Y-%m-%d}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+		"tooltip-format": "<tt><small>{calendar}</small></tt>"
 	},
-
 	"mpris": {
 		"format": "",
 		"format-playing": "{status_icon} <i>Playing</i>",
@@ -98,13 +104,10 @@
 		//"ignored-players": ["firefox"],
 		"interval": 2
 	},
-
 	"memory": {
 		"interval": 30,
 		"format": "󰍛 {}%"
 	},
-
-
 	"custom/wf-recorder": {
 		"format": "{}",
 		"tooltip": false,
@@ -114,19 +117,16 @@
 		"on-click": "$HOME/.local/bin/wfcord",
 		"signal": 8
 	},
-	
 	"custom/swaync": {
 		"format": "󱗼",
 		"on-click": "swaync-client -t",
 		"tooltip": false
 	},
-
-    "custom/power": {
+	"custom/power": {
 		"format": "",
 		"on-click": "wlogout -p layer-shell",
 		"tooltip": false
 	},
-
 	"custom/launcher": {
 		"format": "󱗼",
 		"on-click": "$HOME/.config/rofi/scripts/launcher_t2",
