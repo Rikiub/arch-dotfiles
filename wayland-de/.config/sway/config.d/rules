@@ -36,6 +36,7 @@ for_window {
 	[app_id="pavucontrol"] floating enable; sticky enable, resize set width 50 ppt height 60 ppt
 	[app_id="(?i)(?:blueberry.py|blueman-manager|blueman-adapters|blueman-sendto)"] floating enable
 	[app_id="zenity"] floating enable
+	[app_id="xdm-app"] floating enable
 
 	[app_id="ristretto"] floating enable, resize set width 50 ppt height 80 ppt
 	[app_id="gthumb"] floating enable

@@ -6,7 +6,7 @@ separator = ' '
 # Social media
 'discord' = '󰙯'
 'Discord' = '󰙯'
-'org.telegram.desktop' = ""
+'org.telegram.desktop' = ""
 'Thunderbird' = ''
 'thunderbird' = ''
 'Slack' = ''
