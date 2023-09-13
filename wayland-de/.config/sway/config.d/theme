@@ -24,7 +24,7 @@ title_align center
 # --- COLORS ---
 
 # pywal support (dynamic color by wallpaper)
-include "~/.cache/wal/colors-sway"
+include ${XDG_CACHE_HOME:-$HOME/.cache}/wal/colors-sway
 
 # wallpaper set with pywal
 output * background $wallpaper fill

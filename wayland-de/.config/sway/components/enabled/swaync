@@ -1,4 +1,4 @@
-exec_always $components/run-swaync.sh
+exec_always pkill swaync ; swaync
 
 # menu
 bindsym	$mod+Shift+e \

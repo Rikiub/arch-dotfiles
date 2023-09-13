@@ -7,32 +7,18 @@ set $scripts            $sway/scripts
 set $components         $sway/components
 
 # --- VARIABLES ---
-
-# Must be a integer (Default: 600)
-set $swayidle_timeout   600
+# must be a integer (Default: 600)
+set $swayidle_timeout 600
 
 # --- STARTUP ---
 include $sway/config.d/*
 include $sway/input
 include $sway/outputs
 include $sway/workspaces
+include $components/enabled/*
 
-# --- COMPONENTS (Comment # to disable) ---
-include $components/screenshot
-include $components/sworkstyle
-include $components/darkman
-include $components/swaync
-include $components/wofi
-#include $components/rofi
-
-# -- SCRIPTS ---
-exec_always {
-	# exec waybar
-	$components/run-waybar.sh
-	
-	# volume notification daemon
-	#$scripts/volume-subscribe.sh
-}
+# custom bar
+bar swaybar_command waybar
 
 # --- APPLETS ---
 exec {
