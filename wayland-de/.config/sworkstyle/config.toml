@@ -101,6 +101,7 @@ separator = ' '
 'seahorse' = ''
 'copyq' = '󱉧'
 "bleachbit" = "󰃢"
+"syncthing-gtk" = "󰓦"
 
 # File Browser
 "Caja" = ""

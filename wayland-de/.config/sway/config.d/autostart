@@ -1,8 +1,4 @@
-# GTK3 applications take a long time to start (FIX)
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-
 exec {
-
 	# --- DEFAULT ---
 	swayidle -w \
 		timeout $swayidle_timeout 'swaymsg "output * power off"' \
@@ -10,17 +6,10 @@ exec {
 
 	# clipboard
 	wl-paste -t text --watch clipman store --no-persist
-	
-	# workspace name icons
-	sworkstyle &> /tmp/sworkstyle.log
 
 	# --- ETC ---
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 #polkit-gnome
 	/usr/lib/geoclue-2.0/demos/agent #geoclue agent
-
-	# --- APPLETS ---
-	nm-applet
-	blueman-applet
 
 	# --- SCRIPTS ---
 	$scripts/autotiling.py

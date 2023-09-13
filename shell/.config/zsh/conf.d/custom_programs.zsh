@@ -1,16 +1,16 @@
 # --- CUSTOM ---
 # if command exist, replace builtin command and start setup
 
-# exa: a modern replacement for ls.
-if command -v exa &> /dev/null; then
-	alias exa="exa --icons --group-directories-first --header --no-filesize"
-	alias ls="exa"
+# eza: A modern, maintained replacement for ls
+if command -v eza &> /dev/null; then
+	alias eza="eza --icons --group-directories-first --header --no-filesize"
+	alias ls="eza"
 # builtin ls
 else
 	alias ls="ls --color=auto --group-directories-first -X -F -N -h"
 fi
 
-# bat: a cat(1) clone with syntax highlighting and Git integration.
+# bat: A cat(1) clone with syntax highlighting and Git integration.
 if command -v bat &> /dev/null; then
 	alias bat="bat --color=always"
 	alias cat="bat"
@@ -21,7 +21,7 @@ if command -v bat &> /dev/null; then
 	export MANROFFOPT="-c"
 fi
 
-# zoxide is a smarter cd command, inspired by z and autojump.
+# zoxide: Zoxide is a smarter cd command, inspired by z and autojump.
 if command -v zoxide &> /dev/null; then
 	eval "$(zoxide init zsh)"
 fi

@@ -19,6 +19,7 @@ include $sway/workspaces
 
 # --- COMPONENTS (Comment # to disable) ---
 include $components/screenshot
+include $components/sworkstyle
 include $components/darkman
 include $components/swaync
 include $components/wofi
@@ -33,8 +34,11 @@ exec_always {
 	#$scripts/volume-subscribe.sh
 }
 
-# --- USER-APPS ---
+# --- APPLETS ---
 exec {
-	gammastep
-	syncthing
+	nm-applet
+	blueman-applet
+
+	gammastep-indicator
+	syncthing-gtk
 }
