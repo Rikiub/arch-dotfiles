@@ -10,13 +10,19 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # --- ENV FIXES ---
 
+# auto remove
 ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"                             # remove xsession-errors
 rm -f $HOME/.xsession-errors
+rm -rf $HOME/.pki
+
+# .android folder created by ADB
+export ANDROID_HOME="$XDG_DATA_HOME"/android                              
+rm -rf $HOME/.android
+rm -rf $HOME/.fastboot
 
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh                                     # ZSH config
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg                                   # GNU Privacy Guard
 export HISTFILE="$XDG_STATE_HOME"/bash/history                            # bash history
-export ANDROID_HOME="$XDG_DATA_HOME"/android                              # .android folder created by ADB
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java   # .java folder
 
 # --- STARTUP ---

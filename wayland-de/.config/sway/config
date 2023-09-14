@@ -7,8 +7,11 @@ set $scripts            $sway/scripts
 set $components         $sway/components
 
 # --- VARIABLES ---
-# must be a integer (Default: 600)
+# Time to screen off. Must be a integer. (Default: 600)
 set $swayidle_timeout 600
+
+# Time to active screenlock. Must be a integer. (Default: 1000)
+set $swayidle_timeout 1000
 
 # --- STARTUP ---
 include $sway/config.d/*

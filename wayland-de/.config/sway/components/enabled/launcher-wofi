@@ -1,6 +1,6 @@
 # app-launcher
 bindsym $mod+d \
-exec "pgrep wofi && killall wofi || wofi --show drun -a"
+exec "pgrep wofi && pkill wofi || wofi --show drun -a"
 
 bindsym $mod+period \
-exec "pgrep wofi && killall wofi || wofi-emoji"
+exec "pgrep wofi && pkill wofi || wofi-emoji"
