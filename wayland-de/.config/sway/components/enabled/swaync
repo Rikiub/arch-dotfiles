@@ -1,4 +1,4 @@
-exec_always pkill swaync ; swaync
+exec_always swaync
 
 # menu
 bindsym	$mod+Shift+e \

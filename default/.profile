@@ -23,8 +23,8 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java   # .jav
 
 # Detect desktop-session
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-	export MOZ_ENABLE_WAYLAND=1
 	export TERM=foot
+	export MOZ_ENABLE_WAYLAND=1
 elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
 	export TERM=alacritty
 fi

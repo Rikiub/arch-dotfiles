@@ -28,14 +28,14 @@ function send_notification {
 }
 
 # Check if notify-send is installed
-if command -v notify-send >/dev/null 2>&1; then
+if command -v notify-send > /dev/null 2>&1; then
 	NOTIFY_SUPPORT=true
 else
 	NOTIFY_SUPPORT=false
 fi
 
 # Stop the current recording if wf-recorder is running
-if pgrep wf-recorder >/dev/null 2>&1; then
+if pgrep wf-recorder > /dev/null 2>&1; then
 	echo "Stopping the current recording and saving it..."
 	killall -s SIGINT wf-recorder
 	wait
@@ -129,8 +129,14 @@ fi
 
 echo "Recording has started. Execute the command again to end the recording."
 
+# Start recording
+wf-recorder $WF_AUDIO $WF_EXT $WF_MODE "$WF_VALUE" > /dev/null 2>&1 &
+
+if [ -z pgrep wf-recorder > /dev/null 2>&1 ]; then
+	send_notification --icon=dialog-error \
+		"Failed to record"
+	exit 1
+fi
+
 # Send enter signal to Waybar
 pkill -RTMIN+8 waybar
-
-# Start recording
-wf-recorder $WF_AUDIO $WF_EXT $WF_MODE "$WF_VALUE" >/dev/null 2>&1 &

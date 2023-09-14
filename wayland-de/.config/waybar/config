@@ -114,7 +114,7 @@
 		"interval": "once",
 		"exec": "echo '󰻂'",
 		"exec-if": "pgrep 'wf-recorder'",
-		"on-click": "$HOME/.local/bin/wfcord",
+		"on-click": "wfcord",
 		"signal": 8
 	},
 	"custom/swaync": {
@@ -129,7 +129,7 @@
 	},
 	"custom/launcher": {
 		"format": "󱗼",
-		"on-click": "$HOME/.config/rofi/scripts/launcher_t2",
+		"on-click": "wofi -show drun",
 		"tooltip": false
 	}
 }

@@ -1,13 +1,13 @@
 # --- SCREENSHOT ---
 
-set $screenshot $(xdg-user-dir PICTURES)
+set $screenshot $(xdg-user-dir PICTURES)/screenshot_$(date +%Y%m%d%H%M%S).png
 
 bindsym {
 	Print \
-	exec hyprshot -m output -o $screenshot
+	exec grimshot --notify save output $screenshot
 
 	$mod+Shift+s \
-	exec hyprshot -m region -o $screenshot
+	exec grimshot --notify save anything $screenshot
 
 	# Color picker
 	$mod+Shift+a \
