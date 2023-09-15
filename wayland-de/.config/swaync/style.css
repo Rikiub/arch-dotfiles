@@ -1,13 +1,13 @@
-@define-color sn-accent-color     @accent_color;
-@define-color sn-accent-bg-color  @accent_bg_color;
+@define-color sn-accent-color @accent_color;
+@define-color sn-accent-bg-color @accent_bg_color;
 
-@define-color sn-text             @view_fg_color;
-@define-color sn-text-disable     darker(@view_fg_color);
-@define-color sn-bg               @view_bg_color;
-@define-color sn-fg               @window_bg_color;
-@define-color sn-bg-focus         mix(@sn-accent-color, @sn-bg, 0.7);
-@define-color sn-bg-hover         mix(@sn-accent-color, @sn-bg, 0.7);
-@define-color sn-border           @shade_color;
+@define-color sn-text @view_fg_color;
+@define-color sn-text-disable darker(@view_fg_color);
+@define-color sn-bg @view_bg_color;
+@define-color sn-fg @window_bg_color;
+@define-color sn-bg-focus mix(@sn-accent-color, @sn-bg, 0.7);
+@define-color sn-bg-hover mix(@sn-accent-color, @sn-bg, 0.7);
+@define-color sn-border @shade_color;
 
 * {
 	font-family: Symbols Nerd Font Mono, FontAwesome;
@@ -125,6 +125,7 @@
 .inline-reply {
 	margin-top: 8px;
 }
+
 .inline-reply-entry {
 	background: @sn-fg;
 	color: @sn-text;
@@ -132,6 +133,7 @@
 	border: 1px solid @sn-border;
 	border-radius: 12px;
 }
+
 .inline-reply-button {
 	margin-left: 4px;
 	background: @noti-bg;
@@ -139,11 +141,13 @@
 	border-radius: 12px;
 	color: @sn-text;
 }
+
 .inline-reply-button:disabled {
 	background: initial;
 	color: @sn-text-disable;
 	border: 1px solid transparent;
 }
+
 .inline-reply-button:hover {
 	background: @sn-bg-hover;
 }
@@ -212,7 +216,8 @@
 	margin: 8px;
 	font-size: 1.3rem;
 }
-.widget-title > button {
+
+.widget-title>button {
 	font-size: initial;
 	color: @sn-text;
 	text-shadow: none;
@@ -221,7 +226,8 @@
 	box-shadow: none;
 	border-radius: 12px;
 }
-.widget-title > button:hover {
+
+.widget-title>button:hover {
 	background: @sn-bg-hover;
 }
 
@@ -230,17 +236,20 @@
 	margin: 8px;
 	font-size: 1.1rem;
 }
-.widget-dnd > switch {
+
+.widget-dnd>switch {
 	font-size: initial;
 	border-radius: 12px;
 	background: @sn-bg;
 	border: 1px solid @sn-border;
 	box-shadow: none;
 }
-.widget-dnd > switch:checked {
+
+.widget-dnd>switch:checked {
 	background: @bg-selected;
 }
-.widget-dnd > switch slider {
+
+.widget-dnd>switch slider {
 	background: @sn-bg-hover;
 	border-radius: 12px;
 }
@@ -249,7 +258,8 @@
 .widget-label {
 	margin: 8px;
 }
-.widget-label > label {
+
+.widget-label>label {
 	font-size: 1.1rem;
 }
 
@@ -257,16 +267,19 @@
 .widget-mpris {
 	/* The parent to all players */
 }
+
 .widget-mpris-player {
 	background: @sn-fg;
 	padding: 8px;
 	margin: 8px 0px;
 	border-radius: 12px;
 }
+
 .widget-mpris-title {
 	font-weight: bold;
 	font-size: 1.10rem;
 }
+
 .widget-mpris-subtitle {
 	font-size: 0.7rem;
 }
@@ -296,7 +309,7 @@
 	border-radius: 15px;
 }
 
-.widget-volume > box > button {
+.widget-volume>box>button {
 	background: transparent;
 	border: none;
 }
@@ -321,7 +334,8 @@
 	margin: 8px;
 	font-size: 1.5rem;
 }
-.widget-inhibitors > button {
+
+.widget-inhibitors>button {
 	font-size: initial;
 	color: @sn-text;
 	text-shadow: none;
@@ -330,13 +344,15 @@
 	box-shadow: none;
 	border-radius: 12px;
 }
-.widget-inhibitors > button:hover {
+
+.widget-inhibitors>button:hover {
 	background: @sn-bg-hover;
 }
 
 
 
-.topbar-buttons > button { /* Name defined in config after # */
+.topbar-buttons>button {
+	/* Name defined in config after # */
 	border: none;
 	background: transparent;
 }
@@ -350,27 +366,29 @@
 	border: 1px solid @sn-border;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button {
+.widget-buttons-grid>flowbox>flowboxchild>button {
 	background: @sn-fg;
 	border-radius: 12px;
 	border: 1px solid @sn-border;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
 	background: @sn-bg-hover;
 	border: 1px solid @sn-accent-bg-color;
 }
 
 /* Menubar widget */
-.widget-menubar > box > .menu-button-bar > button {
+.widget-menubar>box>.menu-button-bar>button {
 	background: @sn-fg;
 	border: 1px solid @sn-border;
 	margin: 5px 3px;
 }
-.widget-menubar > box > .menu-button-bar > button:hover {
+
+.widget-menubar>box>.menu-button-bar>button:hover {
 	border: 1px solid @sn-accent-bg-color;
 }
-.widget-menubar > box > .menu-button-bar > button:focus {
+
+.widget-menubar>box>.menu-button-bar>button:focus {
 	background: @sn-bg-focus;
 	border: 1px solid @sn-accent-bg-color;
 }
@@ -386,21 +404,21 @@
 	border-radius: 5px;
 }
 
-.app-buttons > button,
-.screenshot-buttons > button,
-.screencast-buttons > button,
-.power-buttons > button,
-.config-buttons > button {
+.app-buttons>button,
+.screenshot-buttons>button,
+.screencast-buttons>button,
+.power-buttons>button,
+.config-buttons>button {
 	border-radius: 0px;
 	background: @sn-fg;
 	border: 1px solid @sn-border;
 }
 
-.app-buttons > button:hover,
-.screenshot-buttons > button:hover,
-.screencast-buttons > button:hover,
-.power-buttons > button:hover,
-.config-buttons > button:hover {
+.app-buttons>button:hover,
+.screenshot-buttons>button:hover,
+.screencast-buttons>button:hover,
+.power-buttons>button:hover,
+.config-buttons>button:hover {
 	border-radius: 5px;
 	background: @sn-bg-hover;
 }
