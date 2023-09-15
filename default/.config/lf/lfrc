@@ -38,7 +38,7 @@ map A push :touch<space>
 
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)
-cmd trash %trash-put $fx
+cmd trash %gio trash $fx
 
 # use '<delete>' key for either 'trash' or 'delete' command
 map <delete> trash
