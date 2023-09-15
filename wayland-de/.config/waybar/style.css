@@ -44,7 +44,7 @@ window#waybar {
 #workspaces button {
 	background: inherit;
 	margin: 2px;
-	padding: 0 15px;
+	padding: 0 10px;
 	min-width: 25px;
 }
 
