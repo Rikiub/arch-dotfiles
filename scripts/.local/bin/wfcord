@@ -11,13 +11,16 @@ FILENAME="record_$(date +%Y-%-m-%-d_%-H-%-M-%-S)"
 VIDEO_DIR="$(xdg-user-dir VIDEOS)"
 OUTPUT="$VIDEO_DIR/$FILENAME"
 
+PID_FILE="${XDG_RUNTIME_DIR:-/run}"/wfcord.pid
+
 # Function to display the help message
 function show_help {
 	echo "Usage: wfcord [${modes[*]}] [${formats[*]}] [OPTIONS]"
 	echo ""
 	echo "OPTIONS"
-	echo "  -h, --help 	Display this help message"
-	echo "  --audio       Include audio in the recording"
+	echo "  -h, --help 	     Display this help message"
+	echo "  --audio          Include audio in the recording"
+	echo "  -n, --no-notify  Disable notifications"
 }
 
 # Send a pretty notification
@@ -28,24 +31,34 @@ function send_notification {
 }
 
 # Check if notify-send is installed
-if command -v notify-send > /dev/null 2>&1; then
+if command -v notify-send > /dev/null; then
 	NOTIFY_SUPPORT=true
 else
 	NOTIFY_SUPPORT=false
 fi
 
+trap "catch" ERR
+function catch {
+	send_notification --icon=dialog-error \
+		"Failed to record"
+
+	echo "Failed to record"
+	killall -q wf-recorder
+	exit 1
+}
+
 # Stop the current recording if wf-recorder is running
-if pgrep wf-recorder > /dev/null 2>&1; then
-	echo "Stopping the current recording and saving it..."
-	killall -s SIGINT wf-recorder
-	wait
+if pgrep wf-recorder >/dev/null; then
+	echo "Stopping recording and saving..."
+	killall -q wf-recorder
 
 	# Send exit signal to Waybar
 	pkill -RTMIN+8 waybar
 
 	send_notification --icon=media-stop \
 		"Recording completed" "$VIDEO_DIR"
-	
+
+	echo "Recording completed"
 	exit
 fi
 
@@ -54,6 +67,7 @@ while [[ "$#" -gt 0 ]]; do
 	case $1 in
 		-h|--help) show_help; exit 0 ;;
 		-a|--audio) audio=true ;;
+		-n|--no-notify) $NOTIFY_SUPPORT=false ;;
 		-*|--*) echo "Invalid argument: $1"; exit 1 ;;
 		*) break ;;
 	esac
@@ -82,15 +96,6 @@ case "$1" in
 	region)
 		WF_MODE="-g"
 		WF_VALUE="$(slurp)"
-
-		if [ $? -ne 0 ]; then
-			echo "ERROR: slurp selection failed"
-
-			send_notification --icon=dialog-error \
-				"Failed to record" "Area not selected"
-
-			exit 1
-		fi
 		;;
 	window)
 		WF_MODE="-g"
@@ -131,12 +136,6 @@ echo "Recording has started. Execute the command again to end the recording."
 
 # Start recording
 wf-recorder $WF_AUDIO $WF_EXT $WF_MODE "$WF_VALUE" > /dev/null 2>&1 &
-
-if [ -z pgrep wf-recorder > /dev/null 2>&1 ]; then
-	send_notification --icon=dialog-error \
-		"Failed to record"
-	exit 1
-fi
 
 # Send enter signal to Waybar
 pkill -RTMIN+8 waybar

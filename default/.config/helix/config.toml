@@ -1,1 +1,9 @@
-theme = "rose_pine"
+theme = "monokai_pro"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.indent-guides]
+render = false
+character = "┆" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1

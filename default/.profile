@@ -60,6 +60,7 @@ rm -rf $HOME/.fastboot
 rm -rf $HOME/.dmrc
 rm -rf $HOME/.w3m
 rm -rf $HOME/.pki
+rm -f $HOME/.python_history
 
 # Move config locations
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh                                     # ZSH config

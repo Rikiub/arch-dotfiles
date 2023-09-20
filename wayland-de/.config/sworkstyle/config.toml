@@ -31,6 +31,7 @@ separator = ' '
 'vlc' = '󰕼'
 'audacity' = ''
 "com.github.neithern.g4music" = ""
+"io.github.quodlibet.QuodLibet" = ""
 
 # Video
 'obs' = '󰕧'
@@ -66,12 +67,11 @@ separator = ' '
 "org.kde.kwrite" = ""
 "org.kde.kate" = ""
 "geany" = ""
-'Code' = ''
-'code-oss' = ''
 'jetbrains-studio' = ''
 'neovide' = ''
 "vscodium" = "󰨞"
-"codium-url-handler" = "󰨞"
+"Code" = "󰨞"
+"code-oss" = "󰨞"
 'GitHub Desktop' = ''
 '/(?i)Github.*Firefox/' = ''
 

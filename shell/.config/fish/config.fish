@@ -8,4 +8,3 @@ end
 
 # pywal support
 #cat ~/.cache/wal/sequences &
-

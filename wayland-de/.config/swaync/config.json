@@ -127,7 +127,7 @@
 					},
 					{
 						"label": "  Lock",
-						"command": "swaync-client -cp && swaylock"
+						"command": "swaync-client -cp && swaylock -f -c 000000"
 					}
 				]
 			},

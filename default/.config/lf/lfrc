@@ -46,10 +46,10 @@ map <delete> trash
 cmd copy-to-clipboard ${{
 	# Linux - Wayland
 	if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-		if wl-copy < "$f" > /dev/null 2>&1; then
-		  exit
-	else
-		wl-copy "$f"
+		if wl-copy < "$f"; then
+      :
+    else
+      wl-copy "$f"
 	fi
 
 	# Linux - X11
@@ -57,7 +57,7 @@ cmd copy-to-clipboard ${{
 		printf '%s' "$f" | xclip
 
 	# Darwin
-	elif type pbcopy > /dev/null 2>&1; then
+	elif type pbcopy >/dev/null 2>&1; then
 		printf '%s' "$f" | pbcopy
 	fi
 }}
