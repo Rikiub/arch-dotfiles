@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# --- SYSTEM THEMES ---
+# --- GLOBAL GTK THEME ---
 
 # QT with GTK THEME compability
 # for "qt5ct" just put

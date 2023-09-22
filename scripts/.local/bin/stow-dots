@@ -2,23 +2,27 @@
 
 # Specified the dotfiles to install here
 DEFAULT_DOTS="default scripts shell arch-linux i3 pywal wayland-de"
+FOLDER_DOTS="scripts"
 
 DOTFILES_DIR="$HOME/dotfiles"
 GIT_DIR="--git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"
 STOW_DIR="--dotfiles --dir=$DOTFILES_DIR --target=$HOME"
 
 function show_usage {
-	echo "Usage: stow-dots [sync|push|both|list]"
+	echo "Usage: stow-dots [sync|push|both] [list]"
 }
 
 function sync {
 	echo "> Searching and fixing broken symlinks..."
 	find ${XDG_CONFIG_HOME:-$HOME/.config} -xtype l -delete
-	find $HOME/.local -xtype l -delete
+	find ${XDG_DATA_HOME:-$HOME/.local/share} -xtype l -delete
 
 	echo "> Syncing..."
 	stow $STOW_DIR \
 	$DEFAULT_DOTS
+
+	stow $STOW_DIR --no-folding \
+	$FOLDER_DOTS
 
 	# check if stow return error
 	if [ $? -ne 0 ]; then
@@ -47,7 +51,7 @@ function push {
 }
 
 function list {
-	ls -d $DOTFILES_DIR/* --group-directories-first --color
+	ls $DOTFILES_DIR --group-directories-first --color
 }
 
 # main

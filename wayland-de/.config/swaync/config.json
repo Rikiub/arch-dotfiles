@@ -137,7 +137,7 @@
 				"actions": [
 					{
 						"label": "  Switch Mode",
-						"command": "darkman toggle"
+						"command": "swaync-client -cp && darkman toggle"
 					}
 				]
 			}

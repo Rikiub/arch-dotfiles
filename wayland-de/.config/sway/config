@@ -20,7 +20,7 @@ include $sway/outputs
 include $sway/workspaces
 include $components/enabled/*
 
-# custom bar
+# custom bar command
 bar swaybar_command waybar
 
 # --- APPLETS ---
