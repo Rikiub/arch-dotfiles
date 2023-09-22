@@ -3,8 +3,8 @@
 # --- CONFIG ---
 
 # Specified the dotfiles to install here
-SINGLE_DOTS="default shell arch-linux i3 pywal wayland-de"
-FOLDER_DOTS="scripts"
+SINGLE_DOTS="default shell arch-linux pywal"
+FOLDER_DOTS="scripts wayland-de i3"
 
 # --- VARIABLES ---
 
