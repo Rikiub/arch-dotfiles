@@ -1,7 +1,11 @@
 theme = "monokai_pro"
 
+[editor]
+auto-format = true
+
 [editor.soft-wrap]
 enable = true
+wrap-indicator = ""
 
 [editor.indent-guides]
 render = false

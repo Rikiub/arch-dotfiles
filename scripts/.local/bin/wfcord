@@ -11,8 +11,6 @@ FILENAME="record_$(date +%Y-%-m-%-d_%-H-%-M-%-S)"
 VIDEO_DIR="$(xdg-user-dir VIDEOS)"
 OUTPUT="$VIDEO_DIR/$FILENAME"
 
-PID_FILE="${XDG_RUNTIME_DIR:-/run}"/wfcord.pid
-
 # Function to display the help message
 function show_help {
 	echo "Usage: wfcord [${modes[*]}] [${formats[*]}] [OPTIONS]"
