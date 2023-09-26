@@ -1,9 +1,28 @@
 #!/usr/bin/env sh
 
-# --- GLOBAL GTK THEME ---
+# --- USER PREFERENCES ---
+
+# Default Apps
+export EDITOR=helix
+export BROWSER=brave
+WAYLAND_TERM=foot
+X11_TERM=alacritty
+
+# Custom sort preference
+export LC_COLLATE=C
+
+# Detect desktop-session
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+	export TERM=$WAYLAND_TERM
+	export MOZ_ENABLE_WAYLAND=1
+elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
+	export TERM=$X11_TERM
+fi
+
+# --- GTK THEME ---
 
 # QT with GTK THEME compability
-# for "qt5ct" just put
+# for "qt5ct" just put "qt5ct"
 # for "gnome" you need install this packages: qgnomeplatform-qt5 qgnomeplatform-qt6
 export QT_QPA_PLATFORMTHEME=qt5ct
 
@@ -18,23 +37,6 @@ export GTK_CURSOR_LIGHT="Qogir"
 export GTK_CURSOR_DARK="Qogir"
 
 export GTK_FONT_NAME="11"
-
-# --- USER PREFERENCES ---
-
-# Detect desktop-session
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-	export TERM=foot
-	export MOZ_ENABLE_WAYLAND=1
-elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
-	export TERM=alacritty
-fi
-
-# default apps
-export EDITOR=helix
-export BROWSER=brave
-
-# Custom sort preference
-export LC_COLLATE=C
 
 # --- XDG Base Directory ---
 # https://wiki.archlinux.org/title/XDG_Base_Directory

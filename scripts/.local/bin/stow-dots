@@ -3,8 +3,8 @@
 # --- CONFIG ---
 
 # Specified the dotfiles to install here
-SINGLE_DOTS="default shell arch-linux pywal"
-FOLDER_DOTS="scripts wayland-de i3"
+SINGLE_DOTS="default pywal"
+FOLDER_DOTS="scripts shell wayland-sway i3"
 
 # --- VARIABLES ---
 
@@ -65,12 +65,12 @@ function install {
 	fix_links
 	echo ''
 
-	echo "> That will restow all your dots to make a fresh install. You are sure of proceed? (s/n)"
+	echo "> That will restow your dots to make a fresh install. You are sure of proceed? (s/n)"
 	read INPUT
 	echo ''
 
 	if [ $INPUT = "s" || $INPUT = "S" ]; then
-		echo "Starting installation..."
+		echo "Started installation."
 
 		$STOW --restow --no-folding \
 			$SINGLE_DOTS
