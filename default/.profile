@@ -5,28 +5,26 @@
 # Default Apps
 export EDITOR=helix
 export BROWSER=brave
-WAYLAND_TERM=foot
-X11_TERM=alacritty
+TERM_WAYLAND=foot
+TERM_X11=alacritty
 
 # Custom sort preference
 export LC_COLLATE=C
 
 # Detect desktop-session
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-	export TERM=$WAYLAND_TERM
+	export TERM=$TERM_WAYLAND
 	export MOZ_ENABLE_WAYLAND=1
 elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
-	export TERM=$X11_TERM
+	export TERM=$TERM_X11
 fi
 
 # --- GTK THEME ---
 
-# QT with GTK THEME compability
-# for "qt5ct" just put "qt5ct"
-# for "gnome" you need install this packages: qgnomeplatform-qt5 qgnomeplatform-qt6
-export QT_QPA_PLATFORMTHEME=qt5ct
+# QT with GTK compability
+export XDG_CURRENT_DESKTOP=GNOME
 
-# Custom GTK Variables. Uses for 'darkman' themes.
+# Custom GTK Variables. Used to "darkman" themes.
 export GTK_THEME_LIGHT="adw-gtk3"
 export GTK_THEME_DARK="adw-gtk3-dark"
 
@@ -46,7 +44,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# Add user PATH
+# User PATH
 export PATH="$HOME/.local/bin:$PATH"
 
 # Remove X11 files
