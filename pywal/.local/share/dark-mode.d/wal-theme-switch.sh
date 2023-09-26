@@ -1,12 +1,14 @@
 #!/usr/bin/env sh
 
-wait
-
 # --- VARS ---
 
-COLOR_SCHEME=$(gsettings get org.gnome.desktop.interface color-scheme)
-COLOR_SCHEME=$(echo $COLOR_SCHEME | sed "s/'//g")
-COLOR_SCHEME=$(echo $COLOR_SCHEME | sed -n 's/prefer-\(dark\|light\)/\1/p')
+if pgrep darkman >/dev/null; then
+  COLOR_SCHEME=$(darkman get)
+else
+  COLOR_SCHEME=$(gsettings get org.gnome.desktop.interface color-scheme)
+  COLOR_SCHEME=$(echo $COLOR_SCHEME | sed "s/'//g")
+  COLOR_SCHEME=$(echo $COLOR_SCHEME | sed -n 's/prefer-\(dark\|light\)/\1/p')
+fi
 
 echo "Swtiching to $COLOR_SCHEME"
 
@@ -36,5 +38,5 @@ elif [ -f $CURRENT_WALLPAPER ]; then
 
 # if nothing exist, got error. you need create a theme with "wal -i <path/to/image>"
 else
-  echo 'ERROR: Theme not founded. You need create a theme with "wal -i <path/to/image>"'
+  echo 'Theme not founded. You need create a theme with "wal -i <path/to/image>"'
 fi
