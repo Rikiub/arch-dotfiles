@@ -77,9 +77,6 @@ bindsym {
 	# --- DEV ---
 	
 	# reload the configuration file
-	$mod+Shift+c reload
-	
-	# restart sway inplace
 	$mod+Shift+r restart
 	
 	# --- USER ---

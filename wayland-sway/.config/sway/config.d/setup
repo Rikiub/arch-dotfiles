@@ -6,8 +6,8 @@ exec {
 		resume 'swaymsg "output * power on"'
 
 	# --- ETC ---
-	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1                     # polkit-gnome
-	/usr/lib/geoclue-2.0/demos/agent                                              # geoclue agent
+	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 # polkit-gnome
+	/usr/lib/geoclue-2.0/demos/agent                          # geoclue agent
 	
 	# --- SCRIPTS ---
 	$scripts/autotiling.py
