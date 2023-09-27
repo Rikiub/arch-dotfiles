@@ -47,7 +47,8 @@
 		}
 	},
 	"widgets": [
-		"menubar",
+		"buttons-grid",
+		"volume",
 		"title",
 		"notifications"
 	],
@@ -74,41 +75,37 @@
 			"image-radius": 30
 		},
 		"volume": {
-			"label": ""
+			"label": "",
+			"show-per-app": false
+		},
+		"backlight": {
+			"label": "󰌵"
+		},
+		"buttons-grid": {
+			"actions": [
+				{
+					"label": "",
+					"command": "darkman toggle"
+				},
+				{
+					"label": "",
+					"command": "swaync-client -cp && swaylock -f -c 000000"
+				},
+				{
+					"label": "",
+					"command": "loginctl terminate-session $XDG_SESSION_ID"
+				},
+				{
+					"label": "",
+					"command": "systemctl reboot"
+				},
+				{
+					"label": "",
+					"command": "systemctl poweroff"
+				}
+			]
 		},
 		"menubar": {
-			"menu#screenshot-buttons": {
-				"label": "",
-				"position": "left",
-				"actions": [
-					{
-						"label": "  Screenshot",
-						"command": "swaync-client -cp && grimshot --notify save anything $(xdg-user-dir PICTURES)/screenshot_$(date +%Y%m%d%H%M%S).png"
-					},
-					{
-						"label": "  Color picker",
-						"command": "swaync-client -cp && hyprpicker -a"
-					}
-				]
-			},
-			"menu#screencast-buttons": {
-				"label": "",
-				"position": "left",
-				"actions": [
-					{
-						"label": "  Record Screen (MP4+Audio)",
-						"command": "swaync-client -cp && wfcord output mp4 --audio"
-					},
-					{
-						"label": "󰈫  Record MP4",
-						"command": "swaync-client -cp && wfcord region mp4"
-					},
-					{
-						"label": "󰵸  Record GIF",
-						"command": "swaync-client -cp && wfcord region gif"
-					}
-				]
-			},
 			"menu#power-buttons": {
 				"label": "",
 				"position": "right",
@@ -128,16 +125,6 @@
 					{
 						"label": "  Lock",
 						"command": "swaync-client -cp && swaylock -f -c 000000"
-					}
-				]
-			},
-			"menu#app-buttons": {
-				"label": "󰀻",
-				"position": "left",
-				"actions": [
-					{
-						"label": "  Switch Mode",
-						"command": "swaync-client -cp && darkman toggle"
 					}
 				]
 			}

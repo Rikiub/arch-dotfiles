@@ -20,13 +20,13 @@
 
 .notification-row:focus,
 .notification-row:hover {
-	background: mix(black, @sn-bg, 0.8);
+	background: transparent;
 	border-radius: 30px;
 }
 
 .notification {
 	border-radius: 10px;
-	margin: 6px 12px;
+	margin: 6px 8px;
 	padding: 0;
 }
 
@@ -304,8 +304,8 @@
 
 .widget-volume {
 	background-color: @sn-bg;
-	padding: 8px;
-	margin: 8px;
+	padding: 0;
+	margin: 5px 8px;
 	border-radius: 15px;
 }
 
@@ -324,8 +324,8 @@
 /* Backlight widget */
 .widget-backlight {
 	background-color: @sn-bg;
-	padding: 8px;
-	margin: 8px;
+	padding: 0;
+	margin: 5px 8px;
 	border-radius: 12px;
 }
 
@@ -363,12 +363,13 @@
 	padding: 0px;
 	margin: 0px;
 	border-radius: 12px;
-	border: 1px solid @sn-border;
+	border: 1px solid transparent;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
 	background: @sn-fg;
-	border-radius: 12px;
+	padding: 1px 25px;
+	border-radius: 5px;
 	border: 1px solid @sn-border;
 }
 
@@ -393,32 +394,20 @@
 	border: 1px solid @sn-accent-bg-color;
 }
 
-.app-buttons,
-.screenshot-buttons,
-.screencast-buttons,
-.power-buttons,
-.config-buttons {
+.power-buttons {
 	margin: 5px 10px;
 	padding: 3px;
 	border: 1px solid @sn-border;
 	border-radius: 5px;
 }
 
-.app-buttons>button,
-.screenshot-buttons>button,
-.screencast-buttons>button,
-.power-buttons>button,
-.config-buttons>button {
+.power-buttons>button {
 	border-radius: 0px;
 	background: @sn-fg;
 	border: 1px solid @sn-border;
 }
 
-.app-buttons>button:hover,
-.screenshot-buttons>button:hover,
-.screencast-buttons>button:hover,
-.power-buttons>button:hover,
-.config-buttons>button:hover {
+.power-buttons>button:hover {
 	border-radius: 5px;
 	background: @sn-bg-hover;
 }

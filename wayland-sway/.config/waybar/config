@@ -18,11 +18,10 @@
 	],
 	"modules-right": [
 		"tray",
-		"custom/wf-recorder",
 		"pulseaudio",
 		"custom/swaync"
 	],
-	// Excluded: "battery", "memory", "network", "custom/launcher"
+	// Excluded: "battery", "memory", "network", "custom/launcher", "custom/wf-recorder"
 	// Modules configuration //
 	"sway/workspaces": {
 		"disable-scroll": false,

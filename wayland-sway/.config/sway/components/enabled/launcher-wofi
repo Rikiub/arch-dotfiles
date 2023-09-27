@@ -3,4 +3,4 @@ bindsym $mod+d \
 exec "pgrep wofi && : || wofi --show drun -a"
 
 bindsym $mod+period \
-exec "pgrep wofi && : || wofi-emoji"
+exec "pgrep wofi && : || ${wofi-emoji:-$scripts/wofi-emoji}"

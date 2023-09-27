@@ -3,8 +3,8 @@ xwayland enable
 
 # --- DIRECTORIES ---
 set $sway               ${XDG_CONFIG_HOME:-$HOME/.config}/sway
-set $scripts            $sway/scripts
 set $components         $sway/components
+set $scripts            $sway/scripts
 
 # --- VARIABLES ---
 # Time to screen off. Must be a integer. (Default: 600)
