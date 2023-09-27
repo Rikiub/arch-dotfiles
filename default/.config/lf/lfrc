@@ -5,23 +5,24 @@ set ifs "\n"
 
 set cursorpreviewfmt "\033[7;2m"
 set scrolloff 10 # leave some space at the top and the bottom of the screen
-set mouse "true"
-set icons
-set drawbox
+set mouse true
+set icons true
+set drawbox true
 set hidden false
 
+set sixel true
 set preview true
+
 set previewer ctpv
 set cleaner ctpvclear
-
 &ctpv -s $id
 &ctpvquit $id
 
 cmd open &xdg-open "$f"
 
 # Mappings
-map D trash
 map . set hidden!
+map D trash
 map x cut
 map y copy
 map p paste

@@ -2,6 +2,7 @@
 /home/sus/Música/Sountracks/Advance Wars Days of Ruin HQ - Gage - Proud Soldier.mp3
 /home/sus/Música/Sountracks/Advance Wars Days of Ruin HQ - Penny - Mr. Bear.mp3
 /home/sus/Música/Sountracks/Advance Wars Days of Ruin HQ - Tabitha - Cruel Rose.mp3
+/home/sus/Música/FNF/Nova Jhon - FnF 17 Bucks： Floor 1 - JEANS.m4a
 /home/sus/Música/FNF/FNF Entity - Promenade.m4a
 /home/sus/Música/FNF/FIGHT OR FLIGHT.m4a
 /home/sus/Música/FNF/FNF： Spooky's Saturday Scare - Cutout (FC).m4a
@@ -33,8 +34,10 @@
 /home/sus/Música/Future Funk/13eam5 - Flyday Chinatown Dance Mix.m4a
 /home/sus/Música/Gringo Rap/1nonly, Ciscaux, Wassup Rocker - DANCE!.m4a
 /home/sus/Música/Gringo Rap/1nonly - Stay With Me.m4a
+/home/sus/Música/FNF/sans. - my theme + MY COOL AND AWESOME THEME by 1up Cartoons - friday night fallen ost.m4a
 /home/sus/Música/Love & Horny/5 Seconds of Summer - Teeth.m4a
 /home/sus/Música/Love & Horny/5 Seconds of Summer - Easier.m4a
+/home/sus/Música/CRAZY/50 Cent - In Da Club.m4a
 /home/sus/Música/CRAZY/7oh2 - 6IXSPEED.m4a
 /home/sus/Música/HAPPY/a-ha - Take on Me.m4a
 /home/sus/Música/HAPPY/Aaron Smith - Dancin (feat. Luvli) - Krono Remix.m4a
@@ -66,6 +69,7 @@
 /home/sus/Música/FNF/Friday Night Trepidation (Original Game Soundtrack) - Endless Sleep.mp3
 /home/sus/Música/FNF/Friday Night Trepidation (Original Game Soundtrack) - Sleeping Tragedies.mp3
 /home/sus/Música/FNF/Friday Night Trepidation (Original Game Soundtrack) - Sweet Dreams are Made of Screams.mp3
+/home/sus/Música/Relaxing/Arctic Monkeys - 505.m4a
 /home/sus/Música/Pop Macarron/Ariana Grande - 7 rings.m4a
 /home/sus/Música/K-pop/ATEEZ - Cyberpunk.m4a
 /home/sus/Música/Cyberpunk/Atrey - Dark Prince (Final Cut).m4a
@@ -156,11 +160,13 @@
 /home/sus/Música/Sountracks/Cheshyre - MC9.m4a
 /home/sus/Música/Relaxing/Childish Gambino - Redbone.m4a
 /home/sus/Música/INDIE/CHROMANCE - Wrap Me In Plastic - Marcus Layton Radio Edit.m4a
+/home/sus/Música/FNF/Chuckle - Purin Vocal Recreation w⧸ Extra Pico Freestyling -  FNF Hypno's Lullaby.m4a
 /home/sus/Música/Strange/Chymes - See You in Hell.m4a
 /home/sus/Música/Vocaloid/CircusP - Copycat.m4a
 /home/sus/Música/ROCK/Citizen Soldier - Soldier.m4a
 /home/sus/Música/Strange/Cjbeards - Sweet Dreams.m4a
 /home/sus/Música/INDIE/Ck9c - Funtime Dance Floor.m4a
+/home/sus/Música/INDIE/Ck9c, Elizabeth Ann - Funtime Dance Floor.m4a
 /home/sus/Música/INDIE/Ck9c, Elizabeth Ann - You Can't Hide.m4a
 /home/sus/Música/ROCK/Cold Kingdom - Surrender.m4a
 /home/sus/Música/Relaxing/Coldplay - Yellow.m4a
@@ -170,9 +176,10 @@
 /home/sus/Música/HAPPY/Confetti - Right Now.m4a
 /home/sus/Música/Pop Macarron/Coolio, L.V. - Gangsta's Paradise.m4a
 /home/sus/Música/K-pop/Crush - Rush Hour (Feat. j-hope of BTS).m4a
-/home/sus/Música/Vocaloid/Crusher-P - Echo.m4a
 /home/sus/Música/Vocaloid/Crusher-P - Propaganda!.m4a
 /home/sus/Música/Love & Horny/Crypto, Jake Daniels - Hayloft.m4a
+/home/sus/Música/LATAM Power/Cultura Profética - Ilegal.m4a
+/home/sus/Música/LATAM Power/Cultura Profética - La Complicidad.m4a
 /home/sus/Música/LATAM Power/Daddy Yankee - Ella Me Levanto.m4a
 /home/sus/Música/HAPPY/Daft Punk - Around the World.m4a
 /home/sus/Música/Pop Macarron/Daft Punk - Around the World.m4a
@@ -190,7 +197,10 @@
 /home/sus/Música/CRAZY/DAZI - Machiavelli.m4a
 /home/sus/Música/NCS Electro/Deaf Kev - Invincible.m4a
 /home/sus/Música/Vocaloid/DECO27 - The Vampire.m4a
+/home/sus/Música/J-pop/DEMONDICE - Alkatraz.m4a
+/home/sus/Música/J-pop/DEMONDICE - You're an Ace, Kid.m4a
 /home/sus/Música/J-pop/DEMONDICE - Hazy Skyscraper.m4a
+/home/sus/Música/J-pop/DEMONDICE - Wannabe.m4a
 /home/sus/Música/INDIE/Derivakat - Pomegranate Lips.m4a
 /home/sus/Música/INDIE/Derivakat - REVIVED.m4a
 /home/sus/Música/Future Funk/Desired - Lost.m4a
@@ -223,6 +233,7 @@
 /home/sus/Música/Pop Macarron/Doja Cat - Woman.m4a
 /home/sus/Música/Pop Macarron/Doja Cat, The Weeknd - You Right.m4a
 /home/sus/Música/Pop Macarron/Doja Cat - Vegas (From the Original Motion Picture Soundtrack ELVIS).m4a
+/home/sus/Música/HAPPY/Dominic Fike - Babydoll.m4a
 /home/sus/Música/Cyberpunk/Donbor - Against the Law.m4a
 /home/sus/Música/NCS Electro/Dot Exe, Meg & Dia - Monster.m4a
 /home/sus/Música/Strange/Dove Cameron - Breakfast.m4a
@@ -268,6 +279,7 @@
 /home/sus/Música/FNF/[FNF] Full-Body Amputation — Spooky's Saturday Scare.m4a
 /home/sus/Música/FNF/[FNF] Rigor Chorus — Spooky's Saturday Scare.m4a
 /home/sus/Música/ROCK/Escape the Fate - One For the Money.m4a
+/home/sus/Música/Pop Macarron/Estelle, Kanye West - American Boy.m4a
 /home/sus/Música/INDIE/Esteman - Mr. Trance.m4a
 /home/sus/Música/K-pop/EVERGLOW - DUN DUN.m4a
 /home/sus/Música/K-pop/EXO - Lotto.m4a
@@ -301,7 +313,6 @@
 /home/sus/Música/FNF/FNF：Late Night City Tales - Chapter 1 OST： Broken Heart - Sharon.m4a
 /home/sus/Música/FNF/FNF：Late Night City Tales - Chapter 1 OST： Secret Marilee - Red.m4a
 /home/sus/Música/Love & Horny/Full Tac, Lil Mariko, Rico Nasty - SIMP.m4a
-/home/sus/Música/Sountracks/Pizza Tower OST - It's Pizza Time!.m4a
 /home/sus/Música/INDIE/GargØynes music - Short Dick Man - GarØynes Remix.m4a
 /home/sus/Música/K-pop/GEMINI - MIA (Feat. CAMO, WOODZ).m4a
 /home/sus/Música/Vocaloid/Ghost and Pals, Silver Chord Music - Candle Queen.m4a
@@ -318,7 +329,6 @@
 /home/sus/Música/INDIE/Green A - Exorcismo.m4a
 /home/sus/Música/INDIE/Green A - Mundo Hipócrita.m4a
 /home/sus/Música/INDIE/Green A - Tragedia de Amor.m4a
-/home/sus/Música/Relaxing/Grover Washington, Jr. - Just the Two of Us.m4a
 /home/sus/Música/Gringo Rap/HAARPER - Bungee Gum.m4a
 /home/sus/Música/Gringo Rap/HAARPER, Luga - Drop It Like It's Hot!.m4a
 /home/sus/Música/J-pop/Hachioji P, Giga, Hatsune Miku, Kagamine Rin - Gimme×Gimme feat. 初音ミク・鏡音リン.m4a
@@ -436,8 +446,11 @@
 /home/sus/Música/K-pop/KDA, Madison Beer, (G)I-DLE, Lexie Liu, Jaira Burns, Seraphine, League of Legends - MORE.m4a
 /home/sus/Música/K-pop/KDA, Madison Beer, (G)I-DLE, Jaira Burns, League of Legends - POPSTARS.m4a
 /home/sus/Música/Love & Horny/Kali Uchis - Moonlight.m4a
+/home/sus/Música/Love & Horny/Kali Uchis - telepatía.m4a
+/home/sus/Música/Relaxing/Kali Uchis - telepatía.m4a
 /home/sus/Música/J-pop/Kanaria - Rendezvous.m4a
 /home/sus/Música/J-pop/KANKAN, FAKE TYPE. - Bloody Mary.m4a
+/home/sus/Música/K-pop/KARD - CAKE.m4a
 /home/sus/Música/FNF/Friday Night Funkin', Vol. 1 (Original Game Soundtrack) - Blammed.mp3
 /home/sus/Música/FNF/Friday Night Funkin', Vol. 1 (Original Game Soundtrack) - Dad Battle.mp3
 /home/sus/Música/FNF/Friday Night Funkin', Vol. 1 (Original Game Soundtrack) - Philly Nice.mp3
@@ -509,7 +522,12 @@
 /home/sus/Música/Cyberpunk/Magnus Deus - Ghost in The Shell - Hyper House edit.m4a
 /home/sus/Música/Cyberpunk/Makeup And Vanity Set - Implant.m4a
 /home/sus/Música/K-pop/MAMAMOO - HIP.m4a
+/home/sus/Música/GLITCH-MIND/Maple - Connection 2 Heaven.m4a
+/home/sus/Música/GLITCH-MIND/Maple - Fairytales.m4a
+/home/sus/Música/GLITCH-MIND/Maple - Green Tea.m4a
 /home/sus/Música/GLITCH-MIND/Maple - Lovemall.m4a
+/home/sus/Música/GLITCH-MIND/Maple - Serenity.m4a
+/home/sus/Música/GLITCH-MIND/Maple - That's So Silly of You.m4a
 /home/sus/Música/Vocaloid/Maretu - Mind brand.m4a
 /home/sus/Música/Relaxing/Mareux - The Perfect Girl.m4a
 /home/sus/Música/Pop Macarron/Mark Ronson - Uptown Funk (feat. Bruno Mars).m4a
@@ -536,8 +554,8 @@
 /home/sus/Música/INDIE/MiatriSs - Take Me! - Helltaker Song.m4a
 /home/sus/Música/Sountracks/Doom Eternal OST - The Only Thing they Fear is You (Mick Gordon).mp3
 /home/sus/Música/Strange/Mickey Valen, Emily Vaughn - My Mind.m4a
-/home/sus/Música/INDIE/Migos, Timbaland - Dem Jeans.m4a
 /home/sus/Música/Future Funk/Mikazuki BIGWAVE - Emotional Prism.m4a
+/home/sus/Música/FNF/Mike Geno - Turn-Bass - BPM Song (Friday Night Funkin, Parappa the Rapper, Scratchin' Melodii).m4a
 /home/sus/Música/FNF/Casanova - Friday Night Funkin' Selever Mod Original Soundtrack - Casanova - Friday Night Funkin' Selever Mod Original Soundtrack.mp3
 /home/sus/Música/FNF/Friday Night Funkin' Mid-Fight Masses Original Soundtrack - Gospel.mp3
 /home/sus/Música/FNF/Friday Night Funkin' Mid-Fight Masses Original Soundtrack - Worship.mp3
@@ -546,11 +564,13 @@
 /home/sus/Música/FNF/Too Clergy (Sarv and Ruv Duet) - Friday Night Funkin' Mid-Fight Masses - Too Clergy (Sarv and Ruv Duet) - Friday Night Funkin' Mid-Fight Masses.mp3
 /home/sus/Música/Relaxing/Mild High Club - Homage.m4a
 /home/sus/Música/Hotline Miami/Mire. - Bury.m4a
+/home/sus/Música/K-pop/MISAMO - Do not touch.m4a
 /home/sus/Música/CRAZY/Mishashi Sensei - IN THE CLUB.m4a
 /home/sus/Música/Strange/Mitchel Dae - Innocent.m4a
 /home/sus/Música/Strange/Mitchel Dae - pSyChOsIs.m4a
 /home/sus/Música/Sountracks/Mittsies - Alchemy.mp3
 /home/sus/Música/Sountracks/Mittsies - Titanium.mp3
+/home/sus/Música/Vocaloid/宮下遊 miy_yuu ⧸ Official Channel - トラフィック・ジャム　歌ってみた／宮下遊.m4a
 /home/sus/Música/J-pop/Moe Shop - GHOST FOOD (feat. TORIENA).m4a
 /home/sus/Música/J-pop/Moe Shop, Jamie Paige, Shiki-TMNS - Love Taste.m4a
 /home/sus/Música/J-pop/Moe Shop, maisou - Lovesick.m4a
@@ -568,9 +588,6 @@
 /home/sus/Música/ROCK/Mother Mother - Wrecking Ball.m4a
 /home/sus/Música/FNF/[Spooky's Saturday Scare] Off The Goop +FLP.sync-conflict-20230403-001836-Y4GRZOK.m4a
 /home/sus/Música/FNF/[Spooky’s Saturday Scare] Septicemia.m4a
-/home/sus/Música/Sountracks/MrZushi - Dodge (Concept Character Theme) (Arte by Sludgetoons).m4a
-/home/sus/Música/Sountracks/MrZushi - Fuhai (OC Theme) (Art by KototheKoto & OC of ZeRoBeAt98).m4a
-/home/sus/Música/Sountracks/MrZushi - Teacher Siren (Concept Theme) (Art by SGTXavi).m4a
 /home/sus/Música/Sountracks/HamillUn - HOTLINEJ YEAHAMI.m4a
 /home/sus/Música/CRAZY/MUPP - Betrayal.m4a
 /home/sus/Música/CRAZY/MUPP - FTP.m4a
@@ -601,6 +618,7 @@
 /home/sus/Música/NCS Electro/NEFFEX - Destiny.m4a
 /home/sus/Música/NCS Electro/NEFFEX - Fight Back.m4a
 /home/sus/Música/NCS Electro/NEFFEX - Grateful.m4a
+/home/sus/Música/FNF/sans. - tribulation by neobeat (ft. redtv53) - friday night fallen ost.m4a
 /home/sus/Música/Strange/Neoni - LOSER.m4a
 /home/sus/Música/INDIE/NerViSon - Objection Funk! - Remix.m4a
 /home/sus/Música/Hotline Miami/Nightstop - Dangerous Desires.m4a
@@ -671,7 +689,6 @@
 /home/sus/Música/Relaxing/Powfu, beabadoobee - death bed (coffee for your head).m4a
 /home/sus/Música/NCS Electro/Poylow, BAUWZ, Nito-Onna - Hate You.m4a
 /home/sus/Música/CRAZY/Prompto - Japanese Stutter.m4a
-/home/sus/Música/FNF/Friday Night Funkin’ Hypno's Lullaby - Pasta Night.mp3
 /home/sus/Música/J-pop/Pure Gem - moe shoppu lovu tastu is tha weh.m4a
 /home/sus/Música/Strange/Pussy Riot, Slayyyter - HATEFUCK.m4a
 /home/sus/Música/Strange/Pussy Riot, ILOVEMAKONNEN - PLASTIC.m4a
@@ -701,6 +718,7 @@
 /home/sus/Música/K-pop/Red Velvet - BYE BYE.m4a
 /home/sus/Música/Strange/REI AMI - RUNAWAY.m4a
 /home/sus/Música/NCS Electro/RetroVision - Puzzle.m4a
+/home/sus/Música/HAPPY/Rex Orange County - Television  So Far So Good.m4a
 /home/sus/Música/Hotline Miami/Reznyck - MCV.m4a
 /home/sus/Música/Pop Macarron/Rihanna, JAY-Z - Umbrella.m4a
 /home/sus/Música/Pop Macarron/Rihanna - S&M.m4a
@@ -777,6 +795,8 @@
 /home/sus/Música/FNF/Twinsomnia (FNF Mod Original Soundtrack) - Boogieman.m4a
 /home/sus/Música/INDIE/SomeThingElseyt - I'm Something Else.m4a
 /home/sus/Música/Cyberpunk/Sonic Mayhem, Power Glove - Futureland.m4a
+/home/sus/Música/FNF/Senpi- - FNF ： Hypno's lullaby v3 - Fatigue (Fanmade).m4a
+/home/sus/Música/K-pop/STAYC - POPPY - Japanese Ver..m4a
 /home/sus/Música/Strange/StayLoose, Bryce Fox - Sociopath.m4a
 /home/sus/Música/Strange/Stela Cole - I Shot Cupid.m4a
 /home/sus/Música/Strange/Stela Cole - Love Like Mine.m4a
@@ -799,6 +819,7 @@
 /home/sus/Música/Strange/Sub Urban - Cirque.m4a
 /home/sus/Música/Strange/Sub Urban - Freak (feat. REI AMI).m4a
 /home/sus/Música/Strange/Sub Urban - Isolate.m4a
+/home/sus/Música/FNF/Sugar Moon - SACRIFICE - Oneshot Mania： DEIMOS UPDATE OST (+ FLP).m4a
 /home/sus/Música/Relaxing/Surf Curse - Freaks.m4a
 /home/sus/Música/Future Funk/SwuM - Bay City.m4a
 /home/sus/Música/NCS Electro/Syn Cole - Feel Good.m4a
@@ -807,6 +828,7 @@
 /home/sus/Música/Love & Horny/TAEMIN - Advice.m4a
 /home/sus/Música/Love & Horny/TAEMIN - MOVE.m4a
 /home/sus/Música/Love & Horny/TAEMIN - Drip Drop.m4a
+/home/sus/Música/J-pop/Tatsuya Kitani - 化け猫 - Leaks From His Laptop.m4a
 /home/sus/Música/J-pop/TeddyLoid - Fly Away.m4a
 /home/sus/Música/J-pop/TeddyLoid - Theme for Scanty & Knee Socks.m4a
 /home/sus/Música/FNF/FNF Vs. Tabi - Genocide.m4a
@@ -842,6 +864,7 @@
 /home/sus/Música/NCS Electro/TheFatRat - Monody (feat. Laura Brehm).m4a
 /home/sus/Música/NCS Electro/TheFatRat - Unity.m4a
 /home/sus/Música/NCS Electro/TheFatRat - Xenogenesis.m4a
+/home/sus/Música/FNF/TheInnuendoVEVO - Pasta Night (ft. punkett & iKenny) ｜ Friday Night Funkin'： Lullaby V2 OST.m4a
 /home/sus/Música/FNF/TheInnuendo - Isotope - Remastered.m4a
 /home/sus/Música/FNF/Prisoner of the Void (VS AGOTI Friday Night Funkin' Mod Original Soundtrack) - A.G.O.T.I.mp3
 /home/sus/Música/FNF/Prisoner of the Void (VS AGOTI Friday Night Funkin' Mod Original Soundtrack) - Parasite.mp3
@@ -913,10 +936,12 @@
 /home/sus/Música/HAPPY/WILLOW - Wait a Minute!.m4a
 /home/sus/Música/Pop Macarron/WILLOW - Wait a Minute!.m4a
 /home/sus/Música/Future Funk/Wingy - City Nights.m4a
+/home/sus/Música/FNF/Xolotl - Friday Night Fallen - Date-Fight.m4a
 /home/sus/Música/Relaxing/Yippes - D4DJ Club.m4a
 /home/sus/Música/LATAM Power/Yo.Soy.Rey, Akapellah - Fumando Con Marciano II.m4a
 /home/sus/Música/Love & Horny/Yorxe - Down With Me.m4a
 /home/sus/Música/Future Funk/Yung Bae - Selfish High Heels (feat. Macross 82-99 & Harrison).m4a
+/home/sus/Música/FNF/speedybrodie - Friday Night Fallen OST - POSTMORTEM.m4a
 /home/sus/Música/FNF/Friday Night Funkin' Online Vs. OST - ROADKILL.m4a
 /home/sus/Música/J-pop/ZUTOMAYO - 残機.m4a
 /home/sus/Música/Future Funk/マドロスMERCURY - Cupcake Break.m4a
