@@ -21,7 +21,7 @@
 		"pulseaudio",
 		"custom/swaync"
 	],
-	// Excluded: "battery", "memory", "network", "custom/launcher", "custom/wf-recorder"
+	// Excluded: "battery", "memory", "network", "custom/wf-recorder"
 	// Modules configuration //
 	"sway/workspaces": {
 		"disable-scroll": false,
@@ -119,16 +119,6 @@
 	"custom/swaync": {
 		"format": "󱗼",
 		"on-click": "swaync-client -t",
-		"tooltip": false
-	},
-	"custom/power": {
-		"format": "",
-		"on-click": "wlogout -p layer-shell",
-		"tooltip": false
-	},
-	"custom/launcher": {
-		"format": "󱗼",
-		"on-click": "wofi -show drun",
 		"tooltip": false
 	}
 }

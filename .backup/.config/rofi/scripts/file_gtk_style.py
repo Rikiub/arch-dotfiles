@@ -20,14 +20,14 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gio, GLib, Gtk
 
-#Converts from rgba <GTK R, G, B> to hex #RRGGBB
+# Converts from rgba <GTK R, G, B> to hex #RRGGBB
 def rgba_to_hex(color):
 	return "#{0:02x}{1:02x}{2:02x}".format(int(color.red * 255), int(color.green * 255), int(color.blue * 255))
 
 window = Gtk.Window()
 style_context = window.get_style_context()
 
-#List of style contexts
+# List of style contexts
 lists = [
 	# gtk-3.0 Default
 	'theme_bg_color', 'theme_fg_color',
@@ -37,7 +37,7 @@ lists = [
 	'info_bg_color', 'info_fg_color',
 	'error_bg_color',
 
-	# gtk-4.0 | Supported by adw-gtk3 theme and Gradience.
+	# gtk-4.0 | Supported by adw-gtk3 theme and Gradience
 	"accent_color", "accent_bg_color",
 	"window_bg_color", "window_fg_color",
 	"view_bg_color", "view_fg_color",

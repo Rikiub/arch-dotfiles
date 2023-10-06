@@ -1,17 +1,7 @@
-@define-color sn-accent-color @accent_color;
-@define-color sn-accent-bg-color @accent_bg_color;
-
-@define-color sn-text @view_fg_color;
-@define-color sn-text-disable darker(@view_fg_color);
-@define-color sn-bg @view_bg_color;
-@define-color sn-fg @window_bg_color;
-@define-color sn-bg-focus mix(@sn-accent-color, @sn-bg, 0.7);
-@define-color sn-bg-hover mix(@sn-accent-color, @sn-bg, 0.7);
-@define-color sn-border @shade_color;
-
 * {
 	font-family: Symbols Nerd Font Mono, FontAwesome;
-	color: @sn-text;
+	color: @view_fg_color;
+	color: @theme_text_color;
 }
 
 .notification-row {
@@ -57,8 +47,8 @@
 }
 
 .close-button {
-	background: @sn-bg;
-	color: @sn-text;
+	background: @view_bg_color;
+	background: @theme_bg_color;
 	text-shadow: none;
 	padding: 0;
 	border-radius: 100%;
@@ -71,28 +61,32 @@
 }
 
 .close-button:hover {
-	box-shadow: none;
-	background: mix(@sn-accent-color, @sn-bg, 0.8);
-	transition: all 0.15s ease-in-out;
+	background: mix(@window_bg_color, @accent_color, 0.5);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
 	border: none;
+	transition: all 0.15s ease-in-out;
+	box-shadow: none;
 }
 
 .notification-default-action,
 .notification-action {
+	background: @window_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	padding: 4px;
 	margin: 0;
 	box-shadow: none;
-	background: @sn-fg;
-	border: 1px solid @sn-border;
-	color: @text-color;
 	transition: all 0.15s ease-in-out;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
 	-gtk-icon-effect: none;
-	background: @sn-bg-hover;
-	border: 1px solid lighter(@sn-border);
+	background: mix(@window_bg_color, @accent_color, 0.5);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 }
 
 .notification-default-action {
@@ -119,7 +113,8 @@
 
 .notification-action:last-child {
 	border-bottom-right-radius: 10px;
-	border-right: 1px solid @sn-border;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 }
 
 .inline-reply {
@@ -127,29 +122,30 @@
 }
 
 .inline-reply-entry {
-	background: @sn-fg;
-	color: @sn-text;
-	caret-color: @sn-text;
-	border: 1px solid @sn-border;
+	background: @view_bg_color;
+	background: @theme_bg_color;
+	caret-color: @view_fg_color;
+	caret-color: @theme_text_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	border-radius: 12px;
 }
 
 .inline-reply-button {
-	margin-left: 4px;
-	background: @noti-bg;
-	border: 1px solid @sn-border;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	border-radius: 12px;
-	color: @sn-text;
+	margin-left: 4px;
 }
 
 .inline-reply-button:disabled {
 	background: initial;
-	color: @sn-text-disable;
 	border: 1px solid transparent;
 }
 
 .inline-reply-button:hover {
-	background: @sn-bg-hover;
+	background: mix(@view_bg_color, @accent_color, 0.3);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.3);
 }
 
 .image {}
@@ -164,7 +160,6 @@
 	font-size: 16px;
 	font-weight: bold;
 	background: transparent;
-	color: @sn-text;
 	text-shadow: none;
 }
 
@@ -172,7 +167,6 @@
 	font-size: 13px;
 	font-weight: bold;
 	background: transparent;
-	color: @sn-text;
 	text-shadow: none;
 	margin-right: 1px;
 }
@@ -181,13 +175,14 @@
 	font-size: 15px;
 	font-weight: normal;
 	background: transparent;
-	color: @sn-text;
 	text-shadow: none;
 }
 
 .control-center {
-	background: @sn-bg;
-	border: solid 1px @sn-border;
+	background: @view_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	border-radius: 30px;
 	padding: 10px;
 }
@@ -218,17 +213,19 @@
 }
 
 .widget-title>button {
+	background: @window_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	font-size: initial;
-	color: @sn-text;
 	text-shadow: none;
-	background: @sn-fg;
-	border: 1px solid @sn-border;
 	box-shadow: none;
 	border-radius: 12px;
 }
 
 .widget-title>button:hover {
-	background: @sn-bg-hover;
+	background: mix(@window_bg_color, @accent_color, 0.5);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
 }
 
 /* DND widget */
@@ -238,19 +235,23 @@
 }
 
 .widget-dnd>switch {
-	font-size: initial;
+	background: @window_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	border-radius: 12px;
-	background: @sn-bg;
-	border: 1px solid @sn-border;
 	box-shadow: none;
+	font-size: initial;
 }
 
 .widget-dnd>switch:checked {
-	background: @bg-selected;
+	background: mix(@window_bg_color, @accent_color, 0.5);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
 }
 
 .widget-dnd>switch slider {
-	background: @sn-bg-hover;
+	background: mix(@window_bg_color, @accent_color, 0.3);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.3);
 	border-radius: 12px;
 }
 
@@ -269,7 +270,8 @@
 }
 
 .widget-mpris-player {
-	background: @sn-fg;
+	background: @window_bg_color;
+	background: @theme_bg_color;
 	padding: 8px;
 	margin: 8px 0px;
 	border-radius: 12px;
@@ -303,7 +305,7 @@
 /* Volume widget */
 
 .widget-volume {
-	background-color: @sn-bg;
+	background: transparent;
 	padding: 0;
 	margin: 5px 8px;
 	border-radius: 15px;
@@ -311,11 +313,12 @@
 
 .widget-volume>box>button {
 	background: transparent;
+	background-color: red;
 	border: none;
 }
 
 .per-app-volume {
-	background-color: @sn-accent;
+	background: transparent;
 	padding: 4px 8px 8px 8px;
 	margin: 0px 8px 8px 8px;
 	border-radius: 12px
@@ -323,7 +326,7 @@
 
 /* Backlight widget */
 .widget-backlight {
-	background-color: @sn-bg;
+	background: transparent;
 	padding: 0;
 	margin: 5px 8px;
 	border-radius: 12px;
@@ -336,17 +339,19 @@
 }
 
 .widget-inhibitors>button {
+	background: @window_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	font-size: initial;
-	color: @sn-text;
 	text-shadow: none;
-	background: @sn-bg;
-	border: 1px solid @sn-border;
 	box-shadow: none;
 	border-radius: 12px;
 }
 
 .widget-inhibitors>button:hover {
-	background: @sn-bg-hover;
+	background: mix(@window_bg_color, @accent_color, 0.5);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
 }
 
 
@@ -367,47 +372,60 @@
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
-	background: @sn-fg;
+	background: @window_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	padding: 1px 25px;
 	border-radius: 5px;
-	border: 1px solid @sn-border;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-	background: @sn-bg-hover;
-	border: 1px solid @sn-accent-bg-color;
+	background: mix(@window_bg_color, @accent_color, 0.5);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 }
 
 /* Menubar widget */
 .widget-menubar>box>.menu-button-bar>button {
-	background: @sn-fg;
-	border: 1px solid @sn-border;
+	background: @window_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	margin: 5px 3px;
 }
 
 .widget-menubar>box>.menu-button-bar>button:hover {
-	border: 1px solid @sn-accent-bg-color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 }
 
 .widget-menubar>box>.menu-button-bar>button:focus {
-	background: @sn-bg-focus;
-	border: 1px solid @sn-accent-bg-color;
+	background: @window_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 }
 
 .power-buttons {
 	margin: 5px 10px;
 	padding: 3px;
-	border: 1px solid @sn-border;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	border-radius: 5px;
 }
 
 .power-buttons>button {
 	border-radius: 0px;
-	background: @sn-fg;
-	border: 1px solid @sn-border;
+	background: @window_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 }
 
 .power-buttons>button:hover {
 	border-radius: 5px;
-	background: @sn-bg-hover;
+	background: @window_bg_color;
+	background: @theme_bg_color;
 }

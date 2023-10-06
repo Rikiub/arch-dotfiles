@@ -1,26 +1,17 @@
-@define-color wb-accent-color @accent_color;
-@define-color wb-accent-bg-color @accent_bg_color;
-
-@define-color wb-text @view_fg_color;
-@define-color wb-background @view_bg_color;
-@define-color wb-border @shade_color;
-
 * {
 	font-family: Symbols Nerd Font Mono, FontAwesome;
 	border-radius: 30px;
-	color: @wb-text;
+	color: @view_fg_color;
+	color: @theme_text_color;
 }
 
 window#waybar {
 	background: transparent;
 }
 
-#workspaces,
 #custom-wf-recorder,
 #custom-swaync,
-#custom-date,
-#custom-launcher,
-#custom-power,
+#workspaces,
 #bluetooth,
 #clock,
 #battery,
@@ -32,8 +23,10 @@ window#waybar {
 #mpris.playing,
 #mpris.paused,
 #mpris.stopped {
-	background: @wb-background;
-	border: 1px solid @wb-border;
+	background: @view_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	padding: 0px 10px;
 }
 
@@ -48,34 +41,40 @@ window#waybar {
 	min-width: 25px;
 }
 
-#workspaces button.focused,
 #custom-swaync,
-#custom-power {
-	background: mix(@wb-background, @wb-accent-color, 0.5);
+#workspaces button.focused {
+	background: mix(@view_bg_color, @accent_color, 0.5);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
 }
 
 #workspaces button:hover {
-	background: mix(@wb-background, @wb-accent-color, 0.3);
+	background: mix(@view_bg_color, @accent_color, 0.3);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.3);
 }
 
 tooltip {
-	background: @wb-background;
-	border: 1px solid @wb-border;
+	background: @window_bg_color;
+	background: @theme_bg_color;
+	border: 1px solid shade(@theme_selected_fg_color, 0.5);
+	border: 1px solid shade(@accent_color, 0.5);
 	border-radius: 10px;
 }
 
 #pulseaudio.muted {
-	color: mix(@wb-text, gray, 0.5);
+	color: mix(@view_fg_color, gray, 0.5);
+	color: mix(@theme_text_color, gray, 0.5);
 }
 
 @keyframes mpris-blink {
 	to {
-		background-color: mix(@wb-background, @wb-accent-color, 0.9);
+		background: mix(@view_bg_color, @accent_color, 0.9);
+		background: mix(@theme_bg_color, @theme_selected_bg_color, 0.9);
 	}
 }
 
 #mpris.playing {
-	background: mix(@wb-background, @wb-accent-color, 0.6);
+	background: mix(@view_bg_color, @accent_color, 0.5);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
 	animation-name: mpris-blink;
 	animation-duration: 2.0s;
 	animation-timing-function: linear;
@@ -85,7 +84,8 @@ tooltip {
 
 #mpris.paused,
 #mpris.stopped {
-	background: mix(@wb-background, @wb-accent-color, 0.3);
+	background: mix(@view_bg_color, @accent_color, 0.3);
+	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.3);
 }
 
 @keyframes wf-record-blink {

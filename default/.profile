@@ -34,7 +34,7 @@ export GTK_ICON_DARK="Papirus-Dark"
 export GTK_CURSOR_LIGHT="Qogir"
 export GTK_CURSOR_DARK="Qogir"
 
-export GTK_FONT_NAME="11"
+export GTK_FONT_NAME="Ubuntu 11"
 
 # --- XDG Base Directory ---
 # https://wiki.archlinux.org/title/XDG_Base_Directory

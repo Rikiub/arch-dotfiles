@@ -36,7 +36,6 @@ bindsym {
 
 	# kill focused window
 	$mod+Shift+q kill
-	$mod+q       kill
 	$mod+F4      kill
 
 	# --- LAYOUT ---
@@ -76,8 +75,8 @@ bindsym {
 	
 	# --- DEV ---
 	
-	# reload the configuration file
-	$mod+Shift+r restart
+	# reload sway config
+	$mod+Shift+r reload
 	
 	# --- USER ---
 	

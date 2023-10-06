@@ -2,7 +2,7 @@
 # VERSION: 3.0
 SETUVAR --export YOURNAL_DIR:/home/sus/Obsidian/Calendario/
 SETUVAR --export YOURNAL_DIRECTORY:/home/sus/Obsidian/Calendario/
-SETUVAR --export YOURNAL_TEMPLATE:/home/sus/Obsidian/Atlas/Utilidades/Plantillas/Plantilla\x2c\x20Calendario\x2c\x20D\u00eda\x2emd
+SETUVAR --export YOURNAL_TEMPLATE:/home/sus/Obsidian/Atlas/Extras/Plantillas/Plantilla\x2c\x20Calendario\x2c\x20D\u00eda\x2emd
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
