@@ -69,7 +69,7 @@ rm -f $HOME/.python_history
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 	export TERM=$TERM_WAYLAND
-	export QT_QPA_PLATFORM=wayland
+	export QT_QPA_PLATFORM=wayland-egl
 	export ECORE_EVAS_ENGINE=wayland_egl
 	export ELM_ENGINE=wayland_egl
 	export SDL_VIDEDRIVER=wayland

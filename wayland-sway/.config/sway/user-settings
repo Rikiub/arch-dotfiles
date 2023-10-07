@@ -10,13 +10,15 @@ xwayland enable
 # --- AUTOSTART ---
 
 # System
+## Essensial utilities
 exec {
 	nm-applet
 	blueman-applet
 }
 
 # User
+## I recommend uses dex to autostart your apps, but also you can initizalize its from here
+## https://wiki.archlinux.org/title/XDG_Autostart
 exec {
-	gammastep-indicator
-	syncthing-gtk
+	
 }
