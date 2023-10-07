@@ -1,33 +1,14 @@
-# --- OTHERS ---
-xwayland enable
+# DO NOT MODIFY THIS FILE
 
 # --- DIRECTORIES ---
 set $sway               ${XDG_CONFIG_HOME:-$HOME/.config}/sway
 set $components         $sway/components
 set $scripts            $sway/scripts
 
-# --- VARIABLES ---
-# Time to screen off. Must be a integer. (Default: 600)
-set $swayidle_timeout 600
-
-# Time to active screenlock. Must be a integer. (Default: 1000)
-set $swayidle_lock 1000
-
-# --- STARTUP ---
+# --- IMPORT ---
+include $sway/user-config
 include $sway/config.d/*
 include $sway/input
 include $sway/outputs
 include $sway/workspaces
 include $components/enabled/*
-
-# custom bar command
-bar swaybar_command waybar
-
-# --- APPLETS ---
-exec {
-	nm-applet
-	blueman-applet
-
-	gammastep-indicator
-	syncthing-gtk
-}

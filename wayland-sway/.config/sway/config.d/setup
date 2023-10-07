@@ -1,9 +1,15 @@
+# Custom bar command
+bar swaybar_command waybar
+
 exec {
-	# --- DEFAULT ---
+	# Screensaver and lockscreen
 	swayidle -w \
 		timeout $swayidle_lock 'swaylock -f -c 000000' \
 		timeout $swayidle_timeout 'swaymsg "output * power off"' \
 		resume 'swaymsg "output * power on"'
+
+	# GTK slow startup fix
+	exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 	# --- ETC ---
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 # polkit-gnome

@@ -1,0 +1,22 @@
+# Time to screen off (Default: 600)
+set $swayidle_timeout 600
+
+# Time to active screenlock (Default: 1000)
+set $swayidle_lock 1000
+
+# enable | disable Xwayland support
+xwayland enable
+
+# --- AUTOSTART ---
+
+# System
+exec {
+	nm-applet
+	blueman-applet
+}
+
+# User
+exec {
+	gammastep-indicator
+	syncthing-gtk
+}

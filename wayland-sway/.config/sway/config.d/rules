@@ -1,66 +1,44 @@
-# Display window as floating. Find out wayland app_id with "swaymsg -t get_tree | jq '.' | grep app_id" and xorg class with xprop
-
 for_window {
-
-	# --OTHERS--
-	[shell="xwayland"] title_format "%title [XWayland]"
-
-	# --FIX POPUP--
-	[window_role="pop-up"] floating enable
-	[window_role="bubble"] floating enable
-	[window_role="task_dialog"] floating enable
-	[window_role="About"] floating enable
-	[window_role="Preferences"] floating enable
-	[window_role="GtkFileChooserDialog"] resize set 590 340
-	[window_role="GtkFiileChooserDialog"] move position center
-	[window_type="dialog"] floating enable
-	[window_type="menu"] floating enable
-	[title="^Open File$"] floating enable
-	[title="Save File"] floating enable
-	[title="File Operation Progress"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
-	[title="(?i)(?:copying|deleting|moving)"] floating enable
-	[title="(?:Open|Save) (?:File|Folder|As)"] floating enable; sticky enable
-	[title="(?:Abrir|Guardar) (?:Archivo|Carpeta|Como)"] floating enable; sticky enable
-	[title="(?:Confirmar|Remplazar|Progreso)"] floating enable; sticky enable
-	[app_id="floating"] floating enable
-	[app_id="floating_update"] floating enable, resize set width 1000px height 600px
-	[app_id="floating_shell_portrait"] floating enable, border pixel 1, sticky enable, resize set width 30 ppt height 40 ppt
-	[app_id="floating_shell"] floating enable, border pixel 1, sticky enable
-
-	# --FLOATING--
-	[app_id="(?i)(?:galculator|gsimplecal|org.gnome.Calculator|qalculate-gtk|qalculate-qt)"] floating enable
-	[app_id="file-roller"] floating enable
-	[app_id="azote"] floating enable
-	[app_id="nm-connection-editor"] floating enable
-	[app_id="nm-openconnect-auth-dialog"] floating enable
-	[app_id="pavucontrol"] floating enable; sticky enable, resize set width 50 ppt height 60 ppt
-	[app_id="(?i)(?:blueberry.py|blueman-manager|blueman-adapters|blueman-sendto)"] floating enable
-	[app_id="zenity"] floating enable
-	[app_id="xdm-app"] floating enable
-
-	[app_id="ristretto"] floating enable, resize set width 50 ppt height 80 ppt
-	[app_id="gthumb"] floating enable
-	[app_id="imv"] floating enable
-	[app_id="org.gnome.Meld"] floating enable
-	[app_id="com.github.hluk.copyq"] floating enable, resize set width 50 ppt height 80 ppt; sticky enable
-
 	# MULTIMEDIA
-	[app_id="com.github.neithern.g4music"] floating enable
-	[title="Preferencias"] floating enable
-	[class="Catapult"] floating enable
-
-	[app_id="(?i)(?:firefox|chromium|brave-browser|microsoft-edge|vivaldi-stable)"] inhibit_idle fullscreen; border none; max_render_time off
-	[app_id="firefox" title="Library"] floating enable, border pixel 1, sticky enable
-	[app_id="(?i)(?:mpv|vlc)"] inhibit_idle visible; border none; max_render_time off
-	[title="mpvfloat"] floating enable
+	## web
+	[app_id="(?i)(?:firefox|chromium|brave-browser|microsoft-edge|vivaldi-stable)"] inhibit_idle fullscreen, max_render_time off
+	## video player
+	[app_id="(?i)(?:mpv|vlc)"] inhibit_idle fullscreen, max_render_time off
+	## music player
+	[app_id="(?i)(?:com.github.neithern.g4music)"] floating enable
+	## images
+	[app_id="(?i)(?:ristretto|gthumb|imv)"] floating enable
+	## calculator
+	[app_id="(?i)(?:galculator|gsimplecal|org.gnome.Calculator|qalculate-gtk|qalculate-qt)"] floating enable
+	
+	# UTILITIES
+	[app_id="flameshot"] floating enable
+	[app_id="yad"] floating enable
+	[class="yad"] floating enable
+	[app_id="org.gnome.Meld"] floating enable
+	[app_id="com.github.hluk.copyq"] floating enable, sticky enable
+	[app_id="gnome-disks"] floating enable
+	[app_id="com.github.GradienceTeam.Gradience"] floating enable
+	[app_id="nwg-look"] floating enable
+	[class="lxappearance"] floating enable
+	[app_id="wpg"] floating enable
+	[app_id="azote"] floating enable
+	
+	# MESSAGING
 	[app_id="telegramdesktop"] floating enable
 	[app_id="telegramdesktop" title="Telegram"] floating disable
-	[class="Anydesk"] inhibit_idle visible; border none;
-
-	[class=".*.exe"] inhibit_idle fullscreen; floating enable; border none
-	[class="gamescope"] inhibit_idle fullscreen; floating enable; border none
-
-	# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+	[class="Anydesk"] inhibit_idle visible
+	[app_id="evolution-alarm-notify"] floating enable
+	[app_id="(?i)Thunderbird" title=".*Reminder"] floating enable
+	[app_id="zoom"] floating enable
+	[app_id="zoom" title="Choose ONE of the audio conference options"] floating enable
+	[app_id="zoom" title="zoom"] floating enable
+	[app_id="zoom" title="Zoom Meeting"] floating disable
+	[app_id="zoom" title="Zoom - Free Account"] floating disable
+	[class="^zoom$"] floating enable
+	
+	# GAMES
+	[instance="origin.exe"] floating enable
 	[class="^Steam$" title="^Friends$"] floating enable
 	[class="^Steam$" title="Steam - News"] floating enable
 	[class="^Steam$" title=".* - Chat"] floating enable
@@ -71,57 +49,37 @@ for_window {
 	[class="^Steam$" title="^Screenshot Uploader$"] floating enable
 	[class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 	[title="^Steam Keyboard$"] floating enable
-	[class="steam_app.*"] inhibit_idle fullscreen; floating enable; border none
-	[class="Steam"] floating enable; max_render_time off
-
-	[title="Cambio de nombre en masa"] floating enable
-	[title="Picture in picture"] floating enable; sticky enable
-	[class="(?i)pinentry"] floating enable
-	[class="yad"] floating enable
-	[app_id="yad"] floating enable
-	[app_id="(?i)Thunderbird" title=".*Reminder"] floating enable
-	[title="Thunderbird Preferences"] floating enable
-	[title="About Mozilla Firefox"] floating enable
-	[title="Page Info - .*"] floating enable
-	[title=".*kdbx - KeePass"] floating enable, resize set 1276px 814px
-	[class="KeePass2"] floating enable
-	[class="KeyStore Explorer"] floating enable
-	[app_id="virt-manager"] floating enable
-	[app_id="xfce-polkit"] floating enable
-	[instance="origin.exe"] floating enable
-	[title="Manage KeeAgent.*"] floating enable
-	[class="ConkyKeyboard"] floating enable
-	[class="Gufw.py"] floating enable
-	[app_id="keepassxc"] floating enable, resize set 1276px 814px
-	[class="^zoom$"] floating enable
-	[app_id="tlp-ui"] floating enable
-	[title=".*Kee - Mozilla Firefox"] floating enable
-	[class="davmail-DavGateway"] floating enable
-	[title="Open Database File"] floating enable
-	[app_id="evolution-alarm-notify"] floating enable
-	[title="TeamSpeak 3"] floating enable
-	[class="ATLauncher"] floating enable
-	[app_id="pamac-manager"] floating enable
-	[app_id="flameshot"] floating enable
-	[title="Firefox - Choose User Profile" ] floating enable
+	[class="steam_app.*"] inhibit_idle fullscreen, floating enable
+	[class="Steam"] floating enable, max_render_time off
+	[class="gamescope"] inhibit_idle fullscreen, floating enable
+	[class="Catapult"] floating enable
+	[class=".*.exe"] inhibit_idle fullscreen, floating enable
 	
-	[app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-	[app_id="gnome-disks"] floating enable
-	
+	# SYSTEM
+	[app_id="(?i)(?:blueberry.py|blueman-manager|blueman-adapters|blueman-sendto)"] floating enable
+	[app_id="qt5ct"] floating enable
+	[app_id="gnome-tweaks"] floating enable
 	[app_id="wdisplays"] floating enable
 	[app_id="nwg-displays"] floating enable
 	[app_id="nwg-shell-config"] floating enable
+	[app_id="file-roller"] floating enable
+	[app_id="zenity"] floating enable
+	[app_id="xdm-app"] floating enable
+	[app_id="nm-connection-editor"] floating enable
+	[app_id="nm-openconnect-auth-dialog"] floating enable
+	[app_id="pavucontrol"] floating enable, sticky enable
 	
-	[app_id="nwg-look"] floating enable, resize set width 580px height 480px
-	[class="lxappearance"] floating enable
-	[app_id="com.github.GradienceTeam.Gradience"] floating enable
-	[app_id="wpg"] floating enable
-	[app_id="qt5ct"] floating enable
-	[app_id="gnome-tweaks"] floating enable
-
-	[app_id="zoom"] floating enable
-	[app_id="zoom" title="Choose ONE of the audio conference options"] floating enable
-	[app_id="zoom" title="zoom"] floating enable
-	[app_id="zoom" title="Zoom Meeting"] floating disable
-	[app_id="zoom" title="Zoom - Free Account"] floating disable
+	# FIX
+	[window_role="GtkFileChooserDialog"] floating enable
+	[window_role="pop-up"] floating enable
+	[window_role="bubble"] floating enable
+	[window_role="task_dialog"] floating enable
+	[window_role="About"] floating enable
+	[window_role="Preferences"] floating enable
+	[window_type="dialog"] floating enable
+	[window_type="menu"] floating enable
+	[app_id="floating"] floating enable
+	[app_id="floating_update"] floating enable
+	[app_id="floating_shell_portrait"] floating enable, sticky enable
+	[app_id="floating_shell"] floating enable, sticky enable
 }
