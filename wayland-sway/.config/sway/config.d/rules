@@ -12,6 +12,7 @@ for_window {
 	[app_id="(?i)(?:galculator|gsimplecal|org.gnome.Calculator|qalculate-gtk|qalculate-qt)"] floating enable
 	
 	# UTILITIES
+	[app_id="org.keepassxc.KeePassXC"] floating enable
 	[app_id="flameshot"] floating enable
 	[app_id="yad"] floating enable
 	[class="yad"] floating enable
@@ -23,7 +24,7 @@ for_window {
 	[class="lxappearance"] floating enable
 	[app_id="wpg"] floating enable
 	[app_id="azote"] floating enable
-	
+		
 	# MESSAGING
 	[app_id="telegramdesktop"] floating enable
 	[app_id="telegramdesktop" title="Telegram"] floating disable
