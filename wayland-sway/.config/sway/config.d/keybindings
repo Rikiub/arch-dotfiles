@@ -153,6 +153,10 @@ bindcode $mod+Shift+80 move container to workspace number $ws8
 bindcode $mod+Shift+81 move container to workspace number $ws9
 bindcode $mod+Shift+90 move container to workspace number $ws10
 
+# touch gestures
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
+
 # --- RESIZE ---
 
 mode "resize" {

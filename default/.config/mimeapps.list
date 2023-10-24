@@ -22,3 +22,4 @@ inode/directory=pcmanfm.desktop;
 text/*=geany.desktop;
 text/plain=geany.desktop;
 x-scheme-handler/terminal=org.codeberg.dnkl.footclient.desktop;
+x-scheme-handler/anytype=anytype.desktop
