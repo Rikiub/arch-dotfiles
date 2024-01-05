@@ -1,5 +1,5 @@
+indicator-idle-visible
 indicator-caps-lock
-indicator
 indicator-radius=100
 indicator-thickness=10
 inside-color=00000088

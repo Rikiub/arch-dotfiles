@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # --- CONFIG ---
 
 # Specified the dotfiles to install here
-SINGLE_DOTS="default pywal scripts"
-FOLDER_DOTS="shell wayland-sway i3"
+SINGLE_DOTS="default scripts"
+FOLDER_DOTS="shell wayland-env wayland-sway"
 
 # --- VARIABLES ---
 
@@ -65,11 +65,11 @@ function install {
 	fix_links
 	echo ''
 
-	echo "> That will restow your dots to make a fresh install. You are sure of proceed? (s/n)"
+	echo "> That will restow your dots to make a fresh install. You are sure of proceed? (s/N)"
 	read INPUT
 	echo ''
 
-	if [ $INPUT = "s" || $INPUT = "S" ]; then
+	if [[ $INPUT = "s" || $INPUT = "S" ]]; then
 		echo "Started installation."
 
 		$STOW --restow --no-folding \

@@ -14,7 +14,10 @@ export LC_COLLATE=C
 # --- GTK THEME ---
 
 # QT with GTK style
-export XDG_CURRENT_DESKTOP=GNOME
+# export XDG_CURRENT_DESKTOP=GNOME
+
+# Fix libadwaita applications
+export ADW_DISABLE_PORTAL=1
 
 # Custom GTK Variables. Used to "darkman" themes.
 export GTK_THEME_LIGHT="adw-gtk3"
@@ -35,35 +38,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # XDG Base Directory
 # https://wiki.archlinux.org/title/XDG_Base_Directory
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME="$HOME/.config"
+if command -v antidot &> /dev/null; then
+	eval "$(antidot init -s bash)"
+fi
 
-# Move config locations
-export ZDOTDIR="$XDG_CONFIG_HOME"/zsh                                     # ZSH config
-export GNUPGHOME="$XDG_DATA_HOME"/gnupg                                   # GNU Privacy Guard
-export HISTFILE="$XDG_STATE_HOME"/bash/history                            # bash history
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java   # .java folder
-
-# -- CLEANUP ---
-
-# Remove X11 files
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
-rm -f $HOME/.xsession-errors
-rm -f $HOME/.Xauthority
-
-# .android folder created by ADB
-export ANDROID_HOME="$XDG_DATA_HOME"/android                           
-rm -rf $HOME/.android
-rm -rf $HOME/.fastboot
-
-# Others
-rm -rf $HOME/.dmrc
-rm -rf $HOME/.w3m
-rm -rf $HOME/.pki
-rm -f $HOME/.python_history
+rm -f .xsession-errors .xsession-errors.old
 
 # --- DESKTOP-SESSION ---
 

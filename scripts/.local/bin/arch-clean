@@ -1,46 +1,57 @@
 #!/usr/bin/env sh
 
-SEP_COLOR="31"
-TEXT_COLOR="33"
+# Auxiliar variables
+COLOR_SEP="31"
+COLOR_TEXT="33"
 
-SEP="\e[0;${SEP_COLOR}m"
-TEXT="\e[1;${TEXT_COLOR}m"
-END="\e[0m"
+# Colors. Each color line must end with `COLOR_END`.
+COLOR_SEP="\e[0;${COLOR_SEP}m"
+COLOR_TEXT="\e[1;${COLOR_TEXT}m"
+COLOR_END="\e[0m"
+
+# Templates
+TMP_SEP="${COLOR_SEP}=====${COLOR_END}"
 
 # this script must be executed on Arch Linux or a distribution with "pacman" package manager.
 if command -v pacman >/dev/null 2>&1; then
 	:
 else
-	echo "You aren't on Arch Linux system because 'pacman' is not installed."
+	echo "You aren't inin a Arch Linux system because 'pacman' is not installed."
 	exit 1
 fi
 
 echo ''
-echo -e "${SEP}======${END} ${TEXT} Sudo Privileges ${END} ${SEP}=====${END}"
+echo -e "${TMP_SEP} ${COLOR_TEXT} Sudo Privileges ${COLOR_END} ${TMP_SEP}"
 echo ''
-sudo echo 'Done'
+sudo echo -e "${COLOR_TEXT}Done${COLOR_END}"
 
 echo ''
-echo -e "${SEP}======${END} ${TEXT} Clean (Pacman|Yay) Cache ${END} ${SEP}=====${END}"
+echo -e "${TMP_SEP} ${COLOR_TEXT} Clear Pacman Cache ${COLOR_END} ${TMP_SEP}"
+echo ''
+
+DEFAULT_ARGS="-Sc --noconfirm"
+
 if command -v yay >/dev/null 2>&1; then
-	echo ''
-	echo -e "${TEXT}Cleaning 'yay' cache...${END}"
-	echo ''
-	yay -Sc --noconfirm
-fi
-if command -v paru >/dev/null 2>&1; then
-	echo ''
-	echo -e "${TEXT}Cleaning 'paru' cache...${END}"
-	echo ''
-	paru -Sc --noconfirm
+	HELPER_COMMAND="yay $DEFAULT_ARGS"
+	HELPER_NAME="Yay"
+elif command -v paru >/dev/null 2>&1; then
+	HELPER_COMMAND="paru $DEFAULT_ARGS"
+	HELPER_NAME="Paru"
+else
+	HELPER_COMMAND="sudo pacman $DEFAULT_ARGS"
+	HELPER_NAME="Pacman"
 fi
 
+echo -e "${COLOR_TEXT}Cleaning with '$HELPER_NAME'${COLOR_END}"
 echo ''
-echo -e "${SEP}======${END} ${TEXT} Removing unused packages ${END} ${SEP}=====${END}"
-echo ''
-pacman -Qtdq | sudo pacman -Rns -              # remove cache
-pacman -Qqd  | sudo pacman -Rsu -              # remove optional/circular dependences
+$HELPER_COMMAND
 
 echo ''
-echo -e "${SEP}======${END} ${TEXT} Optimizations completed ${END} ${SEP}=====${END}"
+echo -e "${TMP_SEP} ${COLOR_TEXT} Removing unused packages ${COLOR_END} ${TMP_SEP}"
+echo ''
+pacman -Qtdq | sudo pacman -Rns - # remove cache
+pacman -Qqd  | sudo pacman -Rsu - # remove optional/circular dependencies
+
+echo ''
+echo -e "${TMP_SEP} ${COLOR_TEXT} Optimizations completed ${COLOR_END} ${TMP_SEP}"
 echo ''
