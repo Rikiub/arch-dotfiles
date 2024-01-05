@@ -7,4 +7,4 @@ Icon=preferences-desktop-wallpaper
  
 [X-Action-Profile pywal]
 MimeTypes=image/jpeg;image/png
-Exec=wal -i %f
+Exec=wal -qts -i %f
