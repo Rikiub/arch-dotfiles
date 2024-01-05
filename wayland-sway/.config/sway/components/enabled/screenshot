@@ -11,6 +11,6 @@ bindsym {
 	exec $grimshot --notify save anything $screenshot
 
 	# Color picker
-	$mod+Shift+c \
+	$mod+Shift+p \
 	exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
 }

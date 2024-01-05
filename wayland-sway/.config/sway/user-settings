@@ -17,7 +17,7 @@ exec {
 }
 
 # User
-## I recommend uses dex to autostart your apps, but also you can initizalize from here
+## I recommend use dex to autostart your apps, but also you can initizalize from here
 ## https://wiki.archlinux.org/title/XDG_Autostart
 exec {
 	gammastep-indicator

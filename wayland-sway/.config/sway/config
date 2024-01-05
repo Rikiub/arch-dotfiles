@@ -1,4 +1,4 @@
-# DO NOT MODIFY THIS FILE
+# DO NOT MODIFY THIS FILE AND DO NOT DELETE ITS FILES
 
 # --- DIRECTORIES ---
 set $sway               ${XDG_CONFIG_HOME:-$HOME/.config}/sway

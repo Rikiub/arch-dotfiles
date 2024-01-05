@@ -59,8 +59,8 @@ bindsym {
 	# --- MEDIA KEYS ---
 	
 	# brightness
-	XF86MonBrightnessDown exec brightnessctl set 5%-
-	XF86MonBrightnessUp exec brightnessctl set 5%+
+	--locked XF86MonBrightnessDown exec brightnessctl set 5%-
+	--locked XF86MonBrightnessUp exec brightnessctl set 5%+
 	
 	# audio
 	--locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
@@ -76,7 +76,7 @@ bindsym {
 	# --- DEV ---
 	
 	# reload sway config
-	$mod+Shift+r reload
+	$mod+Shift+c reload
 	
 	# --- USER ---
 	
