@@ -3,7 +3,7 @@
 # --- CONFIG ---
 
 # Specified the dotfiles to install here
-SINGLE_DOTS="default scripts"
+SINGLE_DOTS="default scripts pywal"
 FOLDER_DOTS="shell wayland-env wayland-sway"
 
 # --- VARIABLES ---
