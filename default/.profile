@@ -42,18 +42,18 @@ if command -v antidot &> /dev/null; then
 	eval "$(antidot init -s bash)"
 fi
 
-rm -f .xsession-errors .xsession-errors.old
+rm -f .xsession-errors .xsession-errors.old .dmrc
 
 # --- DESKTOP-SESSION ---
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 	export TERM=$TERM_WAYLAND
+	export MOZ_ENABLE_WAYLAND=1
 	export QT_QPA_PLATFORM=wayland-egl
 	export ECORE_EVAS_ENGINE=wayland_egl
 	export ELM_ENGINE=wayland_egl
 	export SDL_VIDEODRIVER=wayland
 	export _JAVA_AWT_WM_NONREPARENTING=1
-	export MOZ_ENABLE_WAYLAND=1
 elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
 	export TERM=$TERM_X11
 fi
