@@ -13,10 +13,10 @@ set hidden false
 set sixel true
 set preview true
 
-#set previewer ctpv
-#set cleaner ctpvclear
-#&ctpv -s $id
-#&ctpvquit $id
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
 
 cmd open &xdg-open "$f"
 
@@ -48,9 +48,9 @@ cmd copy-to-clipboard ${{
 	# Linux - Wayland
 	if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 		if wl-copy < "$f"; then
-      :
-    else
-      wl-copy "$f"
+      		:
+    	else
+     		 wl-copy "$f"
 	fi
 
 	# Linux - X11
