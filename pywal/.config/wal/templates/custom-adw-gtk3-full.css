@@ -1,3 +1,4 @@
+@define-color theme_selected_bg_color {color1};
 @define-color accent_color {color1};
 @define-color accent_bg_color darker({color1});
 @define-color window_bg_color mix(white, {background}, 0.95);
