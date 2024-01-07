@@ -28,27 +28,10 @@
 	"hide-on-clear": false,
 	"hide-on-action": true,
 	"script-fail-notify": true,
-	"scripts": {
-		"example-script": {
-			"exec": "echo 'Do something...'",
-			"urgency": "Normal"
-		},
-		"example-action-script": {
-			"exec": "echo 'Do something actionable!'",
-			"urgency": "Normal",
-			"run-on": "action"
-		}
-	},
-	"notification-visibility": {
-		"example-name": {
-			"state": "muted",
-			"urgency": "Low",
-			"app-name": "Spotify"
-		}
-	},
 	"widgets": [
 		"buttons-grid",
 		"volume",
+		"backlight",
 		"title",
 		"notifications"
 	],

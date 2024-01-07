@@ -270,10 +270,10 @@
 }
 
 .widget-mpris-player {
-	background: @window_bg_color;
-	background: @theme_bg_color;
-	padding: 8px;
-	margin: 8px 0px;
+	background: darker(@window_bg_color);
+	background: darker(@theme_bg_color);
+	padding: 10px;
+	margin: 0px 10px;
 	border-radius: 12px;
 }
 

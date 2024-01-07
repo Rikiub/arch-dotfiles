@@ -1,6 +1,6 @@
 * {
 	font-family: Symbols Nerd Font Mono, FontAwesome;
-	border-radius: 30px;
+	border-radius: 10px;
 	color: @view_fg_color;
 	color: @theme_text_color;
 }
@@ -9,7 +9,6 @@ window#waybar {
 	background: transparent;
 }
 
-#custom-wf-recorder,
 #custom-swaync,
 #workspaces,
 #bluetooth,
@@ -28,6 +27,7 @@ window#waybar {
 	border: 1px solid shade(@theme_selected_fg_color, 0.5);
 	border: 1px solid shade(@accent_color, 0.5);
 	padding: 0px 10px;
+	margin: 0 2px;
 }
 
 #workspaces {
@@ -60,6 +60,8 @@ tooltip {
 	border-radius: 10px;
 }
 
+#bluetooth.off,
+#bluetooth.disabled,
 #pulseaudio.muted {
 	color: mix(@view_fg_color, gray, 0.5);
 	color: mix(@theme_text_color, gray, 0.5);
@@ -88,18 +90,10 @@ tooltip {
 	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.3);
 }
 
-@keyframes wf-record-blink {
-	to {
-		background-color: red;
-		color: black;
-	}
+#battery.warning {
+	color: #F5A97F;
 }
 
-#custom-wf-recorder {
-	color: red;
-	animation-name: wf-record-blink;
-	animation-duration: 1.0s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+#battery.critical {
+	color: #E78284;
 }

@@ -1,6 +1,6 @@
 {
-	// Documentation: https://github.com/Alexays/Waybar/wiki //
-	"layer": "bottom", //top, bottom
+	// Documentation: https://github.com/Alexays/Waybar/wiki
+	"layer": "bottom",
 	"position": "top",
 	"height": 0,
 	"spacing": 10,
@@ -18,28 +18,33 @@
 	],
 	"modules-right": [
 		"tray",
-		"pulseaudio",
+		"group/cpanel",
 		"custom/swaync"
 	],
-	// Excluded: "battery", "memory", "network", "custom/wf-recorder"
-	// Modules configuration //
+	"group/cpanel": {
+		"orientation": "inherit",
+		"modules": [
+			"pulseaudio",
+			"battery"
+		]
+	},
 	"sway/workspaces": {
 		"disable-scroll": false,
-		"all-outputs": false,
+		"all-outputs": false
 	},
 	"tray": {
-		"spacing": 10,
+		"spacing": 5,
+		"show-passive-items": false,
 		"reverse-direction": true
 	},
 	"battery": {
 		"states": {
 			"warning": 30,
-			"critical": 15,
+			"critical": 15
 		},
 		"format": "{icon} {capacity}%",
 		"format-charging": "󰂄 {capacity}%",
 		"format-plugged": "󰂄 {capacity}%",
-		"format-alt": "{time} {icon}",
 		"format-full": "󱈑 {capacity}%",
 		"format-icons": [
 			"󱊡",
@@ -47,12 +52,23 @@
 			"󱊣"
 		]
 	},
+	"bluetooth": {
+		"format": " {status}",
+		"format-on": " on",
+		"format-off": " off",
+		"format-disabled": "",
+		"format-connected": " {device_alias}",
+		"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+	},
 	"network": {
 		"format-wifi": " {essid}",
 		"format-disconnected": "󰖪 Disconnected",
 		"format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈁",
 		"format-linked": "{ifname} (No IP) 󰈁",
-		//"format-alt": "{ifname}: {ipaddr}/{cidr}",
 		"on-click": "networkmanager_dmenu",
 		"on-click-right": "nm-connection-editor"
 	},
@@ -100,21 +116,11 @@
 			"paused": "󰏤",
 			"stopped": "󰓛",
 		},
-		//"ignored-players": ["firefox"],
 		"interval": 2
 	},
 	"memory": {
 		"interval": 30,
 		"format": "󰍛 {}%"
-	},
-	"custom/wf-recorder": {
-		"format": "{}",
-		"tooltip": false,
-		"interval": "once",
-		"exec": "echo '󰻂'",
-		"exec-if": "pgrep 'wf-recorder'",
-		"on-click": "wfcord",
-		"signal": 8
 	},
 	"custom/swaync": {
 		"format": "󱗼",
