@@ -90,10 +90,15 @@ tooltip {
 	background: mix(@theme_bg_color, @theme_selected_bg_color, 0.3);
 }
 
-#battery.warning {
+#battery.charging,
+#battery.plugged {
+	color: #26A65B;
+}
+
+#battery.warning:not(.charging) {
 	color: #F5A97F;
 }
 
-#battery.critical {
+#battery.critical:not(.charging) {
 	color: #E78284;
 }
