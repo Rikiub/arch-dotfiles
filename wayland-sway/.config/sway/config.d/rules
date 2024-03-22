@@ -12,8 +12,11 @@ for_window {
 	[app_id="(?i)(?:galculator|gsimplecal|org.gnome.Calculator|qalculate-gtk|qalculate-qt)"] floating enable
 	
 	# UTILITIES
+
+	# source: https://github.com/flameshot-org/flameshot/blob/master/docs/Sway%20and%20wlroots%20support.md
+	[app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
+
 	[app_id="org.keepassxc.KeePassXC"] floating enable
-	[app_id="flameshot"] floating enable
 	[app_id="yad"] floating enable
 	[class="yad"] floating enable
 	[app_id="org.gnome.Meld"] floating enable

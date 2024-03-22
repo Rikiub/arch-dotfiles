@@ -19,11 +19,19 @@ exec {
 	# --- SCRIPTS ---
 	$scripts/autotiling.py
 	$scripts/inactive-windows-transparency.py
-
-	# --- FIX ---
-	# systemd user enviroment integration
-	# fix GTK apps slow startup
-	systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
-	hash dbus-update-activation-environment 2>/dev/null && \
-    	dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 }
+
+# --- FIX ---
+# systemd user environment
+# set XDG_CURRENT_DESKTOP and fix slow GTK apps launch.
+exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment DISPLAY \
+                                         SWAYSOCK \
+                                         WAYLAND_DISPLAY \
+                                         XDG_CURRENT_DESKTOP
+
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY \
+                                                  SWAYSOCK \
+                                                  XDG_CURRENT_DESKTOP=sway \
+                                                  WAYLAND_DISPLAY
