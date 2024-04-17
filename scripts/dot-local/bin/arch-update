@@ -1,0 +1,44 @@
+#!/usr/bin/env sh
+
+# Auxiliar variables
+COLOR_SEP="31"
+COLOR_TEXT="33"
+
+# Colors. Each color line must end with `COLOR_END`.
+COLOR_SEP="\e[0;${COLOR_SEP}m"
+COLOR_TEXT="\e[1;${COLOR_TEXT}m"
+COLOR_END="\e[0m"
+
+# Templates
+TMP_SEP="${COLOR_SEP}=====${COLOR_END}"
+
+if command -v yay >/dev/null 2>&1; then
+	MANAGER="yay"
+elif command -v paru >/dev/null 2>&1; then
+	MANAGER="paru"
+else
+	MANAGER="sudo pacman"
+fi
+
+echo ''
+echo -e "${TMP_SEP} ${COLOR_TEXT} Sudo Privileges ${COLOR_END} ${TMP_SEP}"
+echo ''
+sudo echo -e "${COLOR_TEXT}Done${COLOR_END}"
+
+echo ''
+echo -e "${TMP_SEP} ${COLOR_TEXT} Updating System ${COLOR_END} ${TMP_SEP}"
+echo ''
+echo -e "${COLOR_TEXT}PACKAGE MANAGER:${COLOR_END} $HELPER"
+echo ''
+$MANAGER -Syu
+
+if command -v flatpak >/dev/null 2>&1; then
+	echo ''
+	echo -e "${TMP_SEP} ${COLOR_TEXT} Updating Flatpak ${COLOR_END} ${TMP_SEP}"
+	echo ''
+	flatpak update
+fi
+
+echo ''
+echo -e "${TMP_SEP} ${COLOR_TEXT} Update Completed ${COLOR_END} ${TMP_SEP}"
+echo ''
