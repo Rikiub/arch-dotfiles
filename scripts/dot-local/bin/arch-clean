@@ -16,7 +16,7 @@ TMP_SEP="${COLOR_SEP}=====${COLOR_END}"
 if command -v pacman >/dev/null 2>&1; then
 	:
 else
-	echo "You aren't inin a Arch Linux system because 'pacman' is not installed."
+	echo "You aren't in a Arch Linux system because comamnd 'pacman' is not founded."
 	exit 1
 fi
 
@@ -42,16 +42,16 @@ else
 	HELPER_NAME="Pacman"
 fi
 
-echo -e "${COLOR_TEXT}Cleaning with '$HELPER_NAME'${COLOR_END}"
+echo -e "${COLOR_TEXT}Clean with '$HELPER_NAME'${COLOR_END}"
 echo ''
 $HELPER_COMMAND
 
 echo ''
-echo -e "${TMP_SEP} ${COLOR_TEXT} Removing unused packages ${COLOR_END} ${TMP_SEP}"
+echo -e "${TMP_SEP} ${COLOR_TEXT} Remove unused packages ${COLOR_END} ${TMP_SEP}"
 echo ''
 pacman -Qtdq | sudo pacman -Rns - # remove cache
 pacman -Qqd  | sudo pacman -Rsu - # remove optional/circular dependencies
 
 echo ''
-echo -e "${TMP_SEP} ${COLOR_TEXT} Optimizations completed ${COLOR_END} ${TMP_SEP}"
+echo -e "${TMP_SEP} ${COLOR_TEXT} Optimizations Completed ${COLOR_END} ${TMP_SEP}"
 echo ''
