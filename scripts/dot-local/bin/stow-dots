@@ -19,7 +19,7 @@ function show_usage {
 }
 
 function sync {
-	echo "> Syncing..."
+	echo "> Sync..."
 
 	$STOW --no-folding \
 		$SINGLE_DOTS
