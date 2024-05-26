@@ -2,9 +2,9 @@
 
 # --- CONFIG ---
 
-# Specified the dotfiles to install here
-SINGLE_DOTS="default scripts pywal"
-FOLDER_DOTS="shell wayland-env wayland-sway"
+# Dotfiles to install
+SINGLE_DOTS="scripts shell default wayland-env"
+FOLDER_DOTS="wayland-sway"
 
 # --- VARIABLES ---
 
@@ -18,69 +18,83 @@ function show_usage {
 	echo "Usage: stow-dots [help] [sync|push|both] [list] [fix] [install]"
 }
 
-function sync {
-	echo "> Sync..."
-
-	$STOW --no-folding \
-		$SINGLE_DOTS
-	$STOW \
-		$FOLDER_DOTS
-
-	# check if stow return error
-	if [ $? -ne 0 ]; then
-		echo "ERROR: Stow threw a error"
-		exit 1
-	fi
-
-	echo "> Completed dotfiles sync"
+function log {
+	echo "> $1"
 }
 
-function push {
-	echo "> Start git"
-
-	# push to my github account
-	$GIT add .
-	$GIT commit -m "Update"
-	$GIT push
-
-	# check if git return error
-	if [ $? -ne 0 ]; then
-		echo "ERROR: Git threw a error"
-		exit 1
-	fi
-
-	echo "> Completed dotfiles push"
+function log_error {
+	log "ERROR: $1"
 }
 
 function list {
 	ls $DOTFILES --group-directories-first --color
 }
 
-function fix_links {
-	echo "> Search and delete broken symlinks..."
+function sync {
+	log "Sync."
+
+	$STOW --no-folding \
+		$SINGLE_DOTS
+	$STOW \
+		$FOLDER_DOTS
+
+	# Check if stow return error.
+	if [ $? -ne 0 ]; then
+		log_error "Stow threw a error."
+		exit 1
+	fi
+
+	log "Sync completed."
+}
+
+function push {
+	log "Start git."
+
+	# Push to repository with Git.
+	$GIT add .
+	$GIT commit -m "Update"
+	$GIT push
+
+	# Check if Git return error.
+	if [ $? -ne 0 ]; then
+		log_error "Git threw a error."
+		exit 1
+	fi
+
+	log "Push completed."
+}
+
+function both {
+	sync
+	echo ''
+	push
+}
+
+function fix {
+	log "Search and delete broken symlinks."
 	find ${XDG_CONFIG_HOME:-$HOME/.config} -xtype l -delete
 	find ${XDG_DATA_HOME:-$HOME/.local/share} -xtype l -delete
 }
 
 function install {
-	fix_links
-	echo ''
+	fix
+	log ''
 
-	echo "> That will restow your dots to make a fresh install. You are sure of proceed? (s/N)"
+	log "That will restow your dots to make a fresh install. You are sure of proceed? (s/N)"
 	read INPUT
-	echo ''
+	log ''
 
 	if [[ $INPUT = "s" || $INPUT = "S" ]]; then
-		echo "Started installation."
+		log "Installation started."
 
 		$STOW --restow --no-folding \
 			$SINGLE_DOTS
 		$STOW --restow \
 			$FOLDER_DOTS
 
-		echo "> Completed installation"
+		log "Installation completed."
 	else
-		echo "> Cancelled"
+		log "Installation cancelled."
 	fi
 }
 
@@ -96,15 +110,13 @@ case "$1" in
 		push
 		;;
 	both)
-		sync
-		echo ''
-		push
+		both
 		;;
 	list)
 		list
 		;;
 	fix)
-		fix_links
+		fix
 		;;
 	install)
 		install
