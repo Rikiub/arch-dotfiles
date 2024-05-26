@@ -1,13 +1,9 @@
-# --- CUSTOM ---
-# if command exist, replace builtin command and start setup
+alias ls="ls --color=auto --group-directories-first -X -F -N -h"
 
 # eza: A modern, maintained replacement for ls
 if command -v eza &> /dev/null; then
 	alias eza="eza --icons --group-directories-first --header --no-filesize"
 	alias ls="eza"
-# builtin ls
-else
-	alias ls="ls --color=auto --group-directories-first -X -F -N -h"
 fi
 
 # bat: A cat(1) clone with syntax highlighting and Git integration.
