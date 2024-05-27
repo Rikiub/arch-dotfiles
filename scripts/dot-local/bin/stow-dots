@@ -3,14 +3,13 @@
 # --- CONFIG ---
 
 # Dotfiles to install
-SINGLE_DOTS="scripts shell default wayland-env"
-FOLDER_DOTS="wayland-sway"
+DOTFILES="scripts shell default wayland-env wayland-sway"
 
 # --- VARIABLES ---
 
-DOTFILES="$HOME/.dotfiles"
-GIT="git --git-dir=$DOTFILES/.git --work-tree=$DOTFILES"
-STOW="stow --dotfiles --dir=$DOTFILES --target=$HOME"
+ROOT="$HOME/.dotfiles"
+GIT="git --git-dir=$ROOT/.git --work-tree=$ROOT"
+STOW="stow --dotfiles --dir=$ROOT --target=$HOME"
 
 # --- FUNCTIONS ---
 
@@ -27,16 +26,13 @@ function log_error {
 }
 
 function list {
-	ls $DOTFILES --group-directories-first --color
+	ls $ROOT --group-directories-first --color
 }
 
 function sync {
 	log "Sync."
 
-	$STOW --no-folding \
-		$SINGLE_DOTS
-	$STOW \
-		$FOLDER_DOTS
+	$STOW --no-folding $DOTFILES
 
 	# Check if stow return error.
 	if [ $? -ne 0 ]; then
@@ -87,10 +83,7 @@ function install {
 	if [[ $INPUT = "s" || $INPUT = "S" ]]; then
 		log "Installation started."
 
-		$STOW --restow --no-folding \
-			$SINGLE_DOTS
-		$STOW --restow \
-			$FOLDER_DOTS
+		$STOW --restow --no-folding $DOTFILES
 
 		log "Installation completed."
 	else
