@@ -1,0 +1,12 @@
+2024/05/29-16:02:14.798 eac Recovering log #10
+2024/05/29-16:02:15.368 eac Level-0 table #14: started
+2024/05/29-16:02:15.601 eac Level-0 table #14: 641384 bytes OK
+2024/05/29-16:02:15.850 eac Delete type=0 #10
+2024/05/29-16:02:15.850 eac Delete type=3 #8
+2024/05/29-16:02:20.312 ead Moved #14 to level-1 641384 bytes OK: files[ 0 1 1 0 0 0 0 ]
+2024/05/29-16:02:20.335 ead Compacting 1@1 + 1@2 files
+2024/05/29-16:02:20.921 ead Generated table #16@1: 3164 keys, 1048454 bytes
+2024/05/29-16:02:20.921 ead Compacted 1@1 + 1@2 files => 1048454 bytes
+2024/05/29-16:02:21.175 ead compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/05/29-16:02:21.176 ead Delete type=2 #14
+2024/05/29-16:02:21.176 ead Delete type=2 #12
