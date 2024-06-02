@@ -4,21 +4,18 @@ set $swayidle_timeout 600
 # Time to active screenlock (Default: 1000)
 set $swayidle_lock 1000
 
-# enable | disable Xwayland support
+# Xwayland support (enable | disable)
 xwayland enable
 
 # --- AUTOSTART ---
 
 # System
-## Essensial utilities
 exec {
 	nm-applet
 	blueman-applet
 }
 
 # User
-## I recommend use dex to autostart your apps, but also you can initizalize from here
-## https://wiki.archlinux.org/title/XDG_Autostart
 exec {
 	gammastep-indicator
 }

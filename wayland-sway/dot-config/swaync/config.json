@@ -87,30 +87,6 @@
 					"command": "systemctl poweroff"
 				}
 			]
-		},
-		"menubar": {
-			"menu#power-buttons": {
-				"label": "",
-				"position": "right",
-				"actions": [
-					{
-						"label": "  Shutdown",
-						"command": "systemctl poweroff"
-					},
-					{
-						"label": "  Reboot",
-						"command": "systemctl reboot"
-					},
-					{
-						"label": "  Logout",
-						"command": "pkill -U $USER"
-					},
-					{
-						"label": "  Lock",
-						"command": "swaync-client -cp && swaylock -f -c 000000"
-					}
-				]
-			}
 		}
 	}
 }
