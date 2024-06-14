@@ -1,18 +1,12 @@
 # Disable fish_greeting
 set -g fish_greeting
 
-# Startship Prompt
-if command -q starship
-    starship init fish | source
-end
-
 # ls options
 alias ls="ls --color=auto --group-directories-first -X -F -N -h"
 
-# eza: A modern, maintained replacement for ls
-if command -q eza
-    alias eza="eza --icons --group-directories-first --header --no-filesize"
-    alias ls="eza"
+# Startship Prompt
+if command -q starship
+    starship init fish | source
 end
 
 # Zoxide: Zoxide is a smarter cd command, inspired by z and autojump.
@@ -20,9 +14,14 @@ if command -q zoxide
     zoxide init fish | source
 end
 
+# eza: A modern, maintained replacement for ls
+if command -q eza
+    alias eza="eza --icons --group-directories-first --header --no-filesize"
+    alias ls="eza"
+end
+
 # bat: A cat(1) clone with syntax highlighting and Git integration.
 if command -q bat
-    alias bat="bat --color=always"
     alias cat="bat"
 
     # manpages highlight and theme
