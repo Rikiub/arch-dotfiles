@@ -8,10 +8,13 @@
 **/wpg/wallpapers
 **/wpg/.current
 
-**/zsh/antidote
+**/zsh/antidote/
 **/zsh/.zsh_plugins.zsh
 
 **/gtk-3.0/bookmarks
 
 **/cava/shaders
 **/cmus/lib.pl
+
+**/obsidian/
+!**/obsidian/user-flags.conf
