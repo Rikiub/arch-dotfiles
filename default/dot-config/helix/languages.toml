@@ -1,19 +1,19 @@
+# Python
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
 
-[language-server.ruff-lsp]
-command = "ruff-lsp"
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
 
 [[language]]
 name = "python"
-roots = ["pyproject.toml"]
-file-types = ["py"]
-comment-token = "#"
-language-servers = ["pyright", "ruff-lsp"]
+language-servers = ["pyright", "ruff"]
 formatter = {command = "ruff", args = ["format", "--quiet", "-"]}
 auto-format = true
 
+# Rust
 [[language]]
 name = "rust"
 formatter = {command = "rustfmt"}
