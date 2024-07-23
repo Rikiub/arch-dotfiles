@@ -1,4 +1,0 @@
-# sway config file
-
-# start config
-include ~/.config/i3/config.d/*
