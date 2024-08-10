@@ -1,5 +1,5 @@
 # Time to screen off (Default: 600)
-set $swayidle_timeout 600
+set $swayidle_screen_off 600
 
 # Time to active screenlock (Default: 1000)
 set $swayidle_lock 1000

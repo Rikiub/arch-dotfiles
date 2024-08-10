@@ -1,0 +1,5 @@
+# Screensaver and lockscreen
+swayidle -w \
+	timeout $swayidle_screen_off 'swaymsg "output * dpms off"' \
+		resume 'swaymsg "output * dpms on"' \
+	timeout $swayidle_lock 'swaylock -f -c 000000'

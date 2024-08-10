@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+Profiles=pywal
+Name=Set as wallpaper (Pywal)
+Name[es]=Establecer como fondo de escritorio (Pywal)
+Icon=preferences-desktop-wallpaper
+OnlyShowIn=sway;
+ 
+[X-Action-Profile pywal]
+MimeTypes=image/jpeg;image/png
+Exec=wal -qts -i %f

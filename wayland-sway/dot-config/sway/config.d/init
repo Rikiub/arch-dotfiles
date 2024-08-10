@@ -2,12 +2,6 @@
 bar swaybar_command waybar
 
 exec {
-	# Screensaver and lockscreen
-	swayidle -w \
-		timeout $swayidle_lock 'swaylock -f -c 000000' \
-		timeout $swayidle_timeout 'swaymsg "output * power off"' \
-		resume 'swaymsg "output * power on"'
-
 	# Autostart desktop entries in ~/.config/autostart
 	# https://wiki.archlinux.org/title/XDG_Autostart
 	dex --autostart --search-paths ${XDG_CONFIG_HOME:-$HOME/.config}/autostart

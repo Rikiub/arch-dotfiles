@@ -1,0 +1,14 @@
+# --- SCREENSHOT ---
+
+set $flameshot XDG_CURRENT_DESKTOP=sway flameshot
+
+# Initialize
+exec "pkill flameshot && $flameshot"
+
+bindsym {
+	Print \
+	exec $flameshot screen
+
+	$mod+Shift+s \
+	exec $flameshot gui
+}
