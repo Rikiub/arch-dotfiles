@@ -1,28 +1,23 @@
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-
-@define-color bg-selected rgb(0, 128, 255);
-
-@define-color background_color @view_bg_color;
-@define-color background_color @theme_bg_color;
-
-@define-color background_color_hover mix(@view_bg_color, @accent_color, 0.5);
-@define-color background_color_hover mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
-
-@define-color background_fg_color lighter(@theme_bg_color);
-@define-color background_fg_color @sidebar_bg_color;
-
-@define-color background_fg_color_hover mix(@sidebar_bg_color, @accent_color, 0.5);
-@define-color background_fg_color_hover mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
+/* Base */
+@define-color selected_color mix(@view_bg_color, @accent_color, 0.5);
+@define-color selected_color mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
 
 @define-color text_color @view_fg_color;
 @define-color text_color @theme_text_color;
 
-@define-color border_color shade(@theme_selected_fg_color, 0.5);
-@define-color border_color shade(@accent_color, 0.5);
+@define-color background_color @view_bg_color;
+@define-color background_color @theme_bg_color;
 
-@define-color selected_color mix(@view_bg_color, @accent_color, 0.5);
-@define-color selected_color mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
+/* Preset */
+@define-color background_color_hover @selected_color;
+
+@define-color background_fg_color lighter(@background_color);
+@define-color background_fg_color @sidebar_bg_color;
+
+@define-color border_color @selected_color;
+
+@define-color close_button darker(@background_color);
+@define-color close_button_hover darker(@background_color);
 
 * {
 	font-family: Symbols Nerd Font Mono, FontAwesome;
@@ -44,7 +39,7 @@
 
 .notification-row .notification-background .close-button {
 	/* The notification Close Button */
-	background: @noti-close-bg;
+	background: @close_button;
 	color: @text_color;
 	text-shadow: none;
 	padding: 0;
@@ -59,7 +54,7 @@
 
 .notification-row .notification-background .close-button:hover {
 	box-shadow: none;
-	background: @noti-close-bg-hover;
+	background: @close_button_hover;
 	transition: background 0.15s ease-in-out;
 	border: none;
 }
@@ -229,6 +224,7 @@
 	background: @background_fg_color;
 	border-radius: 12px;
 	margin: 0 15px;
+	padding: 10px 0;
 	margin-bottom: 10px;
 }
 
@@ -283,7 +279,7 @@
 }
 
 .notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
-	background-color: @background_fg_color_hover;
+	background-color: @background_color_hover;
 }
 
 .control-center {
@@ -369,7 +365,7 @@
 }
 
 .widget-dnd>switch:checked {
-	background: @bg-selected;
+	background: @selected_color;
 }
 
 .widget-dnd>switch slider {
@@ -386,20 +382,15 @@
 	font-size: 1.1rem;
 }
 
-/* Mpris widget */
-@define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
-@define-color mpris-button-hover rgba(0, 0, 0, 0.50);
-
 .widget-mpris {
 	/* The parent to all players */
 }
 
 .widget-mpris .widget-mpris-player {
-	padding: 8px;
 	padding: 16px;
 	margin: 16px 20px;
-	background-color: @mpris-album-art-overlay;
 	border-radius: 12px;
+	background-color: @background_fg_color;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
 }
 
@@ -410,6 +401,7 @@
 
 .widget-mpris .widget-mpris-player .widget-mpris-album-art {
 	border-radius: 12px;
+	margin-bottom: 15px;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
 }
 
@@ -424,10 +416,11 @@
 
 .widget-mpris .widget-mpris-player>box>button {
 	/* Change player control buttons */
+	background: @background_color;
 }
 
 .widget-mpris .widget-mpris-player>box>button:hover {
-	background-color: @mpris-button-hover;
+	background-color: @background_color_hover;
 }
 
 .widget-mpris>box>button {
@@ -448,13 +441,13 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
 	background: @background_color;
-	padding: 0 23px;
+	padding: 0 24px;
 	border-radius: 12px;
+	border: solid 1px @border_color;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
 	background: @background_color_hover;
-	border: solid 1px @border_color;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button.toggle:checked {
@@ -502,7 +495,7 @@
 }
 
 .per-app-volume {
-	background-color: @background_color-alt;
+	background-color: @background_fg_color;
 	padding: 4px 8px 8px 8px;
 	margin: 0px 8px 8px 8px;
 	border-radius: 12px;
