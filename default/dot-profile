@@ -30,7 +30,7 @@ export GTK_FONT_NAME="Ubuntu 11"
 # User PATH
 export PATH="$HOME/.local/bin:$PATH"
 
-# Clean HOME
+# Clear HOME
 if command -v antidot &> /dev/null; then
 	eval "$(antidot init -s bash)"
 fi
@@ -41,6 +41,12 @@ rm -f .xsession-errors .xsession-errors.old .dmrc .Xauthority
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 	export TERM=$TERM_WAYLAND
+
+	if [ "$DESKTOP_SESSION" = "sway" ]; then
+		export XDG_CURRENT_DESKTOP="sway"
+	fi
+
 elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
 	export TERM=$TERM_X11
 fi
+. "$HOME/.cargo/env"

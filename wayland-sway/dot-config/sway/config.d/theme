@@ -23,9 +23,7 @@ title_align center
 
 # --- COLORS ---
 
-# pywal support with wallpaper (dynamic color by wallpaper)
-include ${XDG_CACHE_HOME:-$HOME/.cache}/wal/colors-sway
-output * background $wallpaper fill
+output * background ~/.config/background fill
 
 set $focused            #808080
 set $unfocused          #000000

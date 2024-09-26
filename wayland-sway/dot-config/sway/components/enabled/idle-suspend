@@ -1,2 +1,4 @@
-swayidle -w \
-	timeout $swayidle_screen_off "systemctl suspend"
+exec {
+	swayidle -w \
+		timeout $swayidle_screen_off "systemctl suspend"
+}

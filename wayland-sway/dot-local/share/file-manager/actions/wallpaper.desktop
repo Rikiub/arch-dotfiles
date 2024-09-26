@@ -8,4 +8,4 @@ OnlyShowIn=sway;
  
 [X-Action-Profile wallpaper]
 MimeTypes=image/jpeg;image/png
-Exec=swaybg -i %f
+Exec=sh -c "cp -f %f $HOME/.config/background && pkill swaybg && swaybg -i $HOME/.config/background"
