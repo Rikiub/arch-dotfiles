@@ -1,9 +1,0 @@
-set $screenoff 600
-set $lockscreen 1000
-
-exec swayidle -w \
-	timeout $screenoff 'swaymsg "output * dpms off"' \
-	resume 'swaymsg "output * dpms on"' \
-	
-	timeout $lockscreen "systemctl suspend" \
-	before-sleep "playerctl pause" \
