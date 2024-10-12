@@ -11,20 +11,6 @@ TERM_X11=alacritty
 # Sort Preference
 # export LC_COLLATE=C
 
-# --- GTK THEME ---
-
-# Custom GTK Variables. Used for "darkman" themes.
-export GTK_THEME_LIGHT="adw-gtk3"
-export GTK_THEME_DARK="adw-gtk3-dark"
-
-export GTK_ICON_LIGHT="Papirus-Light"
-export GTK_ICON_DARK="Papirus-Dark"
-
-export GTK_CURSOR_LIGHT="Qogir"
-export GTK_CURSOR_DARK="Qogir"
-
-export GTK_FONT_NAME="Ubuntu 11"
-
 # --- DIRECTORIES ---
 
 # User PATH
@@ -49,4 +35,3 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 elif [ "$XDG_SESSION_TYPE" = "x11" ]; then
 	export TERM=$TERM_X11
 fi
-. "$HOME/.cargo/env"

@@ -1,23 +1,22 @@
 /* Base */
-@define-color selected_color mix(@view_bg_color, @accent_color, 0.5);
-@define-color selected_color mix(@theme_bg_color, @theme_selected_bg_color, 0.5);
-
-@define-color text_color @view_fg_color;
+@define-color text_color @window_fg_color;
 @define-color text_color @theme_text_color;
 
-@define-color background_color @view_bg_color;
-@define-color background_color @theme_bg_color;
+@define-color bg_color @theme_bg_color;
+@define-color bg_color @sidebar_bg_color;
 
-/* Preset */
-@define-color background_color_hover @selected_color;
+@define-color fg_color lighter(@bg_color);
 
-@define-color background_fg_color lighter(@background_color);
-@define-color background_fg_color @sidebar_bg_color;
+@define-color selected_color @accent_color;
+@define-color selected_color mix(@bg_color, @theme_selected_bg_color, 0.5);
 
-@define-color border_color @selected_color;
+@define-color bg_color_hover @selected_color;
 
-@define-color close_button darker(@background_color);
-@define-color close_button_hover darker(@background_color);
+@define-color border_color @headerbar_border_color;
+@define-color border_color darker(@bg_color);
+
+@define-color close_button darker(@bg_color);
+@define-color close_button_hover darker(@bg_color);
 
 * {
 	font-family: Symbols Nerd Font Mono, FontAwesome;
@@ -30,7 +29,7 @@
 
 .notification-row:focus,
 .notification-row:hover {
-	background: @background_color;
+	background: @bg_color;
 }
 
 .notification-row .notification-background {
@@ -65,7 +64,7 @@
 	border: 1px solid @border_color;
 	padding: 0;
 	transition: background 0.15s ease-in-out;
-	background: @background_color;
+	background: @bg_color;
 }
 
 .notification-row .notification-background .notification.low {
@@ -94,7 +93,7 @@
 .notification-row .notification-background .notification .notification-action:hover,
 .notification-row .notification-background .notification .notification-default-action:hover {
 	-gtk-icon-effect: none;
-	background: @background_color_hover;
+	background: @bg_color_hover;
 }
 
 .notification-row .notification-background .notification .notification-default-action {
@@ -176,7 +175,7 @@
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-entry {
-	background: darker(@background_color);
+	background: darker(@bg_color);
 	color: @text_color;
 	caret-color: @text_color;
 	border: 1px solid @border_color;
@@ -184,7 +183,7 @@
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button {
-	background: @background_color;
+	background: @bg_color;
 	color: @text_color;
 	border: 1px solid @border_color;
 	border-radius: 12px;
@@ -199,7 +198,7 @@
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button:hover {
-	background: @background_color_hover;
+	background: @bg_color_hover;
 }
 
 .notification-row .notification-background .notification .notification-action {
@@ -221,7 +220,7 @@
 
 .notification-group {
 	/* Styling only for Grouped Notifications */
-	background: @background_fg_color;
+	background: @fg_color;
 	border-radius: 12px;
 	margin: 0 15px;
 	padding: 10px 0;
@@ -265,7 +264,7 @@
 }
 
 .notification-group.collapsed .notification-row .notification {
-	background-color: @background_color;
+	background-color: @bg_color;
 }
 
 .notification-group.collapsed .notification-row:not(:last-child) {
@@ -279,12 +278,12 @@
 }
 
 .notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
-	background-color: @background_color_hover;
+	background-color: @bg_color_hover;
 }
 
 .control-center {
 	/* The Control Center which contains the old notifications + widgets */
-	background: @background_color;
+	background: @bg_color;
 	color: @text_color;
 	border: 1px solid @border_color;
 	border-radius: 12px;
@@ -311,7 +310,7 @@
 
 .control-center .control-center-list .notification .notification-default-action:hover,
 .control-center .control-center-list .notification .notification-action:hover {
-	background-color: @background_color_hover;
+	background-color: @bg_color_hover;
 }
 
 .blank-window {
@@ -336,17 +335,13 @@
 }
 
 .widget-title>button {
-	font-size: initial;
 	color: @text_color;
-	text-shadow: none;
-	background: @background_color;
-	border: 1px solid @border_color;
-	box-shadow: none;
+	background: @fg_color;
 	border-radius: 12px;
 }
 
 .widget-title>button:hover {
-	background: @background_color_hover;
+	background: @bg_color_hover;
 }
 
 /* DND widget */
@@ -359,7 +354,7 @@
 .widget-dnd>switch {
 	font-size: initial;
 	border-radius: 12px;
-	background: @background_color;
+	background: @bg_color;
 	border: 1px solid @border_color;
 	box-shadow: none;
 }
@@ -369,7 +364,7 @@
 }
 
 .widget-dnd>switch slider {
-	background: @background_color_hover;
+	background: @bg_color_hover;
 	border-radius: 12px;
 }
 
@@ -390,13 +385,13 @@
 	padding: 16px;
 	margin: 16px 20px;
 	border-radius: 12px;
-	background-color: @background_fg_color;
+	background-color: @fg_color;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
 }
 
 .widget-mpris .widget-mpris-player button:hover {
 	/* The media player buttons (play, pause, next, etc...) */
-	background: @background_color_hover;
+	background: @bg_color_hover;
 }
 
 .widget-mpris .widget-mpris-player .widget-mpris-album-art {
@@ -416,11 +411,11 @@
 
 .widget-mpris .widget-mpris-player>box>button {
 	/* Change player control buttons */
-	background: @background_color;
+	background: @bg_color;
 }
 
 .widget-mpris .widget-mpris-player>box>button:hover {
-	background-color: @background_color_hover;
+	background-color: @bg_color_hover;
 }
 
 .widget-mpris>box>button {
@@ -433,21 +428,18 @@
 
 /* Buttons widget */
 .widget-buttons-grid {
-	padding: 8px;
-	margin: 8px;
 	border-radius: 12px;
-	background-color: @background_fg_color;
+	background-color: @fg_color;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
-	background: @background_color;
+	background: lighter(@fg_color);
 	padding: 0 24px;
 	border-radius: 12px;
-	border: solid 1px @border_color;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-	background: @background_color_hover;
+	background: @bg_color_hover;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button.toggle:checked {
@@ -461,7 +453,7 @@
 }
 
 /* .AnyName { Name defined in config after #
-	background-color: @background_color;
+	background-color: @bg_color;
 	padding: 8px;
 	margin: 8px;
 	border-radius: 12px;
@@ -473,7 +465,7 @@
 }
 
 .AnyName>button:hover {
-	background-color: @background_color_hover;
+	background-color: @bg_color_hover;
 } */
 .topbar-buttons>button {
 	/* Name defined in config after # */
@@ -483,7 +475,7 @@
 
 /* Volume widget */
 .widget-volume {
-	background-color: @background_fg_color;
+	background-color: @fg_color;
 	padding: 8px;
 	margin: 8px;
 	border-radius: 12px;
@@ -495,7 +487,7 @@
 }
 
 .per-app-volume {
-	background-color: @background_fg_color;
+	background-color: @fg_color;
 	padding: 4px 8px 8px 8px;
 	margin: 0px 8px 8px 8px;
 	border-radius: 12px;
@@ -503,7 +495,7 @@
 
 /* Backlight widget */
 .widget-backlight {
-	background-color: @background_color;
+	background-color: @bg_color;
 	padding: 8px;
 	margin: 8px;
 	border-radius: 12px;
@@ -519,12 +511,12 @@
 	font-size: initial;
 	color: @text_color;
 	text-shadow: none;
-	background: @background_color;
+	background: @bg_color;
 	border: 1px solid @border_color;
 	box-shadow: none;
 	border-radius: 12px;
 }
 
 .widget-inhibitors>button:hover {
-	background: @background_color_hover;
+	background: @bg_color_hover;
 }

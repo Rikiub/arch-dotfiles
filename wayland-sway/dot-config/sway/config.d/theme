@@ -1,7 +1,8 @@
+# FONT
 # Font for window titles. Will also be used by the bar unless a different font
 font pango:Symbols Nerd Font Mono, FontAwesome, 8
 
-# --- WINDOWS ---
+# WINDOWS
 
 # Inner gaps for all windows: space between two adjacent windows (or split containers).
 gaps inner 5
@@ -21,10 +22,10 @@ default_floating_border pixel 2
 titlebar_border_thickness 2
 title_align center
 
-# --- COLORS ---
+# WALLPAPER
+exec_always waypaper --restore
 
-output * background ~/.config/background fill
-
+# COLORS
 set $focused            #808080
 set $unfocused          #000000
 set $focused_inactive   #000000

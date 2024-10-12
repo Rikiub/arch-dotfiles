@@ -1,4 +1,4 @@
-# --- SCREENSHOT ---
+# SCREENSHOT
 
 set $grimshot grimshot
 set $screenshot $(xdg-user-dir PICTURES)/screenshot_$(date +%Y%m%d%H%M%S).png

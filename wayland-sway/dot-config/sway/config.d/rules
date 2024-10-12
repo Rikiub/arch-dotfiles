@@ -4,8 +4,6 @@ for_window {
 	[app_id="(?i)(?:firefox|chromium|brave-browser|microsoft-edge|vivaldi-stable)"] inhibit_idle fullscreen, max_render_time off
 	## video player
 	[app_id="(?i)(?:mpv|vlc)"] inhibit_idle fullscreen, max_render_time off
-	## music player
-	[app_id="(?i)(?:com.github.neithern.g4music)"] floating enable
 	## images
 	[app_id="(?i)(?:ristretto|gthumb|imv)"] floating enable
 	## calculator

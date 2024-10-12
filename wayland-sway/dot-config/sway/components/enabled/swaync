@@ -1,5 +1,0 @@
-exec_always "pkill swaync ; swaync"
-
-# menu
-bindsym	$mod+Shift+e \
-exec swaync-client -t

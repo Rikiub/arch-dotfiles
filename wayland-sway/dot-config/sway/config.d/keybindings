@@ -1,14 +1,16 @@
+# DEFAULTS
+
 # global key modifier
 set $mod Mod4
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# --- KEYS ---
+# KEYS
 
 bindsym {
 
-	# --- FOCUS ---
+	### FOCUS
 	
 	# change focus
 	$mod+h focus left
@@ -38,7 +40,7 @@ bindsym {
 	$mod+Shift+q kill
 	$mod+F4      kill
 
-	# --- LAYOUT ---
+	### LAYOUT
 	
 	# enter fullscreen mode for the focused container
 	$mod+f fullscreen toggle
@@ -56,36 +58,38 @@ bindsym {
 	$mod+Shift+minus move scratchpad
 	$mod+minus scratchpad show
 	
-	# --- MEDIA KEYS ---
-	
-	# brightness
-	--locked XF86MonBrightnessDown exec brightnessctl set 5%-
-	--locked XF86MonBrightnessUp exec brightnessctl set 5%+
-	
-	# audio
-	--locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-	--locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-	--locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-	--locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-	
-	# media-player
-	--locked XF86AudioPlay exec playerctl play-pause
-	--locked XF86AudioNext exec playerctl next
-	--locked XF86AudioPrev exec playerctl previous
-	
-	# --- DEV ---
+	### DEV
 	
 	# reload sway config
 	$mod+Shift+c reload
 	
-	# --- USER ---
+	### USER
 	
 	# launch terminal
 	$mod+Return \
 	exec $TERM
 }
 
-# --- WORKSPACE ---
+# MEDIA KEYS
+bindsym --locked {
+
+	# brightness
+	XF86MonBrightnessUp exec brightnessctl set 5%+
+	XF86MonBrightnessDown exec brightnessctl set 5%-
+		
+	# audio
+	XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+	XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+	XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+	XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+	
+	# player
+	XF86AudioPlay exec playerctl play-pause
+	XF86AudioNext exec playerctl next
+	XF86AudioPrev exec playerctl previous
+}
+
+# WORKSPACE
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -100,84 +104,98 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch between workspaces
-#bindsym $mod+Tab workspace next
-#bindsym $mod+Shift+Tab workspace prev
-bindsym $mod+Tab workspace back_and_forth
+bindsym {
+	# switch between workspaces
+	#$mod+Tab workspace next
+	#$mod+Shift+Tab workspace prev
+	$mod+Tab workspace back_and_forth
+}
 
-# switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym {
+	# switch to workspace
+	$mod+1 workspace number $ws1
+	$mod+2 workspace number $ws2
+	$mod+3 workspace number $ws3
+	$mod+4 workspace number $ws4
+	$mod+5 workspace number $ws5
+	$mod+6 workspace number $ws6
+	$mod+7 workspace number $ws7
+	$mod+8 workspace number $ws8
+	$mod+9 workspace number $ws9
+	$mod+0 workspace number $ws10
 
-# switch to workspace with numlock numpad keys
-bindcode $mod+87 workspace number $ws1
-bindcode $mod+88 workspace number $ws2
-bindcode $mod+89 workspace number $ws3
-bindcode $mod+83 workspace number $ws4
-bindcode $mod+84 workspace number $ws5
-bindcode $mod+85 workspace number $ws6
-bindcode $mod+79 workspace number $ws7
-bindcode $mod+80 workspace number $ws8
-bindcode $mod+81 workspace number $ws9
-bindcode $mod+90 workspace number $ws10
+	# move focused container to workspace
+	$mod+Shift+1 move container to workspace number $ws1
+	$mod+Shift+2 move container to workspace number $ws2
+	$mod+Shift+3 move container to workspace number $ws3
+	$mod+Shift+4 move container to workspace number $ws4
+	$mod+Shift+5 move container to workspace number $ws5
+	$mod+Shift+6 move container to workspace number $ws6
+	$mod+Shift+7 move container to workspace number $ws7
+	$mod+Shift+8 move container to workspace number $ws8
+	$mod+Shift+9 move container to workspace number $ws9
+	$mod+Shift+0 move container to workspace number $ws10
+}
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindcode {
+	# switch to workspace with numlock numpad keys
+	$mod+87 workspace number $ws1
+	$mod+88 workspace number $ws2
+	$mod+89 workspace number $ws3
+	$mod+83 workspace number $ws4
+	$mod+84 workspace number $ws5
+	$mod+85 workspace number $ws6
+	$mod+79 workspace number $ws7
+	$mod+80 workspace number $ws8
+	$mod+81 workspace number $ws9
+	$mod+90 workspace number $ws10
 
-# move focused container to workspace with numpad keys
-bindcode $mod+Shift+87 move container to workspace number $ws1
-bindcode $mod+Shift+88 move container to workspace number $ws2
-bindcode $mod+Shift+89 move container to workspace number $ws3
-bindcode $mod+Shift+83 move container to workspace number $ws4
-bindcode $mod+Shift+84 move container to workspace number $ws5
-bindcode $mod+Shift+85 move container to workspace number $ws6
-bindcode $mod+Shift+79 move container to workspace number $ws7
-bindcode $mod+Shift+80 move container to workspace number $ws8
-bindcode $mod+Shift+81 move container to workspace number $ws9
-bindcode $mod+Shift+90 move container to workspace number $ws10
+	# move focused container to workspace with numpad keys
+	$mod+Shift+87 move container to workspace number $ws1
+	$mod+Shift+88 move container to workspace number $ws2
+	$mod+Shift+89 move container to workspace number $ws3
+	$mod+Shift+83 move container to workspace number $ws4
+	$mod+Shift+84 move container to workspace number $ws5
+	$mod+Shift+85 move container to workspace number $ws6
+	$mod+Shift+79 move container to workspace number $ws7
+	$mod+Shift+80 move container to workspace number $ws8
+	$mod+Shift+81 move container to workspace number $ws9
+	$mod+Shift+90 move container to workspace number $ws10
+}
 
 # touch gestures
-bindgesture swipe:right workspace prev
-bindgesture swipe:left workspace next
+bindgesture {
+	swipe:right workspace prev
+	swipe:left workspace next
 
-# --- RESIZE ---
+	pinch:inward+up move up
+	pinch:inward+down move down
+	pinch:inward+left move left
+	pinch:inward+right move right
+}
+
+
+# RESIZE
+bindsym $mod+r mode "resize"
 
 mode "resize" {
 	bindsym {
-		# These bindings trigger as soon as you enter the resize mode
+		# trigger when you enter on resize mode
 
         h resize grow width 10 px or 10 ppt
         l resize shrink width 10 px or 10 ppt
         j resize grow height 10 px or 10 ppt
         k resize shrink height 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
+        # same bindings, but for arrow keys
         Right resize shrink width 10 px or 10 ppt
         Up    resize grow height 10 px or 10 ppt
         Down  resize shrink height 10 px or 10 ppt
         Left  resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+        # back to normal: Enter, Escape, $mod+r
         Return mode "default"
         Escape mode "default"
         $mod+r mode "default"
 	}
 }
-bindsym $mod+r mode "resize"

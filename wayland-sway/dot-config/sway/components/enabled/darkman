@@ -1,14 +1,8 @@
-# --- enable darkman support ---
-# For support for automatic GTK_THEME switch set the following env variables on your startup script or session manager. (Like .profile)
-#
-# export GTK_THEME_LIGHT="awd-gtk3"
-# export ICON_LIGHT="Papirus-Light"
-# export GTK_THEME_DARK="adw-gtk3-dark"
-# export ICON_DARK="Papirus-Dark"
-
 # run daemon
 exec darkman run
 
 # darkman toggle
-bindsym $mod+Shift+m \
-exec darkman toggle
+bindsym --no-repeat {
+    $mod+Shift+m \
+    exec darkman toggle
+}

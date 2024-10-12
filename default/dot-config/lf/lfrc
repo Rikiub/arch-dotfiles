@@ -13,8 +13,8 @@ set hidden false
 set sixel true
 set preview true
 
-set previewer ctpv
-set cleaner ctpvclear
+set previewer ~/.config/lf/ctpv
+set cleaner ~/.config/lf/ctpvclear
 &ctpv -s $id
 &ctpvquit $id
 
