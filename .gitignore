@@ -16,10 +16,10 @@
 **/cava/shaders
 **/cmus/lib.pl
 
-**/obsidian/
+**/obsidian/*
 !**/obsidian/user-flags.conf
 
-**/nwg-panel/
+**/nwg-panel/*
 !**/nwg-panel/config
 !**/nwg-panel/style.css
 !**/nwg-panel/common-settings.json
